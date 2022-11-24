@@ -1,0 +1,32 @@
+version: '2'
+
+services: 
+  prestashop:
+    container_name: be-adidas
+    image: jacoblink/be-prestashop:test
+    ports:
+      - 80:80
+      - 443:443
+    depends_on:
+      - mariadb
+
+  mariadb:
+    container_name: adidas-db
+    image: mariadb
+    volumes:
+     - ./docker/mariadb:/docker-entrypoint-initdb.d
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=prestashop
+
+  phpmyadmin:
+    container_name: db-admin
+    image: phpmyadmin/phpmyadmin
+    links:
+      - mariadb
+    ports: 
+      - 81:80 
+    environment:
+      - PMA_HOST=mariadb
+      - PMA_USER=root
+      - PMA_PASSWORD=root
