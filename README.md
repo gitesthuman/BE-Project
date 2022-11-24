@@ -16,7 +16,7 @@ You can also strart and stop application in Docker Desktop application.
 
 ---
 
-To enter the admin page, you need to enter `http://localhost:80/kupriano` and log in.
+To enter the admin page, you need to enter http://localhost:80/kupriano and log in.
 
 Email: `demo@prestashop.com`
 
