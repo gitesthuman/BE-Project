@@ -12,11 +12,13 @@ To stop the application use:
 ```
 docker-compose stop
 ```
-You can also strart and stop application in Docker Desktop application.
+You can also start and stop application in Docker Desktop application.
 
 ---
+At first, go to [phpMyAdmin](http://localhost:81) and import database `mariadb.sql`.
 
-To enter the admin page, you need to enter http://localhost:80/kupriano and log in.
+
+To enter the admin page, you need to enter `http://localhost:80/kupriano` and log in.
 
 Email: `demo@prestashop.com`
 
