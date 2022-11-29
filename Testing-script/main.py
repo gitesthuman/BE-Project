@@ -11,7 +11,9 @@ driver = webdriver.Chrome(PATH)
 driver.get("http://127.0.0.1:80")
 driver.maximize_window()
 driver.implicitly_wait(10)
-user = User(driver, "Pan", "Adam", "Adamski", "adam1@gmail.com", "adaamo12.", "2001-01-01")
+
+user = User(driver, "Pan", "Adam", "Adamski", "adam3@gmail.com", "adaamo12.", "2001-01-01")
+
 products = []
 products.append(Product(driver, "CLOTHES", "MEN", "Hummingbird Printed T-Shirt"))
 products.append(Product(driver, "PRODUKTY POWIĄZANE", "HOME ACCESSORIES", "Mug The Best Is Yet To Come"))

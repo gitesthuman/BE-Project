@@ -1,4 +1,3 @@
-from random import random
 from time import sleep
 from selenium.webdriver import ActionChains, Keys
 from selenium.webdriver.common.by import By
