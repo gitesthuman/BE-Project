@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: mariadb
--- Czas generowania: 27 Lis 2022, 16:30
+-- Czas generowania: 08 Gru 2022, 14:39
 -- Wersja serwera: 10.10.2-MariaDB-1:10.10.2+maria~ubu2204
 -- Wersja PHP: 8.0.19
 
@@ -1086,6 +1086,42 @@ CREATE TABLE `ad_admin_filter` (
   `filter_id` varchar(191) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Zrzut danych tabeli `ad_admin_filter`
+--
+
+INSERT INTO `ad_admin_filter` (`id`, `employee`, `shop`, `controller`, `action`, `filter`, `filter_id`) VALUES
+(1, 1, 1, '', '', '{\"orderBy\":\"position\",\"sortOrder\":\"asc\",\"limit\":50,\"filters\":{\"id_category_parent\":2}}', 'category'),
+(2, 1, 1, '', '', '{\"limit\":10,\"orderBy\":\"name\",\"sortOrder\":\"asc\",\"filters\":[]}', 'manufacturer'),
+(3, 1, 1, '', '', '{\"limit\":10,\"orderBy\":\"id_address\",\"sortOrder\":\"desc\",\"filters\":[]}', 'manufacturer_address'),
+(4, 1, 1, '', '', '{\"limit\":20,\"orderBy\":\"name\",\"sortOrder\":\"asc\",\"filters\":[]}', 'empty_category'),
+(5, 1, 1, '', '', '{\"limit\":20,\"orderBy\":\"name\",\"sortOrder\":\"asc\",\"filters\":[]}', 'no_qty_product_with_combination'),
+(6, 1, 1, '', '', '{\"limit\":20,\"orderBy\":\"name\",\"sortOrder\":\"asc\",\"filters\":[]}', 'no_qty_product_without_combination'),
+(7, 1, 1, '', '', '{\"limit\":20,\"orderBy\":\"name\",\"sortOrder\":\"asc\",\"filters\":[]}', 'disabled_product'),
+(8, 1, 1, '', '', '{\"limit\":20,\"orderBy\":\"name\",\"sortOrder\":\"asc\",\"filters\":[]}', 'product_without_image'),
+(9, 1, 1, '', '', '{\"limit\":20,\"orderBy\":\"name\",\"sortOrder\":\"asc\",\"filters\":[]}', 'product_without_description'),
+(10, 1, 1, '', '', '{\"limit\":20,\"orderBy\":\"name\",\"sortOrder\":\"asc\",\"filters\":[]}', 'product_without_price'),
+(11, 1, 1, '', '', '{\"orderBy\":\"position\",\"sortOrder\":\"asc\",\"limit\":50,\"filters\":{\"id_cms_category_parent\":1}}', 'cms_page_category'),
+(12, 1, 1, '', '', '{\"orderBy\":\"position\",\"sortOrder\":\"asc\",\"limit\":50,\"filters\":{\"id_cms_category_parent\":1}}', 'cms_page'),
+(13, 1, 1, 'ProductController', 'catalogAction', '{\"filter_category\":\"\",\"filter_column_id_product\":\"\",\"filter_column_name\":\"\",\"filter_column_reference\":\"\",\"filter_column_name_category\":\"\",\"filter_column_price\":\"\",\"filter_column_sav_quantity\":\"\",\"filter_column_active\":\"\",\"last_offset\":\"20\",\"last_limit\":\"20\",\"last_orderBy\":\"id_product\",\"last_sortOrder\":\"desc\"}', ''),
+(14, 1, 1, '', '', '{\"limit\":50,\"orderBy\":\"id_attachment\",\"sortOrder\":\"asc\",\"filters\":[]}', 'attachment'),
+(15, 1, 1, '', '', '{\"limit\":10,\"orderBy\":\"id_request_sql\",\"sortOrder\":\"desc\",\"filters\":[]}', 'sql_request'),
+(16, 1, 1, '', '', '{\"limit\":50,\"orderBy\":\"id_mail\",\"sortOrder\":\"desc\",\"filters\":[]}', 'email_logs'),
+(17, 1, 1, '', '', '{\"limit\":50,\"orderBy\":\"id_tax\",\"sortOrder\":\"asc\",\"filters\":[]}', 'tax'),
+(18, 1, 1, '', '', '{\"limit\":50,\"orderBy\":\"id_order\",\"sortOrder\":\"DESC\",\"filters\":[]}', 'order'),
+(19, 1, 1, '', '', '{\"limit\":50,\"orderBy\":\"date_add\",\"sortOrder\":\"DESC\",\"filters\":[]}', 'customer'),
+(20, 1, 1, '', '', '{\"limit\":10,\"orderBy\":\"id_contact\",\"sortOrder\":\"asc\",\"filters\":[]}', 'contact'),
+(21, 1, 1, '', '', '{\"limit\":50,\"orderBy\":\"id_zone\",\"sortOrder\":\"asc\",\"filters\":[]}', 'zone'),
+(22, 1, 1, '', '', '{\"limit\":50,\"orderBy\":\"id_meta\",\"sortOrder\":\"asc\",\"filters\":[]}', 'meta'),
+(23, 1, 1, '', '', '{\"limit\":50,\"orderBy\":\"id_search_engine\",\"sortOrder\":\"asc\",\"filters\":[]}', 'search_engine'),
+(24, 1, 1, '', '', '{\"limit\":10,\"orderBy\":\"id_log\",\"sortOrder\":\"desc\",\"filters\":[]}', 'logs'),
+(25, 1, 1, '', '', '{\"limit\":10,\"orderBy\":\"id_employee_session\",\"sortOrder\":\"asc\",\"filters\":[]}', 'security_session_employee'),
+(26, 1, 1, '', '', '{\"limit\":10,\"orderBy\":\"id_customer_session\",\"sortOrder\":\"asc\",\"filters\":[]}', 'security_session_customer'),
+(27, 1, 1, '', '', '{\"limit\":50,\"orderBy\":\"id_order_message\",\"sortOrder\":\"asc\",\"filters\":[]}', 'order_message'),
+(28, 1, 1, '', '', '{\"limit\":50,\"orderBy\":\"id_address\",\"sortOrder\":\"asc\",\"filters\":[]}', 'address'),
+(29, 1, 1, '', '', '{\"limit\":50,\"orderBy\":\"id_webservice_account\",\"sortOrder\":\"asc\",\"filters\":[]}', 'webservice_key'),
+(30, 1, 1, '', '', '{\"limit\":50,\"orderBy\":\"id_employee\",\"sortOrder\":\"asc\",\"filters\":[]}', 'employee');
+
 -- --------------------------------------------------------
 
 --
@@ -1121,6 +1157,14 @@ CREATE TABLE `ad_attachment` (
   `mime` varchar(128) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Zrzut danych tabeli `ad_attachment`
+--
+
+INSERT INTO `ad_attachment` (`id_attachment`, `file`, `file_name`, `file_size`, `mime`) VALUES
+(1, '7796b177e93a9dab904dcff8076cd3b5be4bbc6e', 'meal10.jpg', 126222, 'image/jpeg'),
+(2, '2607e3e549116c7157ffe7cb01cb4e6593381839', 'slide2.jpg', 221918, 'image/webp');
+
 -- --------------------------------------------------------
 
 --
@@ -1133,6 +1177,14 @@ CREATE TABLE `ad_attachment_lang` (
   `name` varchar(32) DEFAULT NULL,
   `description` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Zrzut danych tabeli `ad_attachment_lang`
+--
+
+INSERT INTO `ad_attachment_lang` (`id_attachment`, `id_lang`, `name`, `description`) VALUES
+(1, 1, 'test', ''),
+(2, 1, 'slide2', '');
 
 -- --------------------------------------------------------
 
@@ -1170,13 +1222,17 @@ INSERT INTO `ad_attribute` (`id_attribute`, `id_attribute_group`, `color`, `posi
 (16, 2, '#F1C40F', 11),
 (17, 2, '#964B00', 12),
 (18, 2, '#FCCACD', 13),
-(19, 3, '', 0),
-(20, 3, '', 1),
-(21, 3, '', 2),
-(22, 4, '', 0),
-(23, 4, '', 1),
-(24, 4, '', 2),
-(25, 4, '', 3);
+(26, 1, '', 4),
+(27, 1, '', 5),
+(28, 5, '', 0),
+(29, 5, '', 1),
+(30, 5, '', 2),
+(31, 5, '', 3),
+(32, 5, '', 4),
+(33, 5, '', 5),
+(34, 5, '', 6),
+(35, 5, '', 7),
+(36, 5, '', 8);
 
 -- --------------------------------------------------------
 
@@ -1198,8 +1254,7 @@ CREATE TABLE `ad_attribute_group` (
 INSERT INTO `ad_attribute_group` (`id_attribute_group`, `is_color_group`, `group_type`, `position`) VALUES
 (1, 0, 'select', 0),
 (2, 1, 'color', 1),
-(3, 0, 'select', 2),
-(4, 0, 'select', 3);
+(5, 0, 'select', 2);
 
 -- --------------------------------------------------------
 
@@ -1221,8 +1276,7 @@ CREATE TABLE `ad_attribute_group_lang` (
 INSERT INTO `ad_attribute_group_lang` (`id_attribute_group`, `id_lang`, `name`, `public_name`) VALUES
 (1, 1, 'Rozmiar', 'Rozmiar'),
 (2, 1, 'Kolor', 'Kolor'),
-(3, 1, 'Dimension', 'Dimension'),
-(4, 1, 'Paper Type', 'Paper Type');
+(5, 1, 'Rozmiar buta', 'Rozmiar');
 
 -- --------------------------------------------------------
 
@@ -1242,8 +1296,7 @@ CREATE TABLE `ad_attribute_group_shop` (
 INSERT INTO `ad_attribute_group_shop` (`id_attribute_group`, `id_shop`) VALUES
 (1, 1),
 (2, 1),
-(3, 1),
-(4, 1);
+(5, 1);
 
 -- --------------------------------------------------------
 
@@ -1280,13 +1333,17 @@ INSERT INTO `ad_attribute_lang` (`id_attribute`, `id_lang`, `name`) VALUES
 (16, 1, 'Żółty'),
 (17, 1, 'Brązowy'),
 (18, 1, 'Różowy'),
-(19, 1, '40x60cm'),
-(20, 1, '60x90cm'),
-(21, 1, '80x120cm'),
-(22, 1, 'Ruled'),
-(23, 1, 'Plain'),
-(24, 1, 'Squarred'),
-(25, 1, 'Doted');
+(26, 1, 'XS'),
+(27, 1, '2XL'),
+(28, 1, '36'),
+(29, 1, '37'),
+(30, 1, '38'),
+(31, 1, '39'),
+(32, 1, '40'),
+(33, 1, '41'),
+(34, 1, '42'),
+(35, 1, '43'),
+(36, 1, '44');
 
 -- --------------------------------------------------------
 
@@ -1322,13 +1379,17 @@ INSERT INTO `ad_attribute_shop` (`id_attribute`, `id_shop`) VALUES
 (16, 1),
 (17, 1),
 (18, 1),
-(19, 1),
-(20, 1),
-(21, 1),
-(22, 1),
-(23, 1),
-(24, 1),
-(25, 1);
+(26, 1),
+(27, 1),
+(28, 1),
+(29, 1),
+(30, 1),
+(31, 1),
+(32, 1),
+(33, 1),
+(34, 1),
+(35, 1),
+(36, 1);
 
 -- --------------------------------------------------------
 
@@ -2355,10 +2416,7 @@ CREATE TABLE `ad_cart_product` (
 INSERT INTO `ad_cart_product` (`id_cart`, `id_product`, `id_address_delivery`, `id_shop`, `id_product_attribute`, `id_customization`, `quantity`, `date_add`) VALUES
 (1, 1, 3, 1, 1, 0, 1, '0000-00-00 00:00:00'),
 (1, 2, 3, 1, 9, 0, 1, '0000-00-00 00:00:00'),
-(2, 4, 3, 1, 18, 0, 1, '0000-00-00 00:00:00'),
 (2, 8, 3, 1, 0, 0, 1, '0000-00-00 00:00:00'),
-(3, 16, 3, 1, 28, 0, 1, '0000-00-00 00:00:00'),
-(4, 16, 3, 1, 29, 0, 1, '0000-00-00 00:00:00'),
 (5, 10, 3, 1, 25, 0, 1, '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
@@ -2530,15 +2588,20 @@ CREATE TABLE `ad_category` (
 --
 
 INSERT INTO `ad_category` (`id_category`, `id_parent`, `id_shop_default`, `level_depth`, `nleft`, `nright`, `active`, `date_add`, `date_upd`, `position`, `is_root_category`) VALUES
-(1, 0, 1, 0, 1, 18, 1, '2022-11-27 17:28:04', '2022-11-27 17:28:04', 0, 0),
-(2, 1, 1, 1, 2, 17, 1, '2022-11-27 17:28:04', '2022-11-27 17:28:04', 0, 1),
-(3, 2, 1, 2, 3, 8, 1, '2022-11-27 17:28:22', '2022-11-27 17:28:22', 0, 0),
-(4, 3, 1, 3, 4, 5, 1, '2022-11-27 17:28:22', '2022-11-27 17:28:22', 0, 0),
-(5, 3, 1, 3, 6, 7, 1, '2022-11-27 17:28:22', '2022-11-27 17:28:22', 1, 0),
-(6, 2, 1, 2, 9, 14, 1, '2022-11-27 17:28:22', '2022-11-27 17:28:22', 1, 0),
-(7, 6, 1, 3, 10, 11, 1, '2022-11-27 17:28:22', '2022-11-27 17:28:22', 0, 0),
-(8, 6, 1, 3, 12, 13, 1, '2022-11-27 17:28:23', '2022-11-27 17:28:23', 1, 0),
-(9, 2, 1, 2, 15, 16, 1, '2022-11-27 17:28:23', '2022-11-27 17:28:23', 2, 0);
+(1, 0, 1, 0, 1, 28, 1, '2022-11-27 17:28:04', '2022-11-27 17:28:04', 0, 0),
+(2, 1, 1, 1, 2, 27, 1, '2022-11-27 17:28:04', '2022-11-27 17:28:04', 0, 1),
+(3, 2, 1, 2, 3, 10, 1, '2022-11-27 17:28:22', '2022-11-30 17:37:03', 0, 0),
+(4, 3, 1, 3, 4, 5, 1, '2022-11-27 17:28:22', '2022-11-30 17:41:40', 0, 0),
+(5, 3, 1, 3, 6, 7, 1, '2022-11-27 17:28:22', '2022-11-30 17:41:56', 1, 0),
+(6, 2, 1, 2, 11, 18, 1, '2022-11-27 17:28:22', '2022-11-30 17:37:03', 1, 0),
+(7, 6, 1, 3, 12, 13, 1, '2022-11-27 17:28:22', '2022-11-30 17:45:52', 0, 0),
+(8, 6, 1, 3, 14, 15, 1, '2022-11-27 17:28:23', '2022-11-30 17:46:09', 1, 0),
+(9, 2, 1, 2, 19, 26, 1, '2022-11-27 17:28:23', '2022-11-30 17:37:03', 2, 0),
+(11, 3, 1, 3, 8, 9, 1, '2022-11-30 17:42:14', '2022-11-30 17:42:14', 2, 0),
+(12, 6, 1, 3, 16, 17, 1, '2022-11-30 17:46:33', '2022-11-30 17:46:33', 2, 0),
+(13, 9, 1, 3, 20, 21, 1, '2022-11-30 17:46:51', '2022-11-30 17:46:51', 0, 0),
+(14, 9, 1, 3, 22, 23, 1, '2022-11-30 17:47:03', '2022-11-30 17:47:03', 1, 0),
+(15, 9, 1, 3, 24, 25, 1, '2022-11-30 17:47:15', '2022-11-30 17:47:17', 2, 0);
 
 -- --------------------------------------------------------
 
@@ -2583,7 +2646,22 @@ INSERT INTO `ad_category_group` (`id_category`, `id_group`) VALUES
 (8, 3),
 (9, 1),
 (9, 2),
-(9, 3);
+(9, 3),
+(11, 1),
+(11, 2),
+(11, 3),
+(12, 1),
+(12, 2),
+(12, 3),
+(13, 1),
+(13, 2),
+(13, 3),
+(14, 1),
+(14, 2),
+(14, 3),
+(15, 1),
+(15, 2),
+(15, 3);
 
 -- --------------------------------------------------------
 
@@ -2611,13 +2689,18 @@ CREATE TABLE `ad_category_lang` (
 INSERT INTO `ad_category_lang` (`id_category`, `id_shop`, `id_lang`, `name`, `description`, `additional_description`, `link_rewrite`, `meta_title`, `meta_keywords`, `meta_description`) VALUES
 (1, 1, 1, 'Baza', '', '', 'baza', '', '', ''),
 (2, 1, 1, 'Strona główna', '', '', 'strona-glowna', '', '', ''),
-(3, 1, 1, 'Clothes', '<p>Discover our favorites fashionable discoveries, a selection of cool items to integrate in your wardrobe. Compose a unique style with personality which matches your own.</p>', '', 'clothes', '', '', ''),
-(4, 1, 1, 'Men', '<p>T-shirts, sweaters, hoodies and men\'s accessories. From basics to original creations, for every style. </p>', '', 'men', '', '', ''),
-(5, 1, 1, 'Women', '<p>T-shirts, sweaters, hoodies and women\'s accessories. From basics to original creations, for every style. </p>', '', 'women', '', '', ''),
-(6, 1, 1, 'Produkty powiązane', '<p>Items and accessories for your desk, kitchen or living room. Make your house a home with our eye-catching designs. </p>', '', 'accessories', '', '', ''),
-(7, 1, 1, 'Stationery', '<p>Notebooks, agendas, office accessories and more. Everything you need to combine the pleasant and the useful, either at work or at home. </p>', '', 'stationery', '', '', ''),
-(8, 1, 1, 'Home Accessories', '<p>Details matter! Liven up your interior with our selection of home accessories. </p>', '', 'home-accessories', '', '', ''),
-(9, 1, 1, 'Art', '<p>Framed poster and vector images, all you need to give personality to your walls or bring your creative projects to life.</p>', '', 'art', '', '', '');
+(3, 1, 1, 'Buty', '<p>Discover our favorites fashionable discoveries, a selection of cool items to integrate in your wardrobe. Compose a unique style with personality which matches your own.</p>', '', 'buty', '', '', ''),
+(4, 1, 1, 'Sneakersy', '<p>T-shirts, sweaters, hoodies and men\'s accessories. From basics to original creations, for every style.</p>', '', 'sneakersy', '', '', ''),
+(5, 1, 1, 'Bieganie', '<p>T-shirts, sweaters, hoodies and women\'s accessories. From basics to original creations, for every style.</p>', '', 'bieganie', '', '', ''),
+(6, 1, 1, 'Odzież', '<p>Items and accessories for your desk, kitchen or living room. Make your house a home with our eye-catching designs.</p>', '', 'odziez', '', '', ''),
+(7, 1, 1, 'Koszulki i topy sportowe', '<p>Notebooks, agendas, office accessories and more. Everything you need to combine the pleasant and the useful, either at work or at home.</p>', '', 'koszulki-i-topy', '', '', ''),
+(8, 1, 1, 'Bluzy', '<p>Details matter! Liven up your interior with our selection of home accessories.</p>', '', 'bluzy', '', '', ''),
+(9, 1, 1, 'Akcesoria', '<p>Framed poster and vector images, all you need to give personality to your walls or bring your creative projects to life.</p>', '', 'akcesoria', '', '', ''),
+(11, 1, 1, 'Piłka nożna', '', '', 'pilka-nozna', '', '', ''),
+(12, 1, 1, 'Spodnie', '', '', 'spodnie', '', '', ''),
+(13, 1, 1, 'Skarpetki', '', '', 'skarpetki', '', '', ''),
+(14, 1, 1, 'Nakrycia głowy', '', '', 'nakrycia-glowy', '', '', ''),
+(15, 1, 1, 'Torby i plecaki', '', '', 'torby-i-plecaki', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -2655,9 +2738,13 @@ INSERT INTO `ad_category_product` (`id_category`, `id_product`, `position`) VALU
 (2, 17, 17),
 (2, 18, 18),
 (2, 19, 19),
+(2, 65, 20),
 (3, 1, 1),
 (3, 2, 2),
 (4, 1, 1),
+(4, 20, 2),
+(4, 64, 3),
+(4, 66, 4),
 (5, 2, 1),
 (6, 7, 1),
 (6, 6, 2),
@@ -2714,7 +2801,12 @@ INSERT INTO `ad_category_shop` (`id_category`, `id_shop`, `position`) VALUES
 (6, 1, 1),
 (7, 1, 0),
 (8, 1, 1),
-(9, 1, 2);
+(9, 1, 2),
+(11, 1, 2),
+(12, 1, 2),
+(13, 1, 0),
+(14, 1, 1),
+(15, 1, 2);
 
 -- --------------------------------------------------------
 
@@ -2830,11 +2922,11 @@ CREATE TABLE `ad_cms_lang` (
 --
 
 INSERT INTO `ad_cms_lang` (`id_cms`, `id_lang`, `id_shop`, `meta_title`, `head_seo_title`, `meta_description`, `meta_keywords`, `content`, `link_rewrite`) VALUES
-(1, 1, 1, 'Delivery', '', 'Our terms and conditions of delivery', 'conditions, delivery, delay, shipment, pack', '<h2>Shipments and returns</h2><h3>Your pack shipment</h3><p>Packages are generally dispatched within 2 days after receipt of payment and are shipped via UPS with tracking and drop-off without signature. If you prefer delivery by UPS Extra with required signature, an additional cost will be applied, so please contact us before choosing this method. Whichever shipment choice you make, we will provide you with a link to track your package online.</p><p>Shipping fees include handling and packing fees as well as postage costs. Handling fees are fixed, whereas transport fees vary according to total weight of the shipment. We advise you to group your items in one order. We cannot group two distinct orders placed separately, and shipping fees will apply to each of them. Your package will be dispatched at your own risk, but special care is taken to protect fragile objects.<br /><br />Boxes are amply sized and your items are well-protected.</p>', 'delivery'),
-(2, 1, 1, 'Legal Notice', '', 'Legal notice', 'notice, legal, credits', '<h2>Legal</h2><h3>Credits</h3><p>Concept and production:</p><p>This Web site was created using <a href=\"http://www.prestashop.com\">PrestaShop</a>&trade; open-source software.</p>', 'legal-notice'),
-(3, 1, 1, 'Terms and conditions of use', '', 'Our terms and conditions of use', 'conditions, terms, use, sell', '<h2>Your terms and conditions of use</h2><h3>Rule 1</h3><p>Here is the rule 1 content</p>\r\n<h3>Rule 2</h3><p>Here is the rule 2 content</p>\r\n<h3>Rule 3</h3><p>Here is the rule 3 content</p>', 'terms-and-conditions-of-use'),
-(4, 1, 1, 'About us', '', 'Learn more about us', 'about us, informations', '<h2>About us</h2>\r\n<h3>Our company</h3><p>Our company</p>\r\n<h3>Our team</h3><p>Our team</p>\r\n<h3>Informations</h3><p>Informations</p>', 'about-us'),
-(5, 1, 1, 'Secure payment', '', 'Our secure payment mean', 'secure payment, ssl, visa, mastercard, paypal', '<h2>Secure payment</h2>\r\n<h3>Our secure payment</h3><p>With SSL</p>\r\n<h3>Using Visa/Mastercard/Paypal</h3><p>About this services</p>', 'secure-payment');
+(1, 1, 1, 'Dostawa', '', 'Nasze zasady i warunki dostawy', 'conditions, delivery, delay, shipment, pack', '<h2>Shipments and returns</h2>\n<h3>Your pack shipment</h3>\n<p>Packages are generally dispatched within 2 days after receipt of payment and are shipped via UPS with tracking and drop-off without signature. If you prefer delivery by UPS Extra with required signature, an additional cost will be applied, so please contact us before choosing this method. Whichever shipment choice you make, we will provide you with a link to track your package online.</p>\n<p>Shipping fees include handling and packing fees as well as postage costs. Handling fees are fixed, whereas transport fees vary according to total weight of the shipment. We advise you to group your items in one order. We cannot group two distinct orders placed separately, and shipping fees will apply to each of them. Your package will be dispatched at your own risk, but special care is taken to protect fragile objects.<br /><br />Boxes are amply sized and your items are well-protected.</p>', 'dostawa'),
+(2, 1, 1, 'Nota prawna', '', '', 'notice, legal, credits', '<h3>Ta strona internetowa jest obsługiwana przez firmę adidas AG („adidas”). Przed skorzystaniem z tej strony internetowej prosimy o uważne zapoznanie się z poniższymi Warunkami użytkowania i Polityką prywatności.</h3>\n<p></p>\n<p></p>\n<p style=\"text-align:left;\"></p>\n<h3 style=\"text-align:left;\">Korzystając z tej strony internetowej, wyrażasz zgodę na Warunki użytkowania. Zastrzegamy sobie prawo, według własnego uznania, do zmiany, modyfikacji, dodania lub usunięcia części Warunków użytkowania w dowolnym momencie. Prosimy o okresowe sprawdzanie Warunków użytkowania i Polityki prywatności pod kątem zmian. Dalsze korzystanie ze strony internetowej adidas po opublikowaniu zmian w niniejszych Warunkach użytkowania oznacza akceptację tych zmian.</h3>\n<p style=\"text-align:left;\"></p>\n<p></p>\n<p></p>\n<h3>JEŚLI NIE ZGADZASZ SIĘ NA WARUNKI KORZYSTANIA Z TEGO OKREŚLONE, PROSIMY O OPUSZCZENIE TEJ STRONY INTERNETOWEJ.</h3>', 'nota-prawna'),
+(3, 1, 1, 'Warunki użytkowania', '', 'Nasze warunki użytkowania', 'conditions, terms, use, sell', '<h3><span style=\"font-size:12.87px;\"></span></h3>\n<h3><span style=\"font-size:12.87px;\">PRAWA AUTORSKIE I WŁASNOŚĆ</span></h3>\n<p><span style=\"font-size:12.87px;\">Ta witryna internetowa, w tym cała zawartość prezentowana lub wyświetlana na tej stronie internetowej, w tym między innymi tekst, grafika, zdjęcia, obrazy, ruchome obrazy, dźwięk, ilustracje i oprogramowanie (łącznie „Treść”), jest własnością adidas , jej licencjodawców i/lub dostawców treści. Wszystkie elementy witryn internetowych firmy adidas, w tym między innymi ogólny projekt i Treść, są chronione prawami autorskimi, prawami autorskimi, prawami osobistymi, znakami towarowymi i innymi prawami dotyczącymi praw własności intelektualnej.</span></p>\n<p><span style=\"font-size:12.87px;\"></span></p>\n<p><span style=\"font-size:12.87px;\"></span></p>\n<h3><span style=\"font-size:12.87px;\">OGRANICZENIA KORZYSTANIA Z TREŚCI</span></h3>\n<p><span style=\"font-size:12.87px;\">Nie możesz modyfikować, kopiować, rozpowszechniać, przesyłać, wyświetlać, wykonywać, powielać, publikować, licencjonować, tworzyć dzieł pochodnych, przenosić ani sprzedawać Treści ani żadnej ich części, z wyjątkiem przypadków wyraźnie dozwolonych na tej stronie internetowej. Użytkownik nie usunie z Treści żadnych informacji o prawach autorskich, znakach towarowych ani innych informacji o prawach własności.</span><span style=\"font-size:12.87px;\"></span></p>\n<p><span style=\"font-size:12.87px;\">W przypadku pobrania oprogramowania z tej strony internetowej, oprogramowanie, w tym wszelkie pliki, obrazy włączone lub generowane przez oprogramowanie oraz dane towarzyszące oprogramowaniu (łącznie „oprogramowanie”) są licencjonowane przez adidas. Firma adidas zachowuje pełny i kompletny tytuł do oprogramowania oraz wszelkie związane z nim prawa własności intelektualnej. Nie możesz redystrybuować, sprzedawać, dekompilować, odtwarzać kodu źródłowego, dezasemblować ani w inny sposób redukować oprogramowania do postaci czytelnej dla człowieka.</span></p>\n<p><span style=\"font-size:12.87px;\"></span></p>\n<p><span style=\"font-size:12.87px;\"></span></p>\n<h3><span style=\"font-size:12.87px;\">IDENTYFIKACJA FIRMOWA, ZAWARTOŚĆ WITRYNY I ZNAKI TOWAROWE</span></h3>\n<p><span style=\"font-size:12.87px;\">Wszystkie użyte w niniejszym dokumencie znaki towarowe, znaki usługowe i nazwy handlowe firmy adidas (w tym między innymi: nazwa adidas, firmowe logo adidas, trójlistny projekt adidas i logo z trzema paskami) są znakami towarowymi lub zastrzeżonymi znakami towarowymi firmy adidas lub jej podmiotów stowarzyszonych. Nie możesz używać, kopiować, reprodukować, ponownie publikować, przesyłać, publikować, przesyłać, rozpowszechniać ani modyfikować znaków towarowych adidas w jakikolwiek sposób, z wyjątkiem przypadków wyraźnie dozwolonych na tej stronie internetowej. Używanie znaków towarowych adidas na jakiejkolwiek innej stronie internetowej lub w sieciowym środowisku komputerowym jest dozwolone tylko wtedy, gdy jest to wyraźnie dozwolone na tej stronie internetowej.</span></p>\n<p><span style=\"font-size:12.87px;\"></span></p>\n<h2><span style=\"font-size:12.87px;\">ZASTRZEŻENIE</span></h2>\n<p></p>\n<p><span style=\"font-size:12.87px;\">Używasz i przeglądasz tę stronę internetową na własne ryzyko. Z WYJĄTKIEM POWYŻEJ USTALONYCH INACZEJ, WSZYSTKO NA NINIEJSZEJ STRONIE INTERNETOWEJ JEST DOSTARCZANE „TAK JAK JEST”, BEZ JAKIEJKOLWIEK GWARANCJI, WYRAŹNEJ LUB DOROZUMIANEJ, W TYM MIĘDZY INNYMI DOROZUMIANYCH GWARANCJI PRZYDATNOŚCI HANDLOWEJ, PRZYDATNOŚCI DO OKREŚLONEGO CELU LUB NIENARUSZALNOŚCI. ADIDAS NIE UDZIELA ŻADNYCH GWARANCJI ANI OŚWIADCZEŃ DOTYCZĄCYCH INFORMACJI ZAWARTYCH NA NINIEJSZEJ STRONIE INTERNETOWEJ, A W SZCZEGÓLNOŚCI ZRZEKA SIĘ WSZELKICH GWARANCJI DOTYCZĄCYCH PRZYDATNOŚCI, NIEZAWODNOŚCI, AKTUALNOŚCI LUB DOKŁADNOŚCI INFORMACJI ZAWARTYCH NA NINIEJSZEJ WITRYNIE DO JAKIEGOKOLWIEK CELU. ADIDAS NIE GWARANTUJE, ŻE FUNKCJE ZAWARTE W MATERIAŁACH BĘDĄ DZIAŁAĆ NIEPRZERWANIE LUB WOLNE OD BŁĘDÓW, ŻE WADY ZOSTANĄ USUNIĘTE, ANI ŻE TA WITRYNA LUB SERWER, NA KTÓRYM UDOSTĘPNIAJĄ TAKIE MATERIAŁY, SĄ WOLNE OD WIRUSÓW LUB INNYCH SZKODLIWYCH KOMPONENTÓW. ADIDAS NIE GWARANTUJE ANI NIE SKŁADA ŻADNYCH OŚWIADCZEŃ DOTYCZĄCYCH UŻYTKOWANIA LUB WYNIKÓW UŻYTKOWANIA MATERIAŁÓW NA TEJ WITRYNIE POD WZGLĘDEM ICH POPRAWNOŚCI, DOKŁADNOŚCI, NIEZAWODNOŚCI LUB W INNY SPOSÓB. TY (A NIE ADIDAS) PONOSISZ CAŁKOWITE KOSZTY WSZYSTKICH NIEZBĘDNYCH SERWISÓW, NAPRAW LUB POPRAWEK. DOSTARCZAJĄC LINKI LUB ODNIESIENIA DO STRON INTERNETOWYCH OSÓB TRZECICH, ADIDAS NIE ZATWIERDZA TREŚCI TAKICH STRON INTERNETOWYCH. ADIDAS NIE PONOSI ŻADNEJ ODPOWIEDZIALNOŚCI ZA ZAWARTOŚĆ TAKICH STRON INTERNETOWYCH ANI ODPOWIEDZIALNOŚCI ZA SZKODY WYNIKAJĄCE Z KORZYSTANIA Z TAKICH TREŚCI.</span></p>', 'warunki-uzytkowania'),
+(4, 1, 1, 'O nas', '', 'Dowiedz się więcej o nas', 'about us, informations', '<h2>About us</h2>\n<h3>Our company</h3>\n<p>Our company</p>\n<h3>Our team</h3>\n<p>Our team</p>\n<h3>Informations</h3>\n<p>Informations</p>', 'o-nas'),
+(5, 1, 1, 'Bezpieczna płatność', '', 'Nasz bezpieczny sposób płatności', 'secure payment, ssl, visa, mastercard, paypal', '<h2>Secure payment</h2>\n<h3>Our secure payment</h3>\n<p>With SSL</p>\n<h3>Using Visa/Mastercard/Paypal</h3>\n<p>About this services</p>', 'bezpieczna-platnosc');
 
 -- --------------------------------------------------------
 
@@ -2938,7 +3030,7 @@ INSERT INTO `ad_configuration` (`id_configuration`, `id_shop_group`, `id_shop`, 
 (24, NULL, NULL, 'PS_SHIPPING_FREE_WEIGHT', '0', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (25, NULL, NULL, 'PS_SHIPPING_METHOD', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (26, NULL, NULL, 'PS_TAX', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(27, NULL, NULL, 'PS_SHOP_ENABLE', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(27, NULL, NULL, 'PS_SHOP_ENABLE', '1', '0000-00-00 00:00:00', '2022-11-30 19:16:22'),
 (28, NULL, NULL, 'PS_NB_DAYS_NEW_PRODUCT', '20', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (29, NULL, NULL, 'PS_SSL_ENABLED', '0', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (30, NULL, NULL, 'PS_WEIGHT_UNIT', 'kg', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
@@ -2986,7 +3078,7 @@ INSERT INTO `ad_configuration` (`id_configuration`, `id_shop_group`, `id_shop`, 
 (72, NULL, NULL, 'PS_PRICE_ROUND_MODE', '2', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (73, NULL, NULL, 'PS_1_3_2_UPDATE_DATE', '2011-12-27 10:20:42', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (74, NULL, NULL, 'PS_CONDITIONS_CMS_ID', '3', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(75, NULL, NULL, 'PS_VOLUME_UNIT', 'cl', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(75, NULL, NULL, 'PS_VOLUME_UNIT', 'ml', '0000-00-00 00:00:00', '2022-12-01 08:48:52'),
 (76, NULL, NULL, 'PS_CIPHER_ALGORITHM', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (77, NULL, NULL, 'PS_ATTRIBUTE_CATEGORY_DISPLAY', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (78, NULL, NULL, 'PS_CUSTOMER_SERVICE_FILE_UPLOAD', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
@@ -3000,8 +3092,8 @@ INSERT INTO `ad_configuration` (`id_configuration`, `id_shop_group`, `id_shop`, 
 (86, NULL, NULL, 'PS_SMARTY_FORCE_COMPILE', '0', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (87, NULL, NULL, 'PS_DISTANCE_UNIT', 'km', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (88, NULL, NULL, 'PS_STORES_DISPLAY_CMS', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(89, NULL, NULL, 'SHOP_LOGO_WIDTH', '100', '0000-00-00 00:00:00', '2022-11-27 17:28:05'),
-(90, NULL, NULL, 'SHOP_LOGO_HEIGHT', '28', '0000-00-00 00:00:00', '2022-11-27 17:28:05'),
+(89, NULL, NULL, 'SHOP_LOGO_WIDTH', '1417', '0000-00-00 00:00:00', '2022-11-29 20:24:58'),
+(90, NULL, NULL, 'SHOP_LOGO_HEIGHT', '1053', '0000-00-00 00:00:00', '2022-11-29 20:24:58'),
 (91, NULL, NULL, 'EDITORIAL_IMAGE_WIDTH', '530', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (92, NULL, NULL, 'EDITORIAL_IMAGE_HEIGHT', '228', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (93, NULL, NULL, 'PS_STATSDATA_CUSTOMER_PAGESVIEWS', '0', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
@@ -3026,7 +3118,7 @@ INSERT INTO `ad_configuration` (`id_configuration`, `id_shop_group`, `id_shop`, 
 (112, NULL, NULL, 'PS_COOKIE_SAMESITE', 'Lax', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (113, NULL, NULL, 'PS_USE_ECOTAX', '0', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (114, NULL, NULL, 'PS_CANONICAL_REDIRECT', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(115, NULL, NULL, 'PS_IMG_UPDATE_TIME', '1324977642', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(115, NULL, NULL, 'PS_IMG_UPDATE_TIME', '1669750380', '0000-00-00 00:00:00', '2022-11-29 20:33:00'),
 (116, NULL, NULL, 'PS_BACKUP_DROP_TABLE', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (117, NULL, NULL, 'PS_OS_CHEQUE', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (118, NULL, NULL, 'PS_OS_PAYMENT', '2', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
@@ -3055,11 +3147,11 @@ INSERT INTO `ad_configuration` (`id_configuration`, `id_shop_group`, `id_shop`, 
 (141, NULL, NULL, 'PS_SHOW_NEW_MESSAGES', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (142, NULL, NULL, 'PS_FEATURE_FEATURE_ACTIVE', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (143, NULL, NULL, 'PS_COMBINATION_FEATURE_ACTIVE', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(144, NULL, NULL, 'PS_SPECIFIC_PRICE_FEATURE_ACTIVE', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(144, NULL, NULL, 'PS_SPECIFIC_PRICE_FEATURE_ACTIVE', '1', '0000-00-00 00:00:00', '2022-12-01 22:16:07'),
 (145, NULL, NULL, 'PS_VIRTUAL_PROD_FEATURE_ACTIVE', '1', '0000-00-00 00:00:00', '2022-11-27 17:28:23'),
 (146, NULL, NULL, 'PS_CUSTOMIZATION_FEATURE_ACTIVE', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (147, NULL, NULL, 'PS_CART_RULE_FEATURE_ACTIVE', '0', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(148, NULL, NULL, 'PS_PACK_FEATURE_ACTIVE', '1', '0000-00-00 00:00:00', '2022-11-27 17:28:23'),
+(148, NULL, NULL, 'PS_PACK_FEATURE_ACTIVE', '1', '0000-00-00 00:00:00', '2022-11-30 17:06:04'),
 (149, NULL, NULL, 'PS_ALIAS_FEATURE_ACTIVE', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (150, NULL, NULL, 'PS_TAX_ADDRESS_TYPE', 'id_address_delivery', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (151, NULL, NULL, 'PS_SHOP_DEFAULT', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
@@ -3146,13 +3238,13 @@ INSERT INTO `ad_configuration` (`id_configuration`, `id_shop_group`, `id_shop`, 
 (232, NULL, NULL, 'HOMESLIDER_LOOP', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (233, NULL, NULL, 'PS_BASE_DISTANCE_UNIT', 'm', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (234, NULL, NULL, 'PS_SHOP_DOMAIN', 'localhost', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(235, NULL, NULL, 'PS_SHOP_DOMAIN_SSL', 'localhost', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(235, NULL, NULL, 'PS_SHOP_DOMAIN_SSL', 'localhost:443', '0000-00-00 00:00:00', '2022-12-01 22:10:59'),
 (236, NULL, NULL, 'PS_SHOP_NAME', 'BE-Adidas', '0000-00-00 00:00:00', '2022-11-27 17:28:05'),
 (237, NULL, NULL, 'PS_SHOP_EMAIL', 'demo@prestashop.com', '0000-00-00 00:00:00', '2022-11-27 17:28:06'),
 (238, NULL, NULL, 'PS_MAIL_METHOD', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (239, NULL, NULL, 'PS_SHOP_ACTIVITY', '9', '0000-00-00 00:00:00', '2022-11-27 17:28:05'),
-(240, NULL, NULL, 'PS_LOGO', 'logo.png', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(241, NULL, NULL, 'PS_FAVICON', 'favicon.ico', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(240, NULL, NULL, 'PS_LOGO', 'logo-1669749898.jpg', '0000-00-00 00:00:00', '2022-11-29 20:24:58'),
+(241, NULL, NULL, 'PS_FAVICON', 'favicon.ico', '0000-00-00 00:00:00', '2022-11-29 20:33:00'),
 (242, NULL, NULL, 'PS_STORES_ICON', 'logo_stores.png', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (243, NULL, NULL, 'PS_ROOT_CATEGORY', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (244, NULL, NULL, 'PS_HOME_CATEGORY', '2', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
@@ -3228,7 +3320,7 @@ INSERT INTO `ad_configuration` (`id_configuration`, `id_shop_group`, `id_shop`, 
 (314, NULL, NULL, 'HOMESLIDER_PAUSE_ON_HOVER', '1', '2022-11-27 17:28:07', '2022-11-27 17:28:07'),
 (315, NULL, NULL, 'HOMESLIDER_WRAP', '1', '2022-11-27 17:28:07', '2022-11-27 17:28:07'),
 (316, NULL, NULL, 'HOME_FEATURED_CAT', '2', '2022-11-27 17:28:07', '2022-11-27 17:28:07'),
-(317, NULL, NULL, 'HOME_FEATURED_RANDOMIZE', NULL, '2022-11-27 17:28:07', '2022-11-27 17:28:07'),
+(317, NULL, NULL, 'HOME_FEATURED_RANDOMIZE', NULL, '2022-11-27 17:28:07', '2022-12-01 08:33:47'),
 (318, NULL, NULL, 'BANNER_IMG', NULL, '2022-11-27 17:28:08', '2022-11-27 17:28:08'),
 (319, NULL, NULL, 'BANNER_LINK', NULL, '2022-11-27 17:28:08', '2022-11-27 17:28:08'),
 (320, NULL, NULL, 'BANNER_DESC', NULL, '2022-11-27 17:28:08', '2022-11-27 17:28:08'),
@@ -3306,7 +3398,17 @@ INSERT INTO `ad_configuration` (`id_configuration`, `id_shop_group`, `id_shop`, 
 (401, NULL, NULL, 'PS_LAYERED_FILTER_PRICE_ROUNDING', '1', '2022-11-27 17:28:24', '2022-11-27 17:28:24'),
 (402, NULL, NULL, 'PS_LAYERED_FILTER_SHOW_OUT_OF_STOCK_LAST', '0', '2022-11-27 17:28:24', '2022-11-27 17:28:24'),
 (403, NULL, NULL, 'PS_LAYERED_FILTER_BY_DEFAULT_CATEGORY', '0', '2022-11-27 17:28:24', '2022-11-27 17:28:24'),
-(404, NULL, NULL, 'PS_LAYERED_INDEXED', '1', '2022-11-27 17:28:24', '2022-11-27 17:28:24');
+(404, NULL, NULL, 'PS_LAYERED_INDEXED', '1', '2022-11-27 17:28:24', '2022-11-27 17:28:24'),
+(405, NULL, NULL, 'PS_MAINTENANCE_IP', NULL, '2022-11-30 18:32:15', '2022-11-30 18:32:15'),
+(406, NULL, NULL, 'BANK_WIRE_DETAILS', 'IBAN: PL78116010230000261395200000\r\nSWIFT: BIGBPLPW', '2022-12-01 09:02:41', '2022-12-01 09:02:41'),
+(407, NULL, NULL, 'BANK_WIRE_OWNER', 'Cristiano Ronaldo', '2022-12-01 09:02:41', '2022-12-01 09:02:41'),
+(408, NULL, NULL, 'BANK_WIRE_ADDRESS', 'Aleja Grunwaldzka 102, 80-236 Gdańsk', '2022-12-01 09:02:41', '2022-12-01 09:02:41'),
+(409, NULL, NULL, 'BANK_WIRE_RESERVATION_DAYS', NULL, '2022-12-01 09:02:41', '2022-12-01 09:02:41'),
+(410, NULL, NULL, 'BANK_WIRE_CUSTOM_TEXT', NULL, '2022-12-01 09:02:41', '2022-12-01 09:02:41'),
+(411, NULL, NULL, 'CHEQUE_NAME', 'Cristiano Ronaldo', '2022-12-01 09:04:52', '2022-12-01 09:04:52'),
+(412, NULL, NULL, 'CHEQUE_ADDRESS', 'Av. de Concha Espina, 1, 28036 Madryt, Hiszpania', '2022-12-01 09:04:52', '2022-12-01 09:04:52'),
+(413, NULL, NULL, 'PS_CCCJS_VERSION', '1', '2022-12-01 22:10:59', '2022-12-01 22:10:59'),
+(414, NULL, NULL, 'PS_CCCCSS_VERSION', '1', '2022-12-01 22:10:59', '2022-12-01 22:10:59');
 
 -- --------------------------------------------------------
 
@@ -3364,7 +3466,43 @@ INSERT INTO `ad_configuration_kpi` (`id_configuration_kpi`, `id_shop_group`, `id
 (33, NULL, NULL, 'DASHGOALS_AVG_CART_VALUE_11_2022', '80', '2022-11-27 17:28:20', '2022-11-27 17:28:20'),
 (34, NULL, NULL, 'DASHGOALS_TRAFFIC_12_2022', '600', '2022-11-27 17:28:20', '2022-11-27 17:28:20'),
 (35, NULL, NULL, 'DASHGOALS_CONVERSION_12_2022', '2', '2022-11-27 17:28:20', '2022-11-27 17:28:20'),
-(36, NULL, NULL, 'DASHGOALS_AVG_CART_VALUE_12_2022', '80', '2022-11-27 17:28:20', '2022-11-27 17:28:20');
+(36, NULL, NULL, 'DASHGOALS_AVG_CART_VALUE_12_2022', '80', '2022-11-27 17:28:20', '2022-11-27 17:28:20'),
+(37, NULL, NULL, 'DISABLED_CATEGORIES', '0', '2022-11-29 18:23:45', '2022-11-29 18:23:45'),
+(38, NULL, NULL, 'DISABLED_CATEGORIES_EXPIRE', '1669749825', '2022-11-29 18:23:45', '2022-11-29 18:23:45'),
+(39, NULL, NULL, 'TOP_CATEGORY', NULL, '2022-11-29 18:23:45', '2022-11-29 18:23:45'),
+(40, NULL, NULL, 'TOP_CATEGORY_EXPIRE', NULL, '2022-11-29 18:23:45', '2022-11-29 18:23:45'),
+(41, NULL, NULL, 'PRODUCTS_PER_CATEGORY', '2', '2022-11-29 18:23:45', '2022-11-29 18:23:45'),
+(42, NULL, NULL, 'PRODUCTS_PER_CATEGORY_EXPIRE', '1669746225', '2022-11-29 18:23:45', '2022-11-29 18:23:45'),
+(43, NULL, NULL, 'EMPTY_CATEGORIES', '0', '2022-11-29 18:23:45', '2022-11-29 18:23:45'),
+(44, NULL, NULL, 'EMPTY_CATEGORIES_EXPIRE', '1669749825', '2022-11-29 18:23:45', '2022-11-29 18:23:45'),
+(45, NULL, NULL, 'CONVERSION_RATE', '0%', '2022-11-30 18:16:01', '2022-11-30 18:16:01'),
+(46, NULL, NULL, 'CONVERSION_RATE_EXPIRE', '1669849200', '2022-11-30 18:16:01', '2022-11-30 18:16:01'),
+(47, NULL, NULL, 'NETPROFIT_VISIT', '0,00 zł', '2022-11-30 18:16:01', '2022-11-30 18:16:01'),
+(48, NULL, NULL, 'NETPROFIT_VISIT_EXPIRE', '1669849200', '2022-11-30 18:16:01', '2022-11-30 18:16:01'),
+(49, NULL, NULL, 'AVG_ORDER_VALUE', '0,00 zł', '2022-11-30 18:16:01', '2022-11-30 18:16:01'),
+(50, NULL, NULL, 'AVG_ORDER_VALUE_EXPIRE', '1669849200', '2022-11-30 18:16:01', '2022-11-30 18:16:01'),
+(51, NULL, NULL, 'ABANDONED_CARTS', '0', '2022-11-30 18:16:01', '2022-11-30 18:16:01'),
+(52, NULL, NULL, 'ABANDONED_CARTS_EXPIRE', '1669832161', '2022-11-30 18:16:01', '2022-11-30 18:16:01'),
+(53, NULL, NULL, 'CUSTOMER_MAIN_GENDER', NULL, '2022-11-30 18:16:20', '2022-11-30 18:16:20'),
+(54, NULL, NULL, 'CUSTOMER_MAIN_GENDER_EXPIRE', NULL, '2022-11-30 18:16:20', '2022-11-30 18:16:20'),
+(55, NULL, NULL, 'ORDERS_PER_CUSTOMER', '0', '2022-11-30 18:16:20', '2022-11-30 18:16:20'),
+(56, NULL, NULL, 'ORDERS_PER_CUSTOMER_EXPIRE', '1669914980', '2022-11-30 18:16:20', '2022-11-30 18:16:20'),
+(57, NULL, NULL, 'AVG_CUSTOMER_AGE', NULL, '2022-11-30 18:16:20', '2022-11-30 18:16:20'),
+(58, NULL, NULL, 'AVG_CUSTOMER_AGE_EXPIRE', NULL, '2022-11-30 18:16:20', '2022-11-30 18:16:20'),
+(59, NULL, NULL, 'NEWSLETTER_REGISTRATIONS', '1', '2022-11-30 18:16:20', '2022-11-30 18:16:20'),
+(60, NULL, NULL, 'NEWSLETTER_REGISTRATIONS_EXPIRE', '1669850180', '2022-11-30 18:16:20', '2022-11-30 18:16:20'),
+(61, NULL, NULL, 'AVG_MSG_RESPONSE_TIME', '0 godzin', '2022-12-01 08:54:01', '2022-12-01 08:54:01'),
+(62, NULL, NULL, 'AVG_MSG_RESPONSE_TIME_EXPIRE', '1669895641', '2022-12-01 08:54:01', '2022-12-01 08:54:01'),
+(63, NULL, NULL, 'MESSAGES_PER_THREAD', '0', '2022-12-01 08:54:01', '2022-12-01 08:54:01'),
+(64, NULL, NULL, 'MESSAGES_PER_THREAD_EXPIRE', '1669924441', '2022-12-01 08:54:01', '2022-12-01 08:54:01'),
+(65, NULL, NULL, 'PENDING_MESSAGES', '0', '2022-12-01 08:54:01', '2022-12-01 08:54:01'),
+(66, NULL, NULL, 'PENDING_MESSAGES_EXPIRE', '1669881541', '2022-12-01 08:54:01', '2022-12-01 08:54:01'),
+(67, NULL, NULL, 'ENABLED_LANGUAGES', '1', '2022-12-01 22:18:07', '2022-12-01 22:18:07'),
+(68, NULL, NULL, 'ENABLED_LANGUAGES_EXPIRE', '1669929547', '2022-12-01 22:18:07', '2022-12-01 22:18:07'),
+(69, NULL, NULL, 'MAIN_COUNTRY', NULL, '2022-12-01 22:18:07', '2022-12-01 22:18:07'),
+(70, NULL, NULL, 'MAIN_COUNTRY_EXPIRE', NULL, '2022-12-01 22:18:07', '2022-12-01 22:18:07'),
+(71, NULL, NULL, 'FRONTOFFICE_TRANSLATIONS', '0%', '2022-12-01 22:18:07', '2022-12-01 22:18:07'),
+(72, NULL, NULL, 'FRONTOFFICE_TRANSLATIONS_EXPIRE', '1669929607', '2022-12-01 22:18:07', '2022-12-01 22:18:07');
 
 -- --------------------------------------------------------
 
@@ -3378,6 +3516,20 @@ CREATE TABLE `ad_configuration_kpi_lang` (
   `value` text DEFAULT NULL,
   `date_upd` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Zrzut danych tabeli `ad_configuration_kpi_lang`
+--
+
+INSERT INTO `ad_configuration_kpi_lang` (`id_configuration_kpi`, `id_lang`, `value`, `date_upd`) VALUES
+(39, 1, 'Produkty powiązane', '2022-11-29 18:23:45'),
+(40, 1, '1669829025', '2022-11-29 18:23:45'),
+(53, 1, '100% Klientów Mężczyzn', '2022-11-30 18:16:20'),
+(54, 1, '1669914980', '2022-11-30 18:16:20'),
+(57, 1, '53 lat', '2022-11-30 18:16:20'),
+(58, 1, '1669914980', '2022-11-30 18:16:20'),
+(69, 1, 'Brak zamówień', '2022-12-01 22:18:07'),
+(70, 1, '1670015887', '2022-12-01 22:18:07');
 
 -- --------------------------------------------------------
 
@@ -3402,7 +3554,7 @@ INSERT INTO `ad_configuration_lang` (`id_configuration`, `id_lang`, `value`, `da
 (43, 1, '#ZW', NULL),
 (54, 1, 'ach|aj|albo|bardzo|bez|bo|być|ci|cię|ciebie|co|czy|daleko|dla|dlaczego|dlatego|do|dobrze|dokąd|dość|dużo|dwa|dwaj|dwie|dwoje|dziś|dzisiaj|gdyby|gdzie|go|ich|ile|im|inny|ja|ją|jak|jakby|jaki|je|jeden|jedna|jedno|jego|jej|jemu|jeśli|jest|jestem|jeżeli|już|każdy|kiedy|kierunku|kto|ku|lub|ma|mają|mam|mi|mną|mnie|moi|mój|moja|moje|może|mu|my|na|nam|nami|nas|nasi|nasz|nasza|nasze|natychmiast|nią|nic|nich|nie|niego|niej|niemu|nigdy|nim|nimi|niż|obok|od|okolo|on|ona|one|oni|ono|owszem|po|pod|ponieważ|przed|przedtem|są|sam|sama|się|skąd|tak|taki|tam|ten|to|tobą|tobie|tu|tutaj|twoi|twój|twoja|twoje|ty|wam|wami|was|wasi|wasz|wasza|wasze|we|więc|wszystko|wtedy|wy|żaden|zawsze|że', NULL),
 (79, 1, 'Dear Customer,\r\n\r\nRegards,\r\nCustomer service', NULL),
-(282, 1, 'We are currently updating our shop and will be back really soon.\r\nThanks for your patience.', NULL),
+(282, 1, '<p>We are currently updating our shop and will be back really soon. Thanks for your patience.</p>', '2022-11-30 17:32:15'),
 (284, 1, '', NULL),
 (285, 1, '', NULL),
 (286, 1, 'Obecnie brak na stanie', NULL),
@@ -3415,7 +3567,8 @@ INSERT INTO `ad_configuration_lang` (`id_configuration`, `id_lang`, `value`, `da
 (319, 1, '', '2022-11-27 17:28:08'),
 (320, 1, '', '2022-11-27 17:28:08'),
 (324, 1, 'Możesz zrezygnować w każdej chwili. W tym celu należy odnaleźć szczegóły w naszej informacji prawnej.', '2022-11-27 17:28:08'),
-(387, 1, 'Udostępnione przez Ciebie dane osobowe są wykorzystywane w celu udzielania odpowiedzi na zapytania, przetwarzania zamówień lub umożliwiania dostępu do konkretnych informacji. Przysługuje Ci prawo do modyfikowania oraz usuwania wszelkich danych osobowych zamieszczonych na stronie „Moje konto”.', '2022-11-27 17:28:20');
+(387, 1, 'Udostępnione przez Ciebie dane osobowe są wykorzystywane w celu udzielania odpowiedzi na zapytania, przetwarzania zamówień lub umożliwiania dostępu do konkretnych informacji. Przysługuje Ci prawo do modyfikowania oraz usuwania wszelkich danych osobowych zamieszczonych na stronie „Moje konto”.', '2022-11-27 17:28:20'),
+(410, 1, '', '2022-12-01 09:02:41');
 
 -- --------------------------------------------------------
 
@@ -3440,7 +3593,18 @@ CREATE TABLE `ad_connections` (
 
 INSERT INTO `ad_connections` (`id_connections`, `id_shop_group`, `id_shop`, `id_guest`, `id_page`, `ip_address`, `date_add`, `http_referer`) VALUES
 (1, 1, 1, 1, 1, 2130706433, '2022-11-27 17:28:23', 'https://www.prestashop.com'),
-(2, 1, 1, 3, 1, 2887122945, '2022-11-27 17:28:38', '');
+(2, 1, 1, 3, 1, 2887122945, '2022-11-27 17:28:38', ''),
+(3, 1, 1, 4, 1, 2887516161, '2022-11-27 18:57:49', ''),
+(4, 1, 1, 4, 1, 2887516161, '2022-11-29 18:22:44', ''),
+(5, 1, 1, 4, 2, 2887516161, '2022-11-29 19:45:09', ''),
+(6, 1, 1, 4, 1, 2887516161, '2022-11-30 16:38:25', ''),
+(7, 1, 1, 4, 2, 2887516161, '2022-11-30 18:01:42', ''),
+(8, 1, 1, 4, 1, 2887516161, '2022-12-01 08:31:34', ''),
+(9, 1, 1, 4, 1, 2887516161, '2022-12-01 19:14:55', ''),
+(10, 1, 1, 4, 1, 2887516161, '2022-12-01 21:22:22', ''),
+(11, 1, 1, 4, 1, 2887516161, '2022-12-01 21:53:48', ''),
+(12, 1, 1, 4, 1, 2887516161, '2022-12-02 17:16:39', ''),
+(13, 1, 1, 4, 1, 2887516161, '2022-12-08 15:38:22', '');
 
 -- --------------------------------------------------------
 
@@ -3469,6 +3633,30 @@ CREATE TABLE `ad_connections_source` (
   `keywords` varchar(255) DEFAULT NULL,
   `date_add` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Zrzut danych tabeli `ad_connections_source`
+--
+
+INSERT INTO `ad_connections_source` (`id_connections_source`, `id_connections`, `http_referer`, `request_uri`, `keywords`, `date_add`) VALUES
+(1, 3, '', 'localhost/', '', '2022-11-27 18:57:49'),
+(2, 4, '', 'localhost/', '', '2022-11-29 18:22:44'),
+(3, 4, '', 'localhost/', '', '2022-11-29 18:34:41'),
+(4, 5, '', 'localhost/20', '', '2022-11-29 19:45:09'),
+(5, 6, '', 'localhost/', '', '2022-11-30 16:38:25'),
+(6, 6, '', 'localhost/', '', '2022-11-30 16:46:11'),
+(7, 7, '', 'localhost/dupa', '', '2022-11-30 18:01:42'),
+(8, 8, '', 'localhost/', '', '2022-12-01 08:31:34'),
+(9, 8, '', 'localhost/themes/core.js.map', '', '2022-12-01 08:43:25'),
+(10, 8, '', 'localhost/modules/blockreassurance/views/dist/front.css.map', '', '2022-12-01 08:43:25'),
+(11, 8, '', 'localhost/modules/blockreassurance/views/dist/front.css.map', '', '2022-12-01 08:46:38'),
+(12, 8, '', 'localhost/themes/core.js.map', '', '2022-12-01 08:46:38'),
+(13, 8, '', 'localhost/modules/blockreassurance/views/dist/front.js.map', '', '2022-12-01 08:46:38'),
+(14, 9, '', 'localhost/', '', '2022-12-01 19:14:55'),
+(15, 10, '', 'localhost/', '', '2022-12-01 21:22:22'),
+(16, 11, '', 'localhost/', '', '2022-12-01 21:53:48'),
+(17, 12, '', 'localhost/', '', '2022-12-02 17:16:39'),
+(18, 13, '', 'localhost/', '', '2022-12-08 15:38:22');
 
 -- --------------------------------------------------------
 
@@ -4703,7 +4891,7 @@ CREATE TABLE `ad_employee` (
 --
 
 INSERT INTO `ad_employee` (`id_employee`, `id_profile`, `id_lang`, `lastname`, `firstname`, `email`, `passwd`, `last_passwd_gen`, `stats_date_from`, `stats_date_to`, `stats_compare_from`, `stats_compare_to`, `stats_compare_option`, `preselect_date_range`, `bo_color`, `bo_theme`, `bo_css`, `default_tab`, `bo_width`, `bo_menu`, `active`, `optin`, `id_last_order`, `id_last_customer_message`, `id_last_customer`, `last_connection_date`, `reset_password_token`, `reset_password_validity`, `has_enabled_gravatar`) VALUES
-(1, 1, 1, 'Ronaldo', 'Cristiano', 'demo@prestashop.com', '$2y$10$LrwBCLJ/Univc4X9gizUyuF5QDmODQ266WWjinY2zsk3Fd8voFT7O', '2022-11-27 11:28:06', '2022-10-27', '2022-11-27', '0000-00-00', '0000-00-00', 1, NULL, NULL, 'default', 'theme.css', 1, 0, 1, 1, NULL, 0, 0, 0, NULL, NULL, '0000-00-00 00:00:00', 0);
+(1, 1, 1, 'Ronaldo', 'Cristiano', 'demo@prestashop.com', '$2y$10$LrwBCLJ/Univc4X9gizUyuF5QDmODQ266WWjinY2zsk3Fd8voFT7O', '2022-11-27 11:28:06', '2022-10-27', '2022-11-27', '0000-00-00', '0000-00-00', 1, NULL, NULL, 'default', 'theme.css', 1, 0, 1, 1, NULL, 5, 0, 2, '2022-12-08', NULL, '0000-00-00 00:00:00', 0);
 
 -- --------------------------------------------------------
 
@@ -4718,6 +4906,13 @@ CREATE TABLE `ad_employee_session` (
   `date_add` datetime NOT NULL,
   `date_upd` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Zrzut danych tabeli `ad_employee_session`
+--
+
+INSERT INTO `ad_employee_session` (`id_employee_session`, `id_employee`, `token`, `date_add`, `date_upd`) VALUES
+(7, 1, '2215a26018e67ab096526e4922a151580341945a', '2022-12-08 15:38:46', '2022-12-08 15:38:56');
 
 -- --------------------------------------------------------
 
@@ -5144,9 +5339,9 @@ CREATE TABLE `ad_homeslider_slides` (
 --
 
 INSERT INTO `ad_homeslider_slides` (`id_homeslider_slides`, `position`, `active`) VALUES
-(1, 1, 1),
-(2, 2, 1),
-(3, 3, 1);
+(1, 0, 1),
+(2, 1, 1),
+(3, 2, 1);
 
 -- --------------------------------------------------------
 
@@ -5169,9 +5364,9 @@ CREATE TABLE `ad_homeslider_slides_lang` (
 --
 
 INSERT INTO `ad_homeslider_slides_lang` (`id_homeslider_slides`, `id_lang`, `title`, `description`, `legend`, `url`, `image`) VALUES
-(1, 1, 'Sample 1', '<h3>EXCEPTEUR OCCAECAT</h3>\n                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tristique in tortor et dignissim. Quisque non tempor leo. Maecenas egestas sem elit</p>', 'sample-1', 'http://www.prestashop.com/?utm_source=back-office&utm_medium=v17_homeslider&utm_campaign=back-office-PL&utm_content=download', 'sample-1.jpg'),
-(2, 1, 'Sample 2', '<h3>EXCEPTEUR OCCAECAT</h3>\n                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tristique in tortor et dignissim. Quisque non tempor leo. Maecenas egestas sem elit</p>', 'sample-2', 'http://www.prestashop.com/?utm_source=back-office&utm_medium=v17_homeslider&utm_campaign=back-office-PL&utm_content=download', 'sample-2.jpg'),
-(3, 1, 'Sample 3', '<h3>EXCEPTEUR OCCAECAT</h3>\n                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tristique in tortor et dignissim. Quisque non tempor leo. Maecenas egestas sem elit</p>', 'sample-3', 'http://www.prestashop.com/?utm_source=back-office&utm_medium=v17_homeslider&utm_campaign=back-office-PL&utm_content=download', 'sample-3.jpg');
+(1, 1, 'OFERTY CYBER MONDAY', '<h3>Nie czekaj na przedświąteczną gorączkę. Otrzymasz dodatkowe 20% zniżki, jeśli teraz wydasz 269 zł lub więcej*.</h3>', 'slide-1', 'http://www.prestashop.com/?utm_source=back-office&utm_medium=v17_homeslider&utm_campaign=back-office-PL&utm_content=download', 'ef8e9f879d48dcf576843b3f8243f408a4d94b11_slide1.jpg'),
+(2, 1, 'INSPIROWANE MISTRZOSTWAMI SWIATA FIFA™', '<p>Możesz się wyróżnić, wybierając uniwersalną kolekcję inspirowaną kolorami oficjalnej piłki meczowej Mistrzostw Świata.</p>', 'slide-2', 'http://www.prestashop.com/?utm_source=back-office&utm_medium=v17_homeslider&utm_campaign=back-office-PL&utm_content=download', 'sample-2.jpg'),
+(3, 1, 'Sample 3', '<h3>EXCEPTEUR OCCAECAT</h3>\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tristique in tortor et dignissim. Quisque non tempor leo. Maecenas egestas sem elit</p>', 'sample-3', 'http://www.prestashop.com/?utm_source=back-office&utm_medium=v17_homeslider&utm_campaign=back-office-PL&utm_content=download', 'sample-3.jpg');
 
 -- --------------------------------------------------------
 
@@ -6505,7 +6700,13 @@ INSERT INTO `ad_image` (`id_image`, `id_product`, `position`, `cover`) VALUES
 (20, 18, 1, 1),
 (21, 2, 1, 1),
 (22, 19, 1, 1),
-(23, 15, 1, 1);
+(23, 15, 1, 1),
+(24, 20, 1, 1),
+(25, 20, 2, NULL),
+(40, 64, 1, 1),
+(41, 65, 1, 1),
+(42, 66, 1, 1),
+(43, 1, 3, NULL);
 
 -- --------------------------------------------------------
 
@@ -6546,7 +6747,13 @@ INSERT INTO `ad_image_lang` (`id_image`, `id_lang`, `legend`) VALUES
 (20, 1, 'Mountain fox notebook'),
 (21, 1, 'Brown bear printed sweater'),
 (22, 1, 'Customizable mug'),
-(23, 1, 'Pack Mug + Framed poster');
+(23, 1, 'Pack Mug + Framed poster'),
+(24, 1, ''),
+(25, 1, ''),
+(40, 1, ''),
+(41, 1, ''),
+(42, 1, ''),
+(43, 1, '');
 
 -- --------------------------------------------------------
 
@@ -6567,6 +6774,7 @@ CREATE TABLE `ad_image_shop` (
 
 INSERT INTO `ad_image_shop` (`id_product`, `id_image`, `id_shop`, `cover`) VALUES
 (1, 2, 1, NULL),
+(1, 43, 1, NULL),
 (1, 1, 1, 1),
 (2, 21, 1, 1),
 (3, 3, 1, 1),
@@ -6588,7 +6796,12 @@ INSERT INTO `ad_image_shop` (`id_product`, `id_image`, `id_shop`, `cover`) VALUE
 (16, 18, 1, 1),
 (17, 19, 1, 1),
 (18, 20, 1, 1),
-(19, 22, 1, 1);
+(19, 22, 1, 1),
+(20, 25, 1, NULL),
+(20, 24, 1, 1),
+(64, 40, 1, 1),
+(65, 41, 1, 1),
+(66, 42, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -6883,6 +7096,14 @@ CREATE TABLE `ad_layered_filter_block` (
   `data` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
+--
+-- Zrzut danych tabeli `ad_layered_filter_block`
+--
+
+INSERT INTO `ad_layered_filter_block` (`hash`, `data`) VALUES
+('3c89e4d2fe714839734a43c9245e4117', 'a:1:{s:7:\"filters\";a:10:{i:0;a:7:{s:9:\"type_lite\";s:8:\"category\";s:4:\"type\";s:8:\"category\";s:6:\"id_key\";i:0;s:4:\"name\";s:9:\"Kategorie\";s:6:\"values\";a:0:{}s:17:\"filter_show_limit\";i:0;s:11:\"filter_type\";i:0;}i:1;a:10:{s:9:\"type_lite\";s:18:\"id_attribute_group\";s:4:\"type\";s:18:\"id_attribute_group\";s:6:\"id_key\";i:1;s:4:\"name\";s:7:\"Rozmiar\";s:14:\"is_color_group\";b:0;s:6:\"values\";a:5:{i:1;a:4:{s:4:\"name\";s:1:\"S\";s:3:\"nbr\";i:1;s:8:\"url_name\";N;s:10:\"meta_title\";N;}i:2;a:4:{s:4:\"name\";s:1:\"M\";s:3:\"nbr\";i:1;s:8:\"url_name\";N;s:10:\"meta_title\";N;}i:3;a:4:{s:4:\"name\";s:1:\"L\";s:3:\"nbr\";i:1;s:8:\"url_name\";N;s:10:\"meta_title\";N;}i:4;a:4:{s:4:\"name\";s:2:\"XL\";s:3:\"nbr\";i:1;s:8:\"url_name\";N;s:10:\"meta_title\";N;}i:26;a:4:{s:4:\"name\";s:2:\"XS\";s:3:\"nbr\";i:1;s:8:\"url_name\";N;s:10:\"meta_title\";N;}}s:8:\"url_name\";N;s:10:\"meta_title\";N;s:17:\"filter_show_limit\";i:0;s:11:\"filter_type\";i:0;}i:2;a:10:{s:9:\"type_lite\";s:18:\"id_attribute_group\";s:4:\"type\";s:18:\"id_attribute_group\";s:6:\"id_key\";i:2;s:4:\"name\";s:5:\"Kolor\";s:14:\"is_color_group\";b:1;s:6:\"values\";a:4:{i:5;a:5:{s:4:\"name\";s:5:\"Szary\";s:3:\"nbr\";i:2;s:8:\"url_name\";N;s:10:\"meta_title\";N;s:5:\"color\";s:7:\"#AAB2BD\";}i:6;a:5:{s:4:\"name\";s:13:\"Szarobrązowy\";s:3:\"nbr\";i:1;s:8:\"url_name\";N;s:10:\"meta_title\";N;s:5:\"color\";s:7:\"#CFC4A6\";}i:8;a:5:{s:4:\"name\";s:6:\"Biały\";s:3:\"nbr\";i:1;s:8:\"url_name\";N;s:10:\"meta_title\";N;s:5:\"color\";s:7:\"#ffffff\";}i:11;a:5:{s:4:\"name\";s:6:\"czarny\";s:3:\"nbr\";i:2;s:8:\"url_name\";N;s:10:\"meta_title\";N;s:5:\"color\";s:7:\"#434A54\";}}s:8:\"url_name\";N;s:10:\"meta_title\";N;s:17:\"filter_show_limit\";i:0;s:11:\"filter_type\";i:0;}i:3;a:9:{s:9:\"type_lite\";s:10:\"id_feature\";s:4:\"type\";s:10:\"id_feature\";s:6:\"id_key\";i:1;s:6:\"values\";a:1:{i:4;a:4:{s:3:\"nbr\";i:1;s:4:\"name\";s:8:\"Bawełna\";s:8:\"url_name\";N;s:10:\"meta_title\";N;}}s:4:\"name\";s:11:\"Composition\";s:8:\"url_name\";N;s:10:\"meta_title\";N;s:17:\"filter_show_limit\";i:0;s:11:\"filter_type\";i:0;}i:4;a:9:{s:9:\"type_lite\";s:10:\"id_feature\";s:4:\"type\";s:10:\"id_feature\";s:6:\"id_key\";i:2;s:6:\"values\";a:1:{i:8;a:4:{s:3:\"nbr\";i:1;s:4:\"name\";s:13:\"Short sleeves\";s:8:\"url_name\";N;s:10:\"meta_title\";N;}}s:4:\"name\";s:8:\"Property\";s:8:\"url_name\";N;s:10:\"meta_title\";N;s:17:\"filter_show_limit\";i:0;s:11:\"filter_type\";i:0;}i:5;a:7:{s:9:\"type_lite\";s:8:\"quantity\";s:4:\"type\";s:8:\"quantity\";s:6:\"id_key\";i:0;s:4:\"name\";s:13:\"Dostępność\";s:6:\"values\";a:3:{i:0;a:2:{s:4:\"name\";s:12:\"Niedostępne\";s:3:\"nbr\";i:1;}i:1;a:2:{s:4:\"name\";s:9:\"Dostępny\";s:3:\"nbr\";i:4;}i:2;a:2:{s:4:\"name\";s:11:\"W magazynie\";s:3:\"nbr\";i:4;}}s:17:\"filter_show_limit\";i:0;s:11:\"filter_type\";i:0;}i:6;a:7:{s:9:\"type_lite\";s:12:\"manufacturer\";s:4:\"type\";s:12:\"manufacturer\";s:6:\"id_key\";i:0;s:4:\"name\";s:5:\"Marka\";s:6:\"values\";a:1:{i:1;a:2:{s:4:\"name\";s:13:\"Studio Design\";s:3:\"nbr\";i:1;}}s:17:\"filter_show_limit\";i:0;s:11:\"filter_type\";i:0;}i:7;a:7:{s:9:\"type_lite\";s:9:\"condition\";s:4:\"type\";s:9:\"condition\";s:6:\"id_key\";i:0;s:4:\"name\";s:5:\"Stan:\";s:6:\"values\";a:3:{s:3:\"new\";a:2:{s:4:\"name\";s:4:\"Nowy\";s:3:\"nbr\";i:4;}s:4:\"used\";a:2:{s:4:\"name\";s:8:\"Używane\";s:3:\"nbr\";i:0;}s:11:\"refurbished\";a:2:{s:4:\"name\";s:9:\"Odnowione\";s:3:\"nbr\";i:0;}}s:17:\"filter_show_limit\";i:0;s:11:\"filter_type\";i:0;}i:8;a:12:{s:9:\"type_lite\";s:6:\"weight\";s:4:\"type\";s:6:\"weight\";s:6:\"id_key\";i:0;s:4:\"name\";s:4:\"Waga\";s:3:\"max\";d:0.29999999999999999;s:3:\"min\";d:0;s:4:\"unit\";s:2:\"kg\";s:14:\"specifications\";N;s:17:\"filter_show_limit\";i:0;s:11:\"filter_type\";i:3;s:5:\"value\";N;s:3:\"nbr\";i:4;}i:9;a:12:{s:9:\"type_lite\";s:5:\"price\";s:4:\"type\";s:5:\"price\";s:6:\"id_key\";i:0;s:4:\"name\";s:4:\"Cena\";s:3:\"max\";d:30;s:3:\"min\";d:23;s:4:\"unit\";s:3:\"zł\";s:14:\"specifications\";a:11:{s:6:\"symbol\";a:11:{i:0;s:1:\",\";i:1;s:2:\" \";i:2;s:1:\";\";i:3;s:1:\"%\";i:4;s:1:\"-\";i:5;s:1:\"+\";i:6;s:1:\"E\";i:7;s:2:\"×\";i:8;s:3:\"‰\";i:9;s:3:\"∞\";i:10;s:3:\"NaN\";}s:12:\"currencyCode\";s:3:\"PLN\";s:14:\"currencySymbol\";s:3:\"zł\";s:13:\"numberSymbols\";a:11:{i:0;s:1:\",\";i:1;s:2:\" \";i:2;s:1:\";\";i:3;s:1:\"%\";i:4;s:1:\"-\";i:5;s:1:\"+\";i:6;s:1:\"E\";i:7;s:2:\"×\";i:8;s:3:\"‰\";i:9;s:3:\"∞\";i:10;s:3:\"NaN\";}s:15:\"positivePattern\";s:12:\"#,##0.00 ¤\";s:15:\"negativePattern\";s:13:\"-#,##0.00 ¤\";s:17:\"maxFractionDigits\";i:2;s:17:\"minFractionDigits\";i:2;s:12:\"groupingUsed\";b:1;s:16:\"primaryGroupSize\";i:3;s:18:\"secondaryGroupSize\";i:3;}s:17:\"filter_show_limit\";i:0;s:11:\"filter_type\";i:3;s:3:\"nbr\";i:4;s:5:\"value\";N;}}}'),
+('586af24a62796f53515d60d1e9f733c5', 'a:1:{s:7:\"filters\";a:9:{i:0;a:7:{s:9:\"type_lite\";s:8:\"category\";s:4:\"type\";s:8:\"category\";s:6:\"id_key\";i:0;s:4:\"name\";s:9:\"Kategorie\";s:6:\"values\";a:0:{}s:17:\"filter_show_limit\";i:0;s:11:\"filter_type\";i:0;}i:1;a:10:{s:9:\"type_lite\";s:18:\"id_attribute_group\";s:4:\"type\";s:18:\"id_attribute_group\";s:6:\"id_key\";i:1;s:4:\"name\";s:7:\"Rozmiar\";s:14:\"is_color_group\";b:0;s:6:\"values\";a:4:{i:1;a:4:{s:4:\"name\";s:1:\"S\";s:3:\"nbr\";i:1;s:8:\"url_name\";N;s:10:\"meta_title\";N;}i:2;a:4:{s:4:\"name\";s:1:\"M\";s:3:\"nbr\";i:1;s:8:\"url_name\";N;s:10:\"meta_title\";N;}i:3;a:4:{s:4:\"name\";s:1:\"L\";s:3:\"nbr\";i:1;s:8:\"url_name\";N;s:10:\"meta_title\";N;}i:4;a:4:{s:4:\"name\";s:2:\"XL\";s:3:\"nbr\";i:1;s:8:\"url_name\";N;s:10:\"meta_title\";N;}}s:8:\"url_name\";N;s:10:\"meta_title\";N;s:17:\"filter_show_limit\";i:0;s:11:\"filter_type\";i:0;}i:2;a:9:{s:9:\"type_lite\";s:10:\"id_feature\";s:4:\"type\";s:10:\"id_feature\";s:6:\"id_key\";i:1;s:6:\"values\";a:1:{i:4;a:4:{s:3:\"nbr\";i:1;s:4:\"name\";s:8:\"Bawełna\";s:8:\"url_name\";N;s:10:\"meta_title\";N;}}s:4:\"name\";s:11:\"Composition\";s:8:\"url_name\";N;s:10:\"meta_title\";N;s:17:\"filter_show_limit\";i:0;s:11:\"filter_type\";i:0;}i:3;a:9:{s:9:\"type_lite\";s:10:\"id_feature\";s:4:\"type\";s:10:\"id_feature\";s:6:\"id_key\";i:2;s:6:\"values\";a:1:{i:7;a:4:{s:3:\"nbr\";i:1;s:4:\"name\";s:12:\"Long sleeves\";s:8:\"url_name\";N;s:10:\"meta_title\";N;}}s:4:\"name\";s:8:\"Property\";s:8:\"url_name\";N;s:10:\"meta_title\";N;s:17:\"filter_show_limit\";i:0;s:11:\"filter_type\";i:0;}i:4;a:7:{s:9:\"type_lite\";s:8:\"quantity\";s:4:\"type\";s:8:\"quantity\";s:6:\"id_key\";i:0;s:4:\"name\";s:13:\"Dostępność\";s:6:\"values\";a:3:{i:0;a:2:{s:4:\"name\";s:12:\"Niedostępne\";s:3:\"nbr\";i:0;}i:1;a:2:{s:4:\"name\";s:9:\"Dostępny\";s:3:\"nbr\";i:1;}i:2;a:2:{s:4:\"name\";s:11:\"W magazynie\";s:3:\"nbr\";i:1;}}s:17:\"filter_show_limit\";i:0;s:11:\"filter_type\";i:0;}i:5;a:7:{s:9:\"type_lite\";s:12:\"manufacturer\";s:4:\"type\";s:12:\"manufacturer\";s:6:\"id_key\";i:0;s:4:\"name\";s:5:\"Marka\";s:6:\"values\";a:1:{i:1;a:2:{s:4:\"name\";s:13:\"Studio Design\";s:3:\"nbr\";i:1;}}s:17:\"filter_show_limit\";i:0;s:11:\"filter_type\";i:0;}i:6;a:7:{s:9:\"type_lite\";s:9:\"condition\";s:4:\"type\";s:9:\"condition\";s:6:\"id_key\";i:0;s:4:\"name\";s:5:\"Stan:\";s:6:\"values\";a:3:{s:3:\"new\";a:2:{s:4:\"name\";s:4:\"Nowy\";s:3:\"nbr\";i:1;}s:4:\"used\";a:2:{s:4:\"name\";s:8:\"Używane\";s:3:\"nbr\";i:0;}s:11:\"refurbished\";a:2:{s:4:\"name\";s:9:\"Odnowione\";s:3:\"nbr\";i:0;}}s:17:\"filter_show_limit\";i:0;s:11:\"filter_type\";i:0;}i:7;a:12:{s:9:\"type_lite\";s:6:\"weight\";s:4:\"type\";s:6:\"weight\";s:6:\"id_key\";i:0;s:4:\"name\";s:4:\"Waga\";s:3:\"max\";d:0.29999999999999999;s:3:\"min\";d:0.29999999999999999;s:4:\"unit\";s:2:\"kg\";s:14:\"specifications\";N;s:17:\"filter_show_limit\";i:0;s:11:\"filter_type\";i:3;s:5:\"value\";N;s:3:\"nbr\";i:1;}i:8;a:12:{s:9:\"type_lite\";s:5:\"price\";s:4:\"type\";s:5:\"price\";s:6:\"id_key\";i:0;s:4:\"name\";s:4:\"Cena\";s:3:\"max\";d:45;s:3:\"min\";d:35;s:4:\"unit\";s:3:\"zł\";s:14:\"specifications\";a:11:{s:6:\"symbol\";a:11:{i:0;s:1:\",\";i:1;s:2:\" \";i:2;s:1:\";\";i:3;s:1:\"%\";i:4;s:1:\"-\";i:5;s:1:\"+\";i:6;s:1:\"E\";i:7;s:2:\"×\";i:8;s:3:\"‰\";i:9;s:3:\"∞\";i:10;s:3:\"NaN\";}s:12:\"currencyCode\";s:3:\"PLN\";s:14:\"currencySymbol\";s:3:\"zł\";s:13:\"numberSymbols\";a:11:{i:0;s:1:\",\";i:1;s:2:\" \";i:2;s:1:\";\";i:3;s:1:\"%\";i:4;s:1:\"-\";i:5;s:1:\"+\";i:6;s:1:\"E\";i:7;s:2:\"×\";i:8;s:3:\"‰\";i:9;s:3:\"∞\";i:10;s:3:\"NaN\";}s:15:\"positivePattern\";s:12:\"#,##0.00 ¤\";s:15:\"negativePattern\";s:13:\"-#,##0.00 ¤\";s:17:\"maxFractionDigits\";i:2;s:17:\"minFractionDigits\";i:2;s:12:\"groupingUsed\";b:1;s:16:\"primaryGroupSize\";i:3;s:18:\"secondaryGroupSize\";i:3;}s:17:\"filter_show_limit\";i:0;s:11:\"filter_type\";i:3;s:3:\"nbr\";i:1;s:5:\"value\";N;}}}');
+
 -- --------------------------------------------------------
 
 --
@@ -6920,7 +7141,8 @@ INSERT INTO `ad_layered_indexable_attribute_group` (`id_attribute_group`, `index
 (1, 0),
 (2, 0),
 (3, 0),
-(4, 0);
+(4, 0),
+(5, 0);
 
 -- --------------------------------------------------------
 
@@ -7050,7 +7272,143 @@ INSERT INTO `ad_layered_price_index` (`id_product`, `id_currency`, `id_shop`, `p
 (18, 1, 1, '15.867000', '15.867000', 8),
 (18, 1, 1, '15.867000', '15.867000', 14),
 (19, 1, 1, '17.097000', '17.097000', 8),
-(19, 1, 1, '17.097000', '17.097000', 14);
+(19, 1, 1, '17.097000', '17.097000', 14),
+(20, 1, 1, '25.000000', '25.000000', 8),
+(20, 1, 1, '25.000000', '25.000000', 14),
+(21, 1, 1, '0.000000', '0.000000', 8),
+(21, 1, 1, '0.000000', '0.000000', 14),
+(22, 1, 1, '25.000000', '25.000000', 8),
+(22, 1, 1, '25.000000', '25.000000', 14),
+(22, 1, 1, '25.000000', '25.000000', 21),
+(23, 1, 1, '0.000000', '0.000000', 8),
+(23, 1, 1, '0.000000', '0.000000', 14),
+(23, 1, 1, '0.000000', '0.000000', 21),
+(24, 1, 1, '0.000000', '0.000000', 8),
+(24, 1, 1, '0.000000', '0.000000', 14),
+(24, 1, 1, '0.000000', '0.000000', 21),
+(25, 1, 1, '0.000000', '0.000000', 8),
+(25, 1, 1, '0.000000', '0.000000', 14),
+(25, 1, 1, '0.000000', '0.000000', 21),
+(26, 1, 1, '0.000000', '0.000000', 8),
+(26, 1, 1, '0.000000', '0.000000', 14),
+(26, 1, 1, '0.000000', '0.000000', 21),
+(27, 1, 1, '0.000000', '0.000000', 8),
+(27, 1, 1, '0.000000', '0.000000', 14),
+(27, 1, 1, '0.000000', '0.000000', 21),
+(28, 1, 1, '0.000000', '0.000000', 8),
+(28, 1, 1, '0.000000', '0.000000', 14),
+(28, 1, 1, '0.000000', '0.000000', 21),
+(29, 1, 1, '0.000000', '0.000000', 8),
+(29, 1, 1, '0.000000', '0.000000', 14),
+(29, 1, 1, '0.000000', '0.000000', 21),
+(30, 1, 1, '0.000000', '0.000000', 8),
+(30, 1, 1, '0.000000', '0.000000', 14),
+(30, 1, 1, '0.000000', '0.000000', 21),
+(31, 1, 1, '0.000000', '0.000000', 8),
+(31, 1, 1, '0.000000', '0.000000', 14),
+(31, 1, 1, '0.000000', '0.000000', 21),
+(32, 1, 1, '0.000000', '0.000000', 8),
+(32, 1, 1, '0.000000', '0.000000', 14),
+(32, 1, 1, '0.000000', '0.000000', 21),
+(33, 1, 1, '0.000000', '0.000000', 8),
+(33, 1, 1, '0.000000', '0.000000', 14),
+(33, 1, 1, '0.000000', '0.000000', 21),
+(34, 1, 1, '0.000000', '0.000000', 8),
+(34, 1, 1, '0.000000', '0.000000', 14),
+(34, 1, 1, '0.000000', '0.000000', 21),
+(35, 1, 1, '0.000000', '0.000000', 8),
+(35, 1, 1, '0.000000', '0.000000', 14),
+(35, 1, 1, '0.000000', '0.000000', 21),
+(36, 1, 1, '0.000000', '0.000000', 8),
+(36, 1, 1, '0.000000', '0.000000', 14),
+(36, 1, 1, '0.000000', '0.000000', 21),
+(37, 1, 1, '0.000000', '0.000000', 8),
+(37, 1, 1, '0.000000', '0.000000', 14),
+(37, 1, 1, '0.000000', '0.000000', 21),
+(38, 1, 1, '0.000000', '0.000000', 8),
+(38, 1, 1, '0.000000', '0.000000', 14),
+(38, 1, 1, '0.000000', '0.000000', 21),
+(39, 1, 1, '0.000000', '0.000000', 8),
+(39, 1, 1, '0.000000', '0.000000', 14),
+(39, 1, 1, '0.000000', '0.000000', 21),
+(40, 1, 1, '0.000000', '0.000000', 8),
+(40, 1, 1, '0.000000', '0.000000', 14),
+(40, 1, 1, '0.000000', '0.000000', 21),
+(41, 1, 1, '0.000000', '0.000000', 8),
+(41, 1, 1, '0.000000', '0.000000', 14),
+(41, 1, 1, '0.000000', '0.000000', 21),
+(42, 1, 1, '0.000000', '0.000000', 8),
+(42, 1, 1, '0.000000', '0.000000', 14),
+(42, 1, 1, '0.000000', '0.000000', 21),
+(43, 1, 1, '0.000000', '0.000000', 8),
+(43, 1, 1, '0.000000', '0.000000', 14),
+(43, 1, 1, '0.000000', '0.000000', 21),
+(44, 1, 1, '0.000000', '0.000000', 8),
+(44, 1, 1, '0.000000', '0.000000', 14),
+(44, 1, 1, '0.000000', '0.000000', 21),
+(45, 1, 1, '0.000000', '0.000000', 8),
+(45, 1, 1, '0.000000', '0.000000', 14),
+(45, 1, 1, '0.000000', '0.000000', 21),
+(46, 1, 1, '0.000000', '0.000000', 8),
+(46, 1, 1, '0.000000', '0.000000', 14),
+(46, 1, 1, '0.000000', '0.000000', 21),
+(47, 1, 1, '0.000000', '0.000000', 8),
+(47, 1, 1, '0.000000', '0.000000', 14),
+(47, 1, 1, '0.000000', '0.000000', 21),
+(48, 1, 1, '0.000000', '0.000000', 8),
+(48, 1, 1, '0.000000', '0.000000', 14),
+(48, 1, 1, '0.000000', '0.000000', 21),
+(49, 1, 1, '0.000000', '0.000000', 8),
+(49, 1, 1, '0.000000', '0.000000', 14),
+(49, 1, 1, '0.000000', '0.000000', 21),
+(50, 1, 1, '0.000000', '0.000000', 8),
+(50, 1, 1, '0.000000', '0.000000', 14),
+(50, 1, 1, '0.000000', '0.000000', 21),
+(51, 1, 1, '0.000000', '0.000000', 8),
+(51, 1, 1, '0.000000', '0.000000', 14),
+(51, 1, 1, '0.000000', '0.000000', 21),
+(52, 1, 1, '0.000000', '0.000000', 8),
+(52, 1, 1, '0.000000', '0.000000', 14),
+(52, 1, 1, '0.000000', '0.000000', 21),
+(53, 1, 1, '0.000000', '0.000000', 8),
+(53, 1, 1, '0.000000', '0.000000', 14),
+(53, 1, 1, '0.000000', '0.000000', 21),
+(54, 1, 1, '0.000000', '0.000000', 8),
+(54, 1, 1, '0.000000', '0.000000', 14),
+(54, 1, 1, '0.000000', '0.000000', 21),
+(55, 1, 1, '0.000000', '0.000000', 8),
+(55, 1, 1, '0.000000', '0.000000', 14),
+(55, 1, 1, '0.000000', '0.000000', 21),
+(56, 1, 1, '0.000000', '0.000000', 8),
+(56, 1, 1, '0.000000', '0.000000', 14),
+(56, 1, 1, '0.000000', '0.000000', 21),
+(57, 1, 1, '0.000000', '0.000000', 8),
+(57, 1, 1, '0.000000', '0.000000', 14),
+(57, 1, 1, '0.000000', '0.000000', 21),
+(58, 1, 1, '0.000000', '0.000000', 8),
+(58, 1, 1, '0.000000', '0.000000', 14),
+(58, 1, 1, '0.000000', '0.000000', 21),
+(59, 1, 1, '0.000000', '0.000000', 8),
+(59, 1, 1, '0.000000', '0.000000', 14),
+(59, 1, 1, '0.000000', '0.000000', 21),
+(60, 1, 1, '0.000000', '0.000000', 8),
+(60, 1, 1, '0.000000', '0.000000', 14),
+(60, 1, 1, '0.000000', '0.000000', 21),
+(61, 1, 1, '0.000000', '0.000000', 8),
+(61, 1, 1, '0.000000', '0.000000', 14),
+(62, 1, 1, '25.000000', '25.000000', 8),
+(62, 1, 1, '25.000000', '25.000000', 14),
+(62, 1, 1, '25.000000', '25.000000', 21),
+(63, 1, 1, '25.000000', '25.000000', 8),
+(63, 1, 1, '25.000000', '25.000000', 14),
+(63, 1, 1, '25.000000', '25.000000', 21),
+(64, 1, 1, '25.000000', '25.000000', 8),
+(64, 1, 1, '25.000000', '25.000000', 14),
+(64, 1, 1, '25.000000', '25.000000', 21),
+(65, 1, 1, '25.000000', '25.000000', 8),
+(65, 1, 1, '25.000000', '25.000000', 14),
+(66, 1, 1, '25.000000', '25.000000', 8),
+(66, 1, 1, '25.000000', '25.000000', 14);
 
 -- --------------------------------------------------------
 
@@ -7078,6 +7436,10 @@ INSERT INTO `ad_layered_product_attribute` (`id_attribute`, `id_product`, `id_at
 (3, 2, 1, 1),
 (4, 1, 1, 1),
 (4, 2, 1, 1),
+(26, 1, 1, 1),
+(5, 1, 2, 1),
+(5, 20, 2, 1),
+(6, 20, 2, 1),
 (8, 1, 2, 1),
 (8, 9, 2, 1),
 (8, 10, 2, 1),
@@ -7086,6 +7448,7 @@ INSERT INTO `ad_layered_product_attribute` (`id_attribute`, `id_product`, `id_at
 (11, 9, 2, 1),
 (11, 10, 2, 1),
 (11, 11, 2, 1),
+(11, 20, 2, 1),
 (19, 3, 3, 1),
 (19, 4, 3, 1),
 (19, 5, 3, 1),
@@ -7106,7 +7469,10 @@ INSERT INTO `ad_layered_product_attribute` (`id_attribute`, `id_product`, `id_at
 (24, 18, 4, 1),
 (25, 16, 4, 1),
 (25, 17, 4, 1),
-(25, 18, 4, 1);
+(25, 18, 4, 1),
+(31, 20, 5, 1),
+(32, 20, 5, 1),
+(33, 20, 5, 1);
 
 -- --------------------------------------------------------
 
@@ -7465,7 +7831,157 @@ INSERT INTO `ad_log` (`id_log`, `severity`, `error_code`, `message`, `object_typ
 (240, 1, 0, 'Protect vendor folder in module statsbestcustomers', '', 0, 1, NULL, 1, 0, 1, '2022-11-27 17:28:20', '2022-11-27 17:28:20'),
 (241, 1, 0, 'Module statsbestcustomers has no vendor folder', '', 0, 1, NULL, 1, 0, 1, '2022-11-27 17:28:20', '2022-11-27 17:28:20'),
 (242, 1, 0, 'Protect vendor folder in module ps_facetedsearch', '', 0, 1, NULL, 1, 0, 1, '2022-11-27 17:28:24', '2022-11-27 17:28:24'),
-(243, 1, 0, 'Module ps_facetedsearch has no vendor folder', '', 0, 1, NULL, 1, 0, 1, '2022-11-27 17:28:24', '2022-11-27 17:28:24');
+(243, 1, 0, 'Module ps_facetedsearch has no vendor folder', '', 0, 1, NULL, 1, 0, 1, '2022-11-27 17:28:24', '2022-11-27 17:28:24'),
+(244, 1, 0, 'Połączenie z panelem administracyjnym z 172.28.0.1', '', 0, NULL, NULL, 1, 1, 1, '2022-11-29 18:22:59', '2022-11-29 18:22:59'),
+(245, 1, 0, 'dodanie ProductAttribute', 'ProductAttribute', 26, 1, NULL, 1, 0, 1, '2022-11-29 18:51:54', '2022-11-29 18:51:54'),
+(246, 1, 0, 'dodanie ProductAttribute', 'ProductAttribute', 27, 1, NULL, 1, 0, 1, '2022-11-29 18:52:02', '2022-11-29 18:52:02'),
+(247, 1, 0, 'dodanie AttributeGroup', 'AttributeGroup', 5, 1, NULL, 1, 0, 1, '2022-11-29 18:52:28', '2022-11-29 18:52:28'),
+(248, 1, 0, 'dodanie ProductAttribute', 'ProductAttribute', 28, 1, NULL, 1, 0, 1, '2022-11-29 18:53:23', '2022-11-29 18:53:23'),
+(249, 1, 0, 'dodanie ProductAttribute', 'ProductAttribute', 29, 1, NULL, 1, 0, 1, '2022-11-29 18:53:34', '2022-11-29 18:53:34'),
+(250, 1, 0, 'dodanie ProductAttribute', 'ProductAttribute', 30, 1, NULL, 1, 0, 1, '2022-11-29 18:53:42', '2022-11-29 18:53:42'),
+(251, 1, 0, 'dodanie ProductAttribute', 'ProductAttribute', 31, 1, NULL, 1, 0, 1, '2022-11-29 18:53:50', '2022-11-29 18:53:50'),
+(252, 1, 0, 'dodanie ProductAttribute', 'ProductAttribute', 32, 1, NULL, 1, 0, 1, '2022-11-29 18:53:53', '2022-11-29 18:53:53'),
+(253, 1, 0, 'dodanie ProductAttribute', 'ProductAttribute', 33, 1, NULL, 1, 0, 1, '2022-11-29 18:53:56', '2022-11-29 18:53:56'),
+(254, 1, 0, 'dodanie ProductAttribute', 'ProductAttribute', 34, 1, NULL, 1, 0, 1, '2022-11-29 18:53:59', '2022-11-29 18:53:59'),
+(255, 1, 0, 'dodanie ProductAttribute', 'ProductAttribute', 35, 1, NULL, 1, 0, 1, '2022-11-29 18:54:04', '2022-11-29 18:54:04'),
+(256, 1, 0, 'dodanie ProductAttribute', 'ProductAttribute', 36, 1, NULL, 1, 0, 1, '2022-11-29 18:54:07', '2022-11-29 18:54:07'),
+(257, 1, 0, 'Product modification', 'Product', 20, 1, NULL, 1, 0, 1, '2022-11-29 19:00:40', '2022-11-29 19:00:40'),
+(258, 1, 0, 'Product activated: 20', 'Product', 20, 1, NULL, 1, 0, 1, '2022-11-29 19:00:50', '2022-11-29 19:00:50'),
+(259, 1, 0, 'Product modification', 'Product', 19, 1, NULL, 1, 0, 1, '2022-11-29 19:01:52', '2022-11-29 19:01:52'),
+(260, 1, 0, 'Product modification', 'Product', 20, 1, NULL, 1, 0, 1, '2022-11-29 19:06:58', '2022-11-29 19:06:58'),
+(261, 1, 0, 'Product modification', 'Product', 20, 1, NULL, 1, 0, 1, '2022-11-29 19:07:04', '2022-11-29 19:07:04'),
+(262, 3, 0, 'Swift Error: Expected response code 220 but got an empty response', 'SwiftMessage', 0, 1, NULL, 1, 0, 1, '2022-11-29 19:07:04', '2022-11-29 19:07:04'),
+(263, 3, 0, 'Swift Error: Expected response code 220 but got an empty response', 'SwiftMessage', 0, 1, NULL, 1, 0, 1, '2022-11-29 19:07:04', '2022-11-29 19:07:04'),
+(264, 3, 0, 'Swift Error: Expected response code 220 but got an empty response', 'SwiftMessage', 0, 1, NULL, 1, 0, 1, '2022-11-29 19:07:04', '2022-11-29 19:07:04'),
+(265, 3, 0, 'Swift Error: Expected response code 220 but got an empty response', 'SwiftMessage', 0, 1, NULL, 1, 0, 1, '2022-11-29 19:07:04', '2022-11-29 19:07:04'),
+(266, 3, 0, 'Swift Error: Expected response code 220 but got an empty response', 'SwiftMessage', 0, 1, NULL, 1, 0, 1, '2022-11-29 19:07:04', '2022-11-29 19:07:04'),
+(267, 3, 0, 'Swift Error: Expected response code 220 but got an empty response', 'SwiftMessage', 0, 1, NULL, 1, 0, 1, '2022-11-29 19:07:04', '2022-11-29 19:07:04'),
+(268, 3, 0, 'Swift Error: Expected response code 220 but got an empty response', 'SwiftMessage', 0, 1, NULL, 1, 0, 1, '2022-11-29 19:07:04', '2022-11-29 19:07:04'),
+(269, 3, 0, 'Swift Error: Expected response code 220 but got an empty response', 'SwiftMessage', 0, 1, NULL, 1, 0, 1, '2022-11-29 19:07:04', '2022-11-29 19:07:04'),
+(270, 3, 0, 'Swift Error: Expected response code 220 but got an empty response', 'SwiftMessage', 0, 1, NULL, 1, 0, 1, '2022-11-29 19:07:04', '2022-11-29 19:07:04'),
+(271, 1, 0, 'Product modification', 'Product', 20, 1, NULL, 1, 0, 1, '2022-11-29 19:07:18', '2022-11-29 19:07:18'),
+(272, 3, 0, 'Swift Error: Expected response code 220 but got an empty response', 'SwiftMessage', 0, 1, NULL, 1, 0, 1, '2022-11-29 19:07:18', '2022-11-29 19:07:18'),
+(273, 3, 0, 'Swift Error: Expected response code 220 but got an empty response', 'SwiftMessage', 0, 1, NULL, 1, 0, 1, '2022-11-29 19:07:18', '2022-11-29 19:07:18'),
+(274, 3, 0, 'Swift Error: Expected response code 220 but got an empty response', 'SwiftMessage', 0, 1, NULL, 1, 0, 1, '2022-11-29 19:07:18', '2022-11-29 19:07:18'),
+(275, 3, 0, 'Swift Error: Expected response code 220 but got an empty response', 'SwiftMessage', 0, 1, NULL, 1, 0, 1, '2022-11-29 19:07:18', '2022-11-29 19:07:18'),
+(276, 3, 0, 'Swift Error: Expected response code 220 but got an empty response', 'SwiftMessage', 0, 1, NULL, 1, 0, 1, '2022-11-29 19:07:18', '2022-11-29 19:07:18'),
+(277, 3, 0, 'Swift Error: Expected response code 220 but got an empty response', 'SwiftMessage', 0, 1, NULL, 1, 0, 1, '2022-11-29 19:07:18', '2022-11-29 19:07:18'),
+(278, 3, 0, 'Swift Error: Expected response code 220 but got an empty response', 'SwiftMessage', 0, 1, NULL, 1, 0, 1, '2022-11-29 19:07:18', '2022-11-29 19:07:18'),
+(279, 3, 0, 'Swift Error: Expected response code 220 but got an empty response', 'SwiftMessage', 0, 1, NULL, 1, 0, 1, '2022-11-29 19:07:18', '2022-11-29 19:07:18'),
+(280, 3, 0, 'Swift Error: Expected response code 220 but got an empty response', 'SwiftMessage', 0, 1, NULL, 1, 0, 1, '2022-11-29 19:07:18', '2022-11-29 19:07:18'),
+(281, 1, 0, 'Product modification', 'Product', 20, 1, NULL, 1, 0, 1, '2022-11-29 19:07:53', '2022-11-29 19:07:53'),
+(282, 3, 0, 'Swift Error: Expected response code 220 but got an empty response', 'SwiftMessage', 0, 1, NULL, 1, 0, 1, '2022-11-29 19:07:53', '2022-11-29 19:07:53'),
+(283, 3, 0, 'Swift Error: Expected response code 220 but got an empty response', 'SwiftMessage', 0, 1, NULL, 1, 0, 1, '2022-11-29 19:07:53', '2022-11-29 19:07:53'),
+(284, 3, 0, 'Swift Error: Expected response code 220 but got an empty response', 'SwiftMessage', 0, 1, NULL, 1, 0, 1, '2022-11-29 19:07:53', '2022-11-29 19:07:53'),
+(285, 3, 0, 'Swift Error: Expected response code 220 but got an empty response', 'SwiftMessage', 0, 1, NULL, 1, 0, 1, '2022-11-29 19:07:54', '2022-11-29 19:07:54'),
+(286, 3, 0, 'Swift Error: Expected response code 220 but got an empty response', 'SwiftMessage', 0, 1, NULL, 1, 0, 1, '2022-11-29 19:07:54', '2022-11-29 19:07:54'),
+(287, 3, 0, 'Swift Error: Expected response code 220 but got an empty response', 'SwiftMessage', 0, 1, NULL, 1, 0, 1, '2022-11-29 19:07:54', '2022-11-29 19:07:54'),
+(288, 3, 0, 'Swift Error: Expected response code 220 but got an empty response', 'SwiftMessage', 0, 1, NULL, 1, 0, 1, '2022-11-29 19:07:54', '2022-11-29 19:07:54'),
+(289, 3, 0, 'Swift Error: Expected response code 220 but got an empty response', 'SwiftMessage', 0, 1, NULL, 1, 0, 1, '2022-11-29 19:07:54', '2022-11-29 19:07:54'),
+(290, 3, 0, 'Swift Error: Expected response code 220 but got an empty response', 'SwiftMessage', 0, 1, NULL, 1, 0, 1, '2022-11-29 19:07:54', '2022-11-29 19:07:54'),
+(291, 1, 0, 'Product modification', 'Product', 20, 1, NULL, 1, 0, 1, '2022-11-29 19:08:20', '2022-11-29 19:08:20'),
+(292, 3, 0, 'Swift Error: Expected response code 220 but got an empty response', 'SwiftMessage', 0, 1, NULL, 1, 0, 1, '2022-11-29 19:08:20', '2022-11-29 19:08:20'),
+(293, 3, 0, 'Swift Error: Expected response code 220 but got an empty response', 'SwiftMessage', 0, 1, NULL, 1, 0, 1, '2022-11-29 19:08:20', '2022-11-29 19:08:20'),
+(294, 1, 0, 'Product modification', 'Product', 20, 1, NULL, 1, 0, 1, '2022-11-29 19:09:15', '2022-11-29 19:09:15'),
+(295, 3, 0, 'Swift Error: Expected response code 220 but got an empty response', 'SwiftMessage', 0, 1, NULL, 1, 0, 1, '2022-11-29 19:09:15', '2022-11-29 19:09:15'),
+(296, 3, 0, 'Swift Error: Expected response code 220 but got an empty response', 'SwiftMessage', 0, 1, NULL, 1, 0, 1, '2022-11-29 19:09:15', '2022-11-29 19:09:15'),
+(297, 1, 0, 'import Produkty (od 0 do 5)', 'Produkty', 0, 1, NULL, 1, 0, 1, '2022-11-29 19:18:26', '2022-11-29 19:18:26'),
+(298, 1, 0, 'import Produkty (od 5 do 20)', 'Produkty', 0, 1, NULL, 1, 0, 1, '2022-11-29 19:18:26', '2022-11-29 19:18:26'),
+(299, 1, 0, 'import Produkty (od 0 do 5)', 'Produkty', 0, 1, NULL, 1, 0, 1, '2022-11-29 19:18:27', '2022-11-29 19:18:27'),
+(300, 1, 0, 'import Produkty (od 5 do 20)', 'Produkty', 0, 1, NULL, 1, 0, 1, '2022-11-29 19:18:28', '2022-11-29 19:18:28'),
+(301, 1, 0, 'import Produkty (od 0 do 5)', 'Produkty', 0, 1, NULL, 1, 0, 1, '2022-11-29 19:18:28', '2022-11-29 19:18:28'),
+(302, 1, 0, 'Products deleted: (41).', 'Product', 0, 1, NULL, 1, 0, 1, '2022-11-29 19:19:51', '2022-11-29 19:19:51'),
+(303, 1, 0, 'Products deleted: (40).', 'Product', 0, 1, NULL, 1, 0, 1, '2022-11-29 19:19:51', '2022-11-29 19:19:51'),
+(304, 1, 0, 'Products deleted: (39).', 'Product', 0, 1, NULL, 1, 0, 1, '2022-11-29 19:19:51', '2022-11-29 19:19:51'),
+(305, 1, 0, 'Products deleted: (38).', 'Product', 0, 1, NULL, 1, 0, 1, '2022-11-29 19:19:51', '2022-11-29 19:19:51'),
+(306, 1, 0, 'Products deleted: (37).', 'Product', 0, 1, NULL, 1, 0, 1, '2022-11-29 19:19:52', '2022-11-29 19:19:52'),
+(307, 1, 0, 'Products deleted: (36).', 'Product', 0, 1, NULL, 1, 0, 1, '2022-11-29 19:19:52', '2022-11-29 19:19:52'),
+(308, 1, 0, 'Products deleted: (35).', 'Product', 0, 1, NULL, 1, 0, 1, '2022-11-29 19:19:52', '2022-11-29 19:19:52'),
+(309, 1, 0, 'Products deleted: (34).', 'Product', 0, 1, NULL, 1, 0, 1, '2022-11-29 19:19:52', '2022-11-29 19:19:52'),
+(310, 1, 0, 'Products deleted: (33).', 'Product', 0, 1, NULL, 1, 0, 1, '2022-11-29 19:19:52', '2022-11-29 19:19:52'),
+(311, 1, 0, 'Products deleted: (32).', 'Product', 0, 1, NULL, 1, 0, 1, '2022-11-29 19:19:52', '2022-11-29 19:19:52'),
+(312, 1, 0, 'Products deleted: (31).', 'Product', 0, 1, NULL, 1, 0, 1, '2022-11-29 19:19:53', '2022-11-29 19:19:53'),
+(313, 1, 0, 'Products deleted: (30).', 'Product', 0, 1, NULL, 1, 0, 1, '2022-11-29 19:19:53', '2022-11-29 19:19:53'),
+(314, 1, 0, 'Products deleted: (29).', 'Product', 0, 1, NULL, 1, 0, 1, '2022-11-29 19:19:53', '2022-11-29 19:19:53'),
+(315, 1, 0, 'Products deleted: (28).', 'Product', 0, 1, NULL, 1, 0, 1, '2022-11-29 19:19:53', '2022-11-29 19:19:53'),
+(316, 1, 0, 'Products deleted: (27).', 'Product', 0, 1, NULL, 1, 0, 1, '2022-11-29 19:19:53', '2022-11-29 19:19:53'),
+(317, 1, 0, 'Products deleted: (26).', 'Product', 0, 1, NULL, 1, 0, 1, '2022-11-29 19:19:54', '2022-11-29 19:19:54'),
+(318, 1, 0, 'Products deleted: (25).', 'Product', 0, 1, NULL, 1, 0, 1, '2022-11-29 19:19:54', '2022-11-29 19:19:54'),
+(319, 1, 0, 'Products deleted: (24).', 'Product', 0, 1, NULL, 1, 0, 1, '2022-11-29 19:19:54', '2022-11-29 19:19:54'),
+(320, 1, 0, 'Products deleted: (23).', 'Product', 0, 1, NULL, 1, 0, 1, '2022-11-29 19:19:54', '2022-11-29 19:19:54'),
+(321, 1, 0, 'Products deleted: (22).', 'Product', 0, 1, NULL, 1, 0, 1, '2022-11-29 19:20:08', '2022-11-29 19:20:08'),
+(322, 1, 0, 'import Produkty (od 0 do 5)', 'Produkty', 0, 1, NULL, 1, 0, 1, '2022-11-29 19:24:00', '2022-11-29 19:24:00'),
+(323, 1, 0, 'import Produkty (od 5 do 20)', 'Produkty', 0, 1, NULL, 1, 0, 1, '2022-11-29 19:24:00', '2022-11-29 19:24:00'),
+(324, 1, 0, 'import Produkty (od 0 do 5)', 'Produkty', 0, 1, NULL, 1, 0, 1, '2022-11-29 19:24:02', '2022-11-29 19:24:02'),
+(325, 1, 0, 'import Produkty (od 5 do 11)', 'Produkty', 0, 1, NULL, 1, 0, 1, '2022-11-29 19:24:02', '2022-11-29 19:24:02'),
+(326, 1, 0, 'import Produkty (od 16 do 44)', 'Produkty', 0, 1, NULL, 1, 0, 1, '2022-11-29 19:24:03', '2022-11-29 19:24:03'),
+(327, 1, 0, 'import Produkty (od 0 do 5)', 'Produkty', 0, 1, NULL, 1, 0, 1, '2022-11-29 19:24:03', '2022-11-29 19:24:03'),
+(328, 1, 0, 'Products deleted: (60).', 'Product', 0, 1, NULL, 1, 0, 1, '2022-11-29 19:28:15', '2022-11-29 19:28:15'),
+(329, 1, 0, 'Products deleted: (59).', 'Product', 0, 1, NULL, 1, 0, 1, '2022-11-29 19:28:15', '2022-11-29 19:28:15'),
+(330, 1, 0, 'Products deleted: (58).', 'Product', 0, 1, NULL, 1, 0, 1, '2022-11-29 19:28:16', '2022-11-29 19:28:16'),
+(331, 1, 0, 'Products deleted: (57).', 'Product', 0, 1, NULL, 1, 0, 1, '2022-11-29 19:28:16', '2022-11-29 19:28:16'),
+(332, 1, 0, 'Products deleted: (56).', 'Product', 0, 1, NULL, 1, 0, 1, '2022-11-29 19:28:16', '2022-11-29 19:28:16'),
+(333, 1, 0, 'Products deleted: (55).', 'Product', 0, 1, NULL, 1, 0, 1, '2022-11-29 19:28:16', '2022-11-29 19:28:16'),
+(334, 1, 0, 'Products deleted: (54).', 'Product', 0, 1, NULL, 1, 0, 1, '2022-11-29 19:28:16', '2022-11-29 19:28:16'),
+(335, 1, 0, 'Products deleted: (53).', 'Product', 0, 1, NULL, 1, 0, 1, '2022-11-29 19:28:17', '2022-11-29 19:28:17'),
+(336, 1, 0, 'Products deleted: (52).', 'Product', 0, 1, NULL, 1, 0, 1, '2022-11-29 19:28:17', '2022-11-29 19:28:17'),
+(337, 1, 0, 'Products deleted: (51).', 'Product', 0, 1, NULL, 1, 0, 1, '2022-11-29 19:28:17', '2022-11-29 19:28:17'),
+(338, 1, 0, 'Products deleted: (50).', 'Product', 0, 1, NULL, 1, 0, 1, '2022-11-29 19:28:17', '2022-11-29 19:28:17'),
+(339, 1, 0, 'Products deleted: (49).', 'Product', 0, 1, NULL, 1, 0, 1, '2022-11-29 19:28:17', '2022-11-29 19:28:17'),
+(340, 1, 0, 'Products deleted: (48).', 'Product', 0, 1, NULL, 1, 0, 1, '2022-11-29 19:28:17', '2022-11-29 19:28:17'),
+(341, 1, 0, 'Products deleted: (47).', 'Product', 0, 1, NULL, 1, 0, 1, '2022-11-29 19:28:17', '2022-11-29 19:28:17'),
+(342, 1, 0, 'Products deleted: (46).', 'Product', 0, 1, NULL, 1, 0, 1, '2022-11-29 19:28:18', '2022-11-29 19:28:18');
+INSERT INTO `ad_log` (`id_log`, `severity`, `error_code`, `message`, `object_type`, `object_id`, `id_shop`, `id_shop_group`, `id_lang`, `in_all_shops`, `id_employee`, `date_add`, `date_upd`) VALUES
+(343, 1, 0, 'Products deleted: (45).', 'Product', 0, 1, NULL, 1, 0, 1, '2022-11-29 19:28:18', '2022-11-29 19:28:18'),
+(344, 1, 0, 'Products deleted: (44).', 'Product', 0, 1, NULL, 1, 0, 1, '2022-11-29 19:28:18', '2022-11-29 19:28:18'),
+(345, 1, 0, 'Products deleted: (43).', 'Product', 0, 1, NULL, 1, 0, 1, '2022-11-29 19:28:18', '2022-11-29 19:28:18'),
+(346, 1, 0, 'Products deleted: (42).', 'Product', 0, 1, NULL, 1, 0, 1, '2022-11-29 19:28:18', '2022-11-29 19:28:18'),
+(347, 1, 0, 'import Produkty (od 0 do 5)', 'Produkty', 0, 1, NULL, 1, 0, 1, '2022-11-29 19:34:49', '2022-11-29 19:34:49'),
+(348, 1, 0, 'import Produkty (od 0 do 5)', 'Produkty', 0, 1, NULL, 1, 0, 1, '2022-11-29 19:34:52', '2022-11-29 19:34:52'),
+(349, 1, 0, 'import Produkty (od 0 do 5)', 'Produkty', 0, 1, NULL, 1, 0, 1, '2022-11-29 19:34:52', '2022-11-29 19:34:52'),
+(350, 3, 0, 'Swift Error: Expected response code 220 but got an empty response', 'SwiftMessage', 0, 1, NULL, 1, 0, 1, '2022-11-29 19:34:52', '2022-11-29 19:34:52'),
+(351, 1, 0, 'Product deleted: (62).', 'Product', 62, 1, NULL, 1, 0, 1, '2022-11-29 19:35:47', '2022-11-29 19:35:47'),
+(352, 1, 0, 'import Produkty (od 0 do 5)', 'Produkty', 0, 1, NULL, 1, 0, 1, '2022-11-29 19:41:43', '2022-11-29 19:41:43'),
+(353, 1, 0, 'import Produkty (od 0 do 5)', 'Produkty', 0, 1, NULL, 1, 0, 1, '2022-11-29 19:41:43', '2022-11-29 19:41:43'),
+(354, 1, 0, 'import Produkty (od 0 do 5)', 'Produkty', 0, 1, NULL, 1, 0, 1, '2022-11-29 19:41:43', '2022-11-29 19:41:43'),
+(355, 3, 0, 'Swift Error: Expected response code 220 but got an empty response', 'SwiftMessage', 0, 1, NULL, 1, 0, 1, '2022-11-29 19:41:43', '2022-11-29 19:41:43'),
+(356, 1, 0, 'import Produkty (od 0 do 5)', 'Produkty', 0, 1, NULL, 1, 0, 1, '2022-11-29 19:43:03', '2022-11-29 19:43:03'),
+(357, 1, 0, 'import Produkty (od 0 do 5)', 'Produkty', 0, 1, NULL, 1, 0, 1, '2022-11-29 19:43:05', '2022-11-29 19:43:05'),
+(358, 1, 0, 'import Produkty (od 0 do 5)', 'Produkty', 0, 1, NULL, 1, 0, 1, '2022-11-29 19:43:05', '2022-11-29 19:43:05'),
+(359, 3, 0, 'Swift Error: Expected response code 220 but got an empty response', 'SwiftMessage', 0, 1, NULL, 1, 0, 1, '2022-11-29 19:43:05', '2022-11-29 19:43:05'),
+(360, 1, 0, 'Product deleted: (63).', 'Product', 63, 1, NULL, 1, 0, 1, '2022-11-29 19:43:22', '2022-11-29 19:43:22'),
+(361, 1, 0, 'Połączenie z panelem administracyjnym z 172.28.0.1', '', 0, NULL, NULL, 1, 1, 1, '2022-11-30 16:38:57', '2022-11-30 16:38:57'),
+(362, 1, 0, 'import Produkty (od 0 do 5)', 'Produkty', 0, 1, NULL, 1, 0, 1, '2022-11-30 16:45:59', '2022-11-30 16:45:59'),
+(363, 1, 0, 'import Produkty (od 0 do 5)', 'Produkty', 0, 1, NULL, 1, 0, 1, '2022-11-30 16:46:00', '2022-11-30 16:46:00'),
+(364, 1, 0, 'import Produkty (od 0 do 5)', 'Produkty', 0, 1, NULL, 1, 0, 1, '2022-11-30 16:46:00', '2022-11-30 16:46:00'),
+(365, 3, 0, 'Swift Error: Expected response code 220 but got an empty response', 'SwiftMessage', 0, 1, NULL, 1, 0, 1, '2022-11-30 16:46:00', '2022-11-30 16:46:00'),
+(366, 1, 0, 'import Produkty (od 0 do 5)', 'Produkty', 0, 1, NULL, 1, 0, 1, '2022-11-30 17:01:19', '2022-11-30 17:01:19'),
+(367, 1, 0, 'import Produkty (od 0 do 5)', 'Produkty', 0, 1, NULL, 1, 0, 1, '2022-11-30 17:01:20', '2022-11-30 17:01:20'),
+(368, 1, 0, 'import Produkty (od 0 do 5)', 'Produkty', 0, 1, NULL, 1, 0, 1, '2022-11-30 17:01:20', '2022-11-30 17:01:20'),
+(369, 3, 0, 'Swift Error: Expected response code 220 but got an empty response', 'SwiftMessage', 0, 1, NULL, 1, 0, 1, '2022-11-30 17:01:20', '2022-11-30 17:01:20'),
+(370, 1, 0, 'Product modification', 'Product', 66, 1, NULL, 1, 0, 1, '2022-11-30 17:05:59', '2022-11-30 17:05:59'),
+(371, 1, 0, 'Product modification', 'Product', 66, 1, NULL, 1, 0, 1, '2022-11-30 17:06:04', '2022-11-30 17:06:04'),
+(372, 3, 0, 'Swift Error: Expected response code 220 but got an empty response', 'SwiftMessage', 0, 1, NULL, 1, 0, 1, '2022-11-30 18:07:09', '2022-11-30 18:07:09'),
+(373, 3, 0, 'Swift Error: Expected response code 220 but got an empty response', 'SwiftMessage', 0, 1, NULL, 1, 0, 1, '2022-11-30 18:07:09', '2022-11-30 18:07:09'),
+(374, 3, 0, 'Swift Error: Expected response code 220 but got an empty response', 'SwiftMessage', 0, 1, NULL, 1, 0, 1, '2022-11-30 18:07:09', '2022-11-30 18:07:09'),
+(375, 3, 0, 'Swift Error: Expected response code 220 but got an empty response', 'SwiftMessage', 0, 1, NULL, 1, 0, 1, '2022-11-30 18:07:09', '2022-11-30 18:07:09'),
+(376, 3, 0, 'Swift Error: Expected response code 220 but got an empty response', 'SwiftMessage', 0, 1, NULL, 1, 0, 1, '2022-11-30 18:07:09', '2022-11-30 18:07:09'),
+(377, 3, 0, 'Swift Error: Expected response code 220 but got an empty response', 'SwiftMessage', 0, 1, NULL, 1, 0, 1, '2022-11-30 18:07:09', '2022-11-30 18:07:09'),
+(378, 1, 0, 'usunięcie Feature', 'Feature', 3, 1, NULL, 1, 0, 1, '2022-11-30 18:07:56', '2022-11-30 18:07:56'),
+(379, 1, 0, 'Protect vendor folder in module ps_categorytree', '', 0, 1, NULL, 1, 0, 1, '2022-11-30 18:32:27', '2022-11-30 18:32:27'),
+(380, 1, 0, 'Połączenie z panelem administracyjnym z 172.28.0.1', '', 0, NULL, NULL, 1, 1, 1, '2022-12-01 08:31:55', '2022-12-01 08:31:55'),
+(381, 1, 0, 'Połączenie z panelem administracyjnym z 172.28.0.1', '', 0, NULL, NULL, 1, 1, 1, '2022-12-01 19:15:15', '2022-12-01 19:15:15'),
+(382, 1, 0, 'Połączenie z panelem administracyjnym z 172.28.0.1', '', 0, NULL, NULL, 1, 1, 1, '2022-12-01 21:22:36', '2022-12-01 21:22:36'),
+(383, 1, 0, 'Połączenie z panelem administracyjnym z 172.28.0.1', '', 0, NULL, NULL, 1, 1, 1, '2022-12-02 17:17:08', '2022-12-02 17:17:08'),
+(384, 1, 0, 'import Kombinacje (od 0 do 5)', 'Kombinacje', 0, 1, NULL, 1, 0, 1, '2022-12-02 17:39:14', '2022-12-02 17:39:14'),
+(385, 3, 0, 'Swift Error: Expected response code 220 but got an empty response', 'SwiftMessage', 0, 1, NULL, 1, 0, 1, '2022-12-02 17:39:14', '2022-12-02 17:39:14'),
+(386, 1, 0, 'import Kombinacje (od 0 do 5)', 'Kombinacje', 0, 1, NULL, 1, 0, 1, '2022-12-02 17:39:14', '2022-12-02 17:39:14'),
+(387, 3, 0, 'Swift Error: Expected response code 220 but got an empty response', 'SwiftMessage', 0, 1, NULL, 1, 0, 1, '2022-12-02 17:39:14', '2022-12-02 17:39:14'),
+(388, 1, 0, 'import Kombinacje (od 0 do 5)', 'Kombinacje', 0, 1, NULL, 1, 0, 1, '2022-12-02 17:43:49', '2022-12-02 17:43:49'),
+(389, 3, 0, 'Swift Error: Expected response code 220 but got an empty response', 'SwiftMessage', 0, 1, NULL, 1, 0, 1, '2022-12-02 17:43:52', '2022-12-02 17:43:52'),
+(390, 1, 0, 'import Kombinacje (od 0 do 5)', 'Kombinacje', 0, 1, NULL, 1, 0, 1, '2022-12-02 17:43:52', '2022-12-02 17:43:52'),
+(391, 3, 0, 'Swift Error: Expected response code 220 but got an empty response', 'SwiftMessage', 0, 1, NULL, 1, 0, 1, '2022-12-02 17:43:52', '2022-12-02 17:43:52'),
+(392, 1, 0, 'Połączenie z panelem administracyjnym z 172.28.0.1', '', 0, NULL, NULL, 1, 1, 1, '2022-12-08 15:38:46', '2022-12-08 15:38:46');
 
 -- --------------------------------------------------------
 
@@ -7760,7 +8276,7 @@ INSERT INTO `ad_module` (`id_module`, `name`, `active`, `version`) VALUES
 (20, 'ps_socialfollow', 1, '2.2.0'),
 (21, 'ps_customeraccountlinks', 1, '3.1.1'),
 (22, 'productcomments', 1, '5.0.2'),
-(23, 'ps_categorytree', 1, '2.0.2'),
+(23, 'ps_categorytree', 1, '2.0.3'),
 (25, 'ps_sharebuttons', 1, '2.1.1'),
 (26, 'statspersonalinfos', 1, '2.0.4'),
 (27, 'ps_distributionapiclient', 1, '1.0.2'),
@@ -8379,6 +8895,22 @@ CREATE TABLE `ad_module_history` (
   `date_add` datetime NOT NULL,
   `date_upd` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Zrzut danych tabeli `ad_module_history`
+--
+
+INSERT INTO `ad_module_history` (`id`, `id_employee`, `id_module`, `date_add`, `date_upd`) VALUES
+(1, 1, 39, '2022-12-01 08:41:20', '2022-12-01 08:41:20'),
+(2, 1, 20, '2022-12-01 08:42:33', '2022-12-01 08:42:33'),
+(3, 1, 44, '2022-12-01 08:44:12', '2022-12-01 08:44:12'),
+(4, 1, 2, '2022-12-01 08:44:52', '2022-12-01 08:44:52'),
+(5, 1, 1, '2022-12-01 08:45:28', '2022-12-01 08:45:28'),
+(6, 1, 37, '2022-12-01 08:54:36', '2022-12-01 08:54:36'),
+(7, 1, 29, '2022-12-01 09:03:02', '2022-12-01 09:03:02'),
+(8, 1, 58, '2022-12-01 09:05:12', '2022-12-01 09:05:12'),
+(9, 1, 12, '2022-12-01 19:19:47', '2022-12-01 19:19:47'),
+(10, 1, 14, '2022-12-01 22:06:17', '2022-12-01 22:06:17');
 
 -- --------------------------------------------------------
 
@@ -9047,7 +9579,6 @@ CREATE TABLE `ad_pack` (
 --
 
 INSERT INTO `ad_pack` (`id_product_pack`, `id_product_item`, `id_product_attribute_item`, `quantity`) VALUES
-(15, 5, 19, 5),
 (15, 7, 0, 5);
 
 -- --------------------------------------------------------
@@ -9067,7 +9598,8 @@ CREATE TABLE `ad_page` (
 --
 
 INSERT INTO `ad_page` (`id_page`, `id_page_type`, `id_object`) VALUES
-(1, 1, NULL);
+(1, 1, NULL),
+(2, 2, NULL);
 
 -- --------------------------------------------------------
 
@@ -9083,6 +9615,452 @@ CREATE TABLE `ad_pagenotfound` (
   `http_referer` varchar(256) NOT NULL,
   `date_add` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+
+--
+-- Zrzut danych tabeli `ad_pagenotfound`
+--
+
+INSERT INTO `ad_pagenotfound` (`id_pagenotfound`, `id_shop`, `id_shop_group`, `request_uri`, `http_referer`, `date_add`) VALUES
+(1, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/categories?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 17:23:44'),
+(2, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/categories/3/edit?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 17:23:54'),
+(3, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/categories/2?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 17:24:20'),
+(4, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/categories/6/edit?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 17:24:24'),
+(5, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/categories/2?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 17:24:38'),
+(6, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/categories/3?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 17:24:42'),
+(7, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/categories/4/edit?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 17:24:45'),
+(8, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/categories/3?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 17:26:01'),
+(9, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/categories/5/edit?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 17:26:04'),
+(10, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/categories/3?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 17:26:51'),
+(11, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/categories/2?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 17:30:25'),
+(12, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/categories/6?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 17:30:38'),
+(13, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/categories/7/edit?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 17:30:40'),
+(14, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/categories/6?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 17:31:38'),
+(15, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/categories/8/edit?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 17:31:40'),
+(16, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/categories/6?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 17:33:41'),
+(17, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/categories/2?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 17:33:44'),
+(18, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/categories/3?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 17:33:47'),
+(19, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/categories/5/edit?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 17:33:51'),
+(20, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/categories/3?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 17:34:23'),
+(21, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/categories/2?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 17:34:28'),
+(22, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/brands/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 17:46:22'),
+(23, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/monitoring/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 17:46:41'),
+(24, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/categories?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 17:46:44'),
+(25, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/categories/3?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 17:46:47'),
+(26, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/categories/4?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 17:46:49'),
+(27, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/categories/3?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 17:46:51'),
+(28, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/categories/4/edit?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 17:46:55'),
+(29, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/categories/3?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 17:47:12'),
+(30, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/improve/design/cms-pages/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 17:47:22'),
+(31, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/improve/design/cms-pages/1/edit?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 17:47:28'),
+(32, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/improve/design/cms-pages/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 17:47:50'),
+(33, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/improve/design/cms-pages/2/edit?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 17:47:53'),
+(34, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/improve/design/cms-pages/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 17:48:28'),
+(35, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/improve/design/cms-pages/3/edit?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 17:48:40'),
+(36, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/improve/design/cms-pages/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 17:49:03'),
+(37, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/improve/design/cms-pages/4/edit?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 17:49:05'),
+(38, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/improve/design/cms-pages/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 17:49:18'),
+(39, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/improve/design/cms-pages/5/edit?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 17:49:20'),
+(40, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/improve/design/cms-pages/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 17:49:36'),
+(41, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/configure/shop/product-preferences/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 17:49:55'),
+(42, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/categories?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 17:50:11'),
+(43, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/products?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 17:50:36'),
+(44, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/products/19?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 17:50:44'),
+(45, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/products?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 17:56:25'),
+(46, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/products/20?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 17:56:31'),
+(47, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/products/21?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 18:00:41'),
+(48, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/products?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 18:00:48'),
+(49, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/products?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 18:00:51'),
+(50, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/products/19?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 18:00:57'),
+(51, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/brands/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 18:03:39'),
+(52, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/products?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 18:03:42'),
+(53, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/products/0/20/id_product/desc?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 18:04:10'),
+(54, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/products/1?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 18:04:16'),
+(55, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/products?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 18:04:56'),
+(56, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/products/20?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 18:05:01'),
+(57, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/products?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 18:10:00'),
+(58, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/products/0/20/id_product/desc?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 18:10:04'),
+(59, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/products/0/20/id_product/desc?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 18:10:07'),
+(60, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/attachments/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 18:11:33'),
+(61, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/attachments/new?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 18:11:36'),
+(62, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/attachments/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 18:11:58'),
+(63, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/products?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 18:12:06'),
+(64, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/products/19?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 18:12:09'),
+(65, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/products?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 18:13:08'),
+(66, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/configure/advanced/import/?import_type=products&_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 18:14:37'),
+(67, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/configure/advanced/import/?token=96de4d205ccf20461b7e4ffa2111b2a9&_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 18:18:41'),
+(68, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/products?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 18:18:50'),
+(69, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/products/20/20?controller_type=2&controller_name=PrestaShopBundle%5CController%5CAdmin%5CProductController&_route=0&_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 18:18:56'),
+(70, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/products/0/20?controller_type=2&controller_name=PrestaShopBundle%5CController%5CAdmin%5CProductController&_route=0&_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 18:19:02'),
+(71, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/products/22?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 18:19:05'),
+(72, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/products/0/20?controller_type=2&controller_name=PrestaShopBundle%5CController%5CAdmin%5CProductController&_route=0&_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 18:19:10'),
+(73, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/products/0/20/id_product/desc?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 18:19:55'),
+(74, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/products/0/20/id_product/desc?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 18:20:09'),
+(75, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/configure/advanced/import/?import_type=products&_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 18:20:45'),
+(76, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/configure/advanced/import/?import_type=products&_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 18:21:50'),
+(77, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/configure/advanced/import/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 18:22:12'),
+(78, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/configure/advanced/import/?token=96de4d205ccf20461b7e4ffa2111b2a9&_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 18:24:10'),
+(79, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/products?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 18:24:19'),
+(80, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/products/20?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 18:27:39'),
+(81, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/products?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 18:27:42'),
+(82, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/products/20/20?controller_type=2&controller_name=PrestaShopBundle%5CController%5CAdmin%5CProductController&_route=0&_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 18:27:45'),
+(83, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/products/0/20?controller_type=2&controller_name=PrestaShopBundle%5CController%5CAdmin%5CProductController&_route=0&_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 18:27:50'),
+(84, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/products/0/20/id_product/desc?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 18:28:19'),
+(85, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/products/61?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 18:30:17'),
+(86, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/products/0/20/id_product/desc?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 18:30:20'),
+(87, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/configure/advanced/import/?import_type=products&_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 18:30:35'),
+(88, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/configure/advanced/import/?import_type=products&_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 18:31:15'),
+(89, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/configure/advanced/import/?import_type=products&_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 18:31:28'),
+(90, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/configure/advanced/import/?import_type=products&_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 18:31:30'),
+(91, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/configure/advanced/import/?import_type=products&_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 18:31:37'),
+(92, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/products?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 18:31:43'),
+(93, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/configure/advanced/import/?import_type=products&_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 18:31:45'),
+(94, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/configure/advanced/import/?import_type=products&_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 18:32:23'),
+(95, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/configure/advanced/import/?import_type=products&_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 18:32:35'),
+(96, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/configure/advanced/import/?import_type=products&_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 18:33:14'),
+(97, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/configure/advanced/import/?import_type=products&_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 18:33:26'),
+(98, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/configure/advanced/import/?token=96de4d205ccf20461b7e4ffa2111b2a9&_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 18:35:18'),
+(99, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/products?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 18:35:22'),
+(100, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/products/62?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 18:35:34'),
+(101, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/products?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 18:35:36'),
+(102, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/products?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 18:35:48'),
+(103, 1, 1, '/favicon.ico', 'http://localhost/25-large_default/ozweego-shoes.jpg', '2022-11-29 18:36:07'),
+(104, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/configure/advanced/import/?import_type=products&_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 18:38:46'),
+(105, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/configure/advanced/import/?import_type=products&_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 18:40:38'),
+(106, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/configure/advanced/import/?token=96de4d205ccf20461b7e4ffa2111b2a9&_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 18:41:56'),
+(107, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/configure/advanced/import/?token=96de4d205ccf20461b7e4ffa2111b2a9&_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 18:43:11'),
+(108, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/products?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 18:43:14'),
+(109, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/products?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 18:43:23'),
+(110, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/products/64?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 18:43:28'),
+(111, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/products?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 18:43:38'),
+(112, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/products/20?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 18:44:00'),
+(113, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/products?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 18:44:09'),
+(114, 1, 1, '/20', '', '2022-11-29 18:45:09'),
+(115, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/products/64?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 18:45:35'),
+(116, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/categories?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 18:45:47'),
+(117, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/categories/3?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 18:45:56'),
+(118, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/categories/4/edit?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 18:45:59'),
+(119, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/categories/3?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 18:46:24'),
+(120, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/categories/4/edit?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 18:49:44'),
+(121, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/categories/3?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 18:50:21'),
+(122, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/categories/5/edit?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 18:50:55'),
+(123, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/categories/3?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 18:51:18'),
+(124, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/categories/2?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 18:51:21'),
+(125, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/categories/6?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 18:51:25'),
+(126, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/categories/7/edit?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 18:51:27'),
+(127, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/categories/6?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 18:51:46'),
+(128, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/categories/8/edit?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 18:51:48'),
+(129, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/categories/6?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 18:52:10'),
+(130, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/monitoring/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 19:04:01'),
+(131, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/products?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 19:04:14'),
+(132, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/configure/advanced/sql-requests/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 19:04:27'),
+(133, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/configure/advanced/emails/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 19:04:35'),
+(134, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/configure/advanced/system-information/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 19:05:00'),
+(135, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/improve/design/cms-pages/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 19:22:31'),
+(136, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/configure/shop/preferences/preferences?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 19:22:39'),
+(137, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/configure/shop/preferences/preferences?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 19:22:50'),
+(138, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/improve/design/themes/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 19:23:14'),
+(139, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/improve/design/themes/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 19:24:58'),
+(140, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/improve/design/themes/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 19:31:16'),
+(141, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/improve/design/themes/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 19:31:27'),
+(142, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/improve/design/themes/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 19:31:40'),
+(143, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/improve/design/themes/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 19:31:43'),
+(144, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/improve/design/themes/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 19:31:53'),
+(145, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/improve/design/themes/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 19:33:00'),
+(146, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/improve/design/themes/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 19:33:05'),
+(147, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/improve/design/themes/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-29 19:33:19'),
+(148, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/products?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-30 15:39:04'),
+(149, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/products/20?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-30 15:39:11'),
+(150, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/products?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-30 15:39:13'),
+(151, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/products/20?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-30 15:39:15'),
+(152, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/products?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-30 15:39:18'),
+(153, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/products/19?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-30 15:39:20'),
+(154, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/products?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-30 15:39:29'),
+(155, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/improve/payment/preferences?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-30 15:39:49'),
+(156, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/brands/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-30 15:40:05'),
+(157, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/configure/shop/preferences/preferences?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-30 15:40:14'),
+(158, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/configure/shop/product-preferences/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-30 15:40:20'),
+(159, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/products?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-30 15:40:34'),
+(160, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/products/64?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-30 15:40:36'),
+(161, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/products?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-30 15:41:10'),
+(162, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/configure/advanced/import/?import_type=products&_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-30 15:41:35'),
+(163, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/products?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-30 15:44:06'),
+(164, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/products/64?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-30 15:44:10'),
+(165, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/improve/international/taxes/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-30 15:44:15'),
+(166, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/products?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-30 15:44:36'),
+(167, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/configure/advanced/import/?import_type=products&_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-30 15:44:41'),
+(168, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/configure/advanced/import/?token=96de4d205ccf20461b7e4ffa2111b2a9&_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-30 15:46:04'),
+(169, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/products?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-30 15:46:22'),
+(170, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/configure/advanced/import/?import_type=products&_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-30 15:55:18'),
+(171, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/configure/advanced/import/?import_type=products&_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-30 15:57:26'),
+(172, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/configure/advanced/import/?token=96de4d205ccf20461b7e4ffa2111b2a9&_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-30 16:01:23'),
+(173, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/products?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-30 16:01:28'),
+(174, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/products/66?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-30 16:01:31'),
+(175, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/products?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-30 16:02:21'),
+(176, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/products/66?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-30 16:02:24'),
+(177, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/products?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-30 16:03:30'),
+(178, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/products/66?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-30 16:03:33'),
+(179, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/products?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-30 16:03:44'),
+(180, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/configure/advanced/sql-requests/new?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-30 16:03:51'),
+(181, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/products?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-30 16:03:56'),
+(182, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/products/66?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-30 16:04:00'),
+(183, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/products?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-30 16:04:03'),
+(184, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/configure/advanced/import/?import_type=products&_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-30 16:04:05'),
+(185, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/products?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-30 16:05:41'),
+(186, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/products/66?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-30 16:05:42'),
+(187, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/products?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-30 16:07:19');
+INSERT INTO `ad_pagenotfound` (`id_pagenotfound`, `id_shop`, `id_shop_group`, `request_uri`, `http_referer`, `date_add`) VALUES
+(188, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/products/66?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-30 16:07:32'),
+(189, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/products?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-30 16:09:18'),
+(190, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/products?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-30 16:28:25'),
+(191, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/configure/advanced/import/?import_type=products&_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-30 16:28:29'),
+(192, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/categories?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-30 16:34:37'),
+(193, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/categories/3?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-30 16:34:53'),
+(194, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/categories?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-30 16:34:58'),
+(195, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/categories/3/edit?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-30 16:35:15'),
+(196, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/categories/2?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-30 16:35:34'),
+(197, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/categories/6/edit?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-30 16:36:26'),
+(198, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/categories/2?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-30 16:36:39'),
+(199, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/categories/9/edit?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-30 16:36:42'),
+(200, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/categories/2?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-30 16:36:53'),
+(201, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/categories/2?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-30 16:37:04'),
+(202, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/categories/3?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-30 16:37:08'),
+(203, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/categories/4/edit?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-30 16:41:20'),
+(204, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/categories/3?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-30 16:41:40'),
+(205, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/categories/5/edit?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-30 16:41:43'),
+(206, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/categories/3?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-30 16:41:57'),
+(207, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/categories/new?id_parent=3&_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-30 16:42:00'),
+(208, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/categories/3?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-30 16:42:14'),
+(209, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/categories/2?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-30 16:42:20'),
+(210, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/categories/6?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-30 16:42:24'),
+(211, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/categories/7/edit?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-30 16:42:32'),
+(212, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/categories/6?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-30 16:45:52'),
+(213, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/categories/8/edit?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-30 16:45:55'),
+(214, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/categories/6?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-30 16:46:09'),
+(215, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/categories/new?id_parent=6&_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-30 16:46:12'),
+(216, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/categories/6?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-30 16:46:34'),
+(217, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/categories/2?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-30 16:46:37'),
+(218, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/categories/9?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-30 16:46:40'),
+(219, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/categories/new?id_parent=9&_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-30 16:46:43'),
+(220, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/categories/9?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-30 16:46:51'),
+(221, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/categories/new?id_parent=9&_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-30 16:46:53'),
+(222, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/categories/9?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-30 16:47:04'),
+(223, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/categories/new?id_parent=9&_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-30 16:47:10'),
+(224, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/categories/9?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-30 16:47:15'),
+(225, 1, 1, '/favicon.ico', 'http://localhost/buty/65-test.html', '2022-11-30 16:47:22'),
+(226, 1, 1, '/dupa', '', '2022-11-30 17:01:42'),
+(227, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/products?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-30 17:09:08'),
+(228, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/configure/advanced/import/?import_type=products&_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-30 17:09:11'),
+(229, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/configure/advanced/import/?import_type=combinations&_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-30 17:09:26'),
+(230, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/configure/advanced/performance/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-30 17:13:01'),
+(231, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/orders/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-30 17:16:01'),
+(232, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/orders/invoices/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-30 17:16:06'),
+(233, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/customers/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-30 17:16:19'),
+(234, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/improve/design/cms-pages/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-30 17:16:48'),
+(235, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/improve/design/cms-pages/1/edit?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-30 17:16:53'),
+(236, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/improve/design/cms-pages/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-30 17:18:08'),
+(237, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/improve/design/mail_theme/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-30 17:18:17'),
+(238, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/improve/design/mail_theme/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-30 17:18:33'),
+(239, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/improve/design/themes/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-30 17:18:36'),
+(240, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/improve/design/themes/customize-layouts?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-30 17:18:40'),
+(241, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/categories?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-30 17:18:48'),
+(242, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/improve/design/cms-pages/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-30 17:18:52'),
+(243, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/brands/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-30 17:18:56'),
+(244, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/improve/modules/manage?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-30 17:32:05'),
+(245, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/improve/modules/alerts?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-30 17:32:09'),
+(246, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/improve/modules/updates?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-30 17:32:10'),
+(247, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/configure/shop/maintenance/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-30 17:32:13'),
+(248, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/configure/shop/maintenance/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-30 17:32:43'),
+(249, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/configure/shop/maintenance/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-11-30 18:16:23'),
+(250, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/improve/modules/manage?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 07:32:13'),
+(251, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/improve/modules/alerts?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 07:32:20'),
+(252, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/improve/design/cms-pages/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 07:32:35'),
+(253, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/configure/shop/preferences/preferences?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 07:33:07'),
+(254, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/improve/design/themes/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 07:33:16'),
+(255, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/improve/design/themes/customize-layouts?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 07:33:21'),
+(256, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/improve/design/modules/positions/?token=9bbb8870a0dcbcb7e71efb1a5cc7b3ca&show_modules=13&_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 07:33:56'),
+(257, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/improve/design/themes/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 07:34:04'),
+(258, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/modules/link-widget/list?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 07:38:47'),
+(259, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/modules/link-widget/edit/1?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 07:38:56'),
+(260, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/modules/link-widget/list?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 07:39:14'),
+(261, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/modules/link-widget/edit/2?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 07:39:18'),
+(262, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/configure/shop/contacts/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 07:40:05'),
+(263, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/configure/shop/contacts/1/edit?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 07:40:08'),
+(264, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/configure/shop/contacts/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 07:40:12'),
+(265, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/improve/design/cms-pages/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 07:40:34'),
+(266, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/improve/modules/manage?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 07:40:47'),
+(267, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/improve/modules/manage?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 07:41:32'),
+(268, 1, 1, '/themes/core.js.map', '', '2022-12-01 07:43:25'),
+(269, 1, 1, '/modules/blockreassurance/views/dist/front.css.map', '', '2022-12-01 07:43:25'),
+(270, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/modules/link-widget/list?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 07:45:29'),
+(271, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/improve/modules/manage?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0&find=statssales', '2022-12-01 07:45:50'),
+(272, 1, 1, '/modules/blockreassurance/views/dist/front.css.map', '', '2022-12-01 07:46:38'),
+(273, 1, 1, '/themes/core.js.map', '', '2022-12-01 07:46:38'),
+(274, 1, 1, '/modules/blockreassurance/views/dist/front.js.map', '', '2022-12-01 07:46:38'),
+(275, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/improve/design/cms-pages/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 07:47:32'),
+(276, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/improve/shipping/preferences/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 07:48:06'),
+(277, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/improve/shipping/preferences/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 07:48:27'),
+(278, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/improve/international/localization/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 07:48:35'),
+(279, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/improve/international/localization/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 07:48:53'),
+(280, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/improve/international/taxes/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 07:49:08'),
+(281, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/improve/international/zones/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 07:49:12'),
+(282, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/configure/shop/preferences/preferences?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 07:49:26'),
+(283, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/configure/shop/order-preferences/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 07:49:30'),
+(284, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/configure/shop/customer-preferences/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 07:50:03'),
+(285, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/configure/shop/customer-preferences/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 07:50:27'),
+(286, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/configure/shop/contacts/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 07:50:31'),
+(287, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/configure/shop/seo-urls/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 07:50:35'),
+(288, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/configure/shop/seo-urls/1/edit?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 07:50:47'),
+(289, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/configure/shop/seo-urls/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 07:50:54'),
+(290, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/configure/shop/seo-urls/24/edit?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 07:51:04'),
+(291, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/configure/shop/search-engines/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 07:51:10'),
+(292, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/configure/shop/seo-urls/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 07:51:16'),
+(293, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/configure/shop/seo-urls/19/edit?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 07:51:29'),
+(294, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/configure/shop/seo-urls/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 07:51:38'),
+(295, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/configure/shop/seo-urls/24/edit?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 07:51:42'),
+(296, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/configure/advanced/logs/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 07:52:19'),
+(297, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/configure/advanced/security/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 07:52:34'),
+(298, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/configure/advanced/security/session/employee?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 07:52:47'),
+(299, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/configure/advanced/security/session/customer?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 07:52:50'),
+(300, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/configure/advanced/security/session/employee?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 07:52:58'),
+(301, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/configure/advanced/security/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 07:53:00'),
+(302, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/configure/advanced/logs/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 07:53:05'),
+(303, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/improve/design/cms-pages/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 07:53:16'),
+(304, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/improve/modules/manage?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 07:54:28'),
+(305, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/improve/modules/alerts?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 07:54:31'),
+(306, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/improve/modules/manage?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 08:02:56'),
+(307, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/improve/modules/alerts?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 08:02:59'),
+(308, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/improve/modules/manage?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 08:04:58'),
+(309, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/improve/modules/manage?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 08:05:04'),
+(310, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/improve/modules/manage?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 08:05:30'),
+(311, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/improve/design/themes/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 18:15:45'),
+(312, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/attachments/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 18:18:52'),
+(313, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/attachments/new?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 18:18:56'),
+(314, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/attachments/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 18:19:07'),
+(315, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/improve/modules/manage?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 18:19:12'),
+(316, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/improve/design/themes/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 18:22:23'),
+(317, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/configure/shop/preferences/preferences?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 20:23:10'),
+(318, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/configure/shop/preferences/preferences?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 20:23:24'),
+(319, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/improve/design/themes/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 20:54:18'),
+(320, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/improve/design/cms-pages/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 20:54:21'),
+(321, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/improve/design/modules/positions/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 20:54:23'),
+(322, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/improve/design/cms-pages/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 20:54:28'),
+(323, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/improve/design/cms-pages/2/edit?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 20:54:33'),
+(324, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/improve/design/cms-pages/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 20:56:36'),
+(325, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/improve/design/cms-pages/2/edit?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 20:57:01'),
+(326, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/improve/design/cms-pages/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 20:57:54'),
+(327, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/improve/design/cms-pages/2/edit?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 20:58:05'),
+(328, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/improve/design/cms-pages/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 20:58:23'),
+(329, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/improve/design/cms-pages/2/edit?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 20:58:42'),
+(330, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/improve/design/cms-pages/2/edit?open_preview=1&_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 20:58:58'),
+(331, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/improve/design/cms-pages/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 20:59:08'),
+(332, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/improve/design/cms-pages/3/edit?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 20:59:30'),
+(333, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/improve/design/cms-pages/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 21:02:37'),
+(334, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/improve/design/cms-pages/3/edit?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 21:03:06'),
+(335, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/improve/design/cms-pages/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 21:03:20'),
+(336, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/improve/design/cms-pages/2/edit?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 21:03:22'),
+(337, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/improve/design/cms-pages/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 21:03:34'),
+(338, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/improve/design/cms-pages/2/edit?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 21:03:50'),
+(339, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/improve/design/cms-pages/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 21:04:13'),
+(340, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/improve/modules/manage?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 21:05:57'),
+(341, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/improve/design/cms-pages/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 21:08:14'),
+(342, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/improve/design/themes/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 21:08:16'),
+(343, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/configure/shop/customer-preferences/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 21:09:15'),
+(344, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/configure/shop/contacts/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 21:09:27'),
+(345, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/configure/shop/seo-urls/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 21:09:31'),
+(346, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/configure/shop/seo-urls/24/edit?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 21:09:51'),
+(347, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/configure/shop/search-engines/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 21:10:27'),
+(348, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/configure/shop/seo-urls/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 21:10:31'),
+(349, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/configure/shop/seo-urls/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 21:10:59'),
+(350, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/improve/modules/manage?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 21:12:08'),
+(351, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/improve/modules/manage?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0&find=statsbestvouchers', '2022-12-01 21:12:50'),
+(352, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/improve/modules/manage?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0&find=statsbestvouchers', '2022-12-01 21:13:01'),
+(353, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/improve/modules/manage?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 21:13:04'),
+(354, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/configure/shop/seo-urls/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 21:13:06'),
+(355, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/configure/shop/customer-preferences/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 21:13:14'),
+(356, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/configure/shop/product-preferences/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 21:13:19'),
+(357, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/configure/shop/order-preferences/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 21:13:22'),
+(358, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/configure/shop/preferences/preferences?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 21:13:28'),
+(359, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/configure/shop/preferences/preferences?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 21:13:33'),
+(360, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/improve/international/localization/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 21:13:48'),
+(361, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/improve/payment/payment_methods?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 21:14:18'),
+(362, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/improve/payment/preferences?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 21:14:21'),
+(363, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/customer-service/order-messages/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 21:14:39'),
+(364, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/customers/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 21:14:47'),
+(365, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/addresses/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 21:14:50'),
+(366, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/stocks/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 21:15:19'),
+(367, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/attachments/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 21:15:20'),
+(368, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/stocks/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 21:15:22'),
+(369, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/brands/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 21:15:32'),
+(370, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/monitoring/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 21:15:38'),
+(371, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/categories?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 21:16:05'),
+(372, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/products?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 21:16:08'),
+(373, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/configure/advanced/security/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 21:16:17'),
+(374, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/configure/advanced/webservice-keys/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 21:16:24'),
+(375, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/configure/advanced/logs/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 21:16:28'),
+(376, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/configure/advanced/sql-requests/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 21:16:32'),
+(377, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/configure/advanced/employees/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 21:16:35'),
+(378, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/configure/advanced/import/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 21:16:39'),
+(379, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/configure/advanced/emails/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 21:16:43'),
+(380, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/improve/international/localization/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 21:17:15');
+INSERT INTO `ad_pagenotfound` (`id_pagenotfound`, `id_shop`, `id_shop_group`, `request_uri`, `http_referer`, `date_add`) VALUES
+(381, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/configure/advanced/administration/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 21:17:21'),
+(382, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/configure/advanced/performance/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 21:17:31'),
+(383, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/configure/advanced/system-information/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 21:17:36'),
+(384, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/configure/shop/customer-preferences/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 21:17:37'),
+(385, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/configure/shop/product-preferences/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 21:17:45'),
+(386, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/improve/international/localization/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 21:18:00'),
+(387, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/improve/international/zones/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 21:18:01'),
+(388, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/improve/international/taxes/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 21:18:03'),
+(389, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/improve/international/translations/settings?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 21:18:06'),
+(390, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/improve/payment/payment_methods?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 21:18:16'),
+(391, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/improve/payment/preferences?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 21:18:18'),
+(392, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/improve/shipping/preferences/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 21:18:24'),
+(393, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/modules/link-widget/list?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 21:18:30'),
+(394, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/improve/design/modules/positions/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 21:18:37'),
+(395, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/improve/design/cms-pages/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 21:18:40'),
+(396, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/improve/design/mail_theme/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 21:18:42'),
+(397, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/improve/design/themes/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 21:18:48'),
+(398, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/improve/modules/manage?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 21:19:25'),
+(399, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/customers/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 21:20:41'),
+(400, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/customers/2/edit?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 21:20:51'),
+(401, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/monitoring/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 21:21:03'),
+(402, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/addresses/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-01 21:21:09'),
+(403, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/products?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-02 16:17:20'),
+(404, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/categories?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-02 16:17:26'),
+(405, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/monitoring/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-02 16:17:33'),
+(406, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/products?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-02 16:17:45'),
+(407, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/products/19?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-02 16:18:21'),
+(408, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/products?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-02 16:18:22'),
+(409, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/products/20/20?controller_type=2&controller_name=PrestaShopBundle%5CController%5CAdmin%5CProductController&_route=0&_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-02 16:18:27'),
+(410, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/products/1?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-02 16:18:29'),
+(411, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/products?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-02 16:20:48'),
+(412, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/configure/advanced/import/?import_type=products&_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-02 16:20:51'),
+(413, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/configure/advanced/import/?import_type=products&_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-02 16:20:59'),
+(414, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/products?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-02 16:33:32'),
+(415, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/products/20/20?controller_type=2&controller_name=PrestaShopBundle%5CController%5CAdmin%5CProductController&_route=0&_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-02 16:33:36'),
+(416, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/products/1?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-02 16:33:40'),
+(417, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/products?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-02 16:36:19'),
+(418, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/configure/advanced/import/?import_type=products&_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-02 16:36:31'),
+(419, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/configure/advanced/import/?import_type=products&_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-02 16:38:12'),
+(420, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/configure/advanced/import/?import_type=products&_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-02 16:38:40'),
+(421, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/configure/advanced/import/?token=96de4d205ccf20461b7e4ffa2111b2a9&_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-02 16:39:20'),
+(422, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/products?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-02 16:39:32'),
+(423, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/products/20/20?controller_type=2&controller_name=PrestaShopBundle%5CController%5CAdmin%5CProductController&_route=0&_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-02 16:39:36'),
+(424, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/products/1?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-02 16:39:37'),
+(425, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/monitoring/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-02 16:41:33'),
+(426, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/categories?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-02 16:41:36'),
+(427, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/products?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-02 16:42:36'),
+(428, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/products/20/20?controller_type=2&controller_name=PrestaShopBundle%5CController%5CAdmin%5CProductController&_route=0&_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-02 16:42:39'),
+(429, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/products/1?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-02 16:42:41'),
+(430, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/products?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-02 16:43:14'),
+(431, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/configure/advanced/import/?import_type=products&_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-02 16:43:17'),
+(432, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/configure/advanced/import/?token=96de4d205ccf20461b7e4ffa2111b2a9&_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-02 16:43:55'),
+(433, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/products?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-02 16:43:58'),
+(434, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/products/20/20?controller_type=2&controller_name=PrestaShopBundle%5CController%5CAdmin%5CProductController&_route=0&_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-02 16:44:03'),
+(435, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/products/1?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-02 16:44:04'),
+(436, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/categories?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-02 16:46:10'),
+(437, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/sell/catalog/monitoring/?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-02 16:46:14'),
+(438, 1, 1, '/kupriano/themes/new-theme/public/index.php?controller=AdminDashboard&token=c9ec85b97c6fece83113d2be8d9a3fc7', 'http://localhost/kupriano/index.php/improve/modules/manage?_token=9QHH7DZj53cWNBjeAzne9LaEBIDg19j-T_IhgoS2pX0', '2022-12-08 14:38:55');
 
 -- --------------------------------------------------------
 
@@ -9100,7 +10078,8 @@ CREATE TABLE `ad_page_type` (
 --
 
 INSERT INTO `ad_page_type` (`id_page_type`, `name`) VALUES
-(1, 'index');
+(1, 'index'),
+(2, 'pagenotfound');
 
 -- --------------------------------------------------------
 
@@ -9186,11 +10165,11 @@ CREATE TABLE `ad_product` (
 --
 
 INSERT INTO `ad_product` (`id_product`, `id_supplier`, `id_manufacturer`, `id_category_default`, `id_shop_default`, `id_tax_rules_group`, `on_sale`, `online_only`, `ean13`, `isbn`, `upc`, `mpn`, `ecotax`, `quantity`, `minimal_quantity`, `low_stock_threshold`, `low_stock_alert`, `price`, `wholesale_price`, `unity`, `unit_price`, `unit_price_ratio`, `additional_shipping_cost`, `reference`, `supplier_reference`, `location`, `width`, `height`, `depth`, `weight`, `out_of_stock`, `additional_delivery_times`, `quantity_discount`, `customizable`, `uploadable_files`, `text_fields`, `active`, `redirect_type`, `id_type_redirected`, `available_for_order`, `available_date`, `show_condition`, `condition`, `show_price`, `indexed`, `visibility`, `cache_is_pack`, `cache_has_attachments`, `is_virtual`, `cache_default_attribute`, `date_add`, `date_upd`, `advanced_stock_management`, `pack_stock_type`, `state`, `product_type`) VALUES
-(1, 1, 1, 4, 1, 1, 0, 0, '', '', '', '', '0.000000', 0, 1, NULL, 0, '23.900000', '5.490000', '', '0.000000', '0.000000', '0.000000', 'demo_1', '', '', '0.000000', '0.000000', '0.000000', '0.300000', 2, 1, 0, 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 1, '2022-11-27 17:28:23', '2022-11-27 17:28:23', 0, 3, 1, 'combinations'),
+(1, 1, 1, 4, 1, 1, 0, 0, '', '', '', '', '0.000000', 0, 1, NULL, 0, '23.900000', '5.490000', '', '0.000000', '0.000000', '0.000000', 'demo_1', '', '', '0.000000', '0.000000', '0.000000', '0.300000', 2, 1, 0, 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 1, '2022-11-27 17:28:23', '2022-12-02 17:43:52', 0, 3, 1, 'combinations'),
 (2, 1, 1, 5, 1, 1, 0, 0, '', '', '', '', '0.000000', 0, 1, NULL, 0, '35.900000', '5.490000', '', '0.000000', '0.000000', '0.000000', 'demo_3', '', '', '0.000000', '0.000000', '0.000000', '0.300000', 2, 1, 0, 0, 0, 0, 1, '404', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 9, '2022-11-27 17:28:23', '2022-11-27 17:28:23', 0, 3, 1, 'combinations'),
-(3, 1, 2, 9, 1, 1, 0, 0, '', '', '', '', '0.000000', 0, 1, NULL, 0, '29.000000', '5.490000', '', '0.000000', '0.000000', '0.000000', 'demo_6', '', '', '0.000000', '0.000000', '0.000000', '0.300000', 2, 1, 0, 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 13, '2022-11-27 17:28:23', '2022-11-27 17:28:23', 0, 3, 1, 'combinations'),
-(4, 1, 2, 9, 1, 1, 0, 0, '', '', '', '', '0.000000', 0, 1, NULL, 0, '29.000000', '5.490000', '', '0.000000', '0.000000', '0.000000', 'demo_5', '', '', '0.000000', '0.000000', '0.000000', '0.300000', 2, 1, 0, 0, 0, 0, 1, '404', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 16, '2022-11-27 17:28:23', '2022-11-27 17:28:23', 0, 3, 1, 'combinations'),
-(5, 1, 2, 9, 1, 1, 0, 0, '', '', '', '', '0.000000', 0, 1, NULL, 0, '29.000000', '5.490000', '', '0.000000', '0.000000', '0.000000', 'demo_7', '', '', '0.000000', '0.000000', '0.000000', '0.300000', 2, 1, 0, 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 19, '2022-11-27 17:28:23', '2022-11-27 17:28:23', 0, 3, 1, 'combinations'),
+(3, 1, 2, 9, 1, 1, 0, 0, '', '', '', '', '0.000000', 0, 1, NULL, 0, '29.000000', '5.490000', '', '0.000000', '0.000000', '0.000000', 'demo_6', '', '', '0.000000', '0.000000', '0.000000', '0.300000', 2, 1, 0, 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2022-11-27 17:28:23', '2022-11-27 17:28:23', 0, 3, 1, 'combinations'),
+(4, 1, 2, 9, 1, 1, 0, 0, '', '', '', '', '0.000000', 0, 1, NULL, 0, '29.000000', '5.490000', '', '0.000000', '0.000000', '0.000000', 'demo_5', '', '', '0.000000', '0.000000', '0.000000', '0.300000', 2, 1, 0, 0, 0, 0, 1, '404', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2022-11-27 17:28:23', '2022-11-27 17:28:23', 0, 3, 1, 'combinations'),
+(5, 1, 2, 9, 1, 1, 0, 0, '', '', '', '', '0.000000', 0, 1, NULL, 0, '29.000000', '5.490000', '', '0.000000', '0.000000', '0.000000', 'demo_7', '', '', '0.000000', '0.000000', '0.000000', '0.300000', 2, 1, 0, 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2022-11-27 17:28:23', '2022-11-27 17:28:23', 0, 3, 1, 'combinations'),
 (6, 2, 1, 8, 1, 1, 0, 0, '', '', '', '', '0.000000', 0, 1, NULL, 0, '11.900000', '5.490000', '', '0.000000', '0.000000', '0.000000', 'demo_11', '', '', '0.000000', '0.000000', '0.000000', '0.300000', 2, 1, 0, 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2022-11-27 17:28:23', '2022-11-27 17:28:23', 0, 3, 1, 'standard'),
 (7, 2, 1, 8, 1, 1, 0, 0, '', '', '', '', '0.000000', 0, 1, NULL, 0, '11.900000', '5.490000', '', '0.000000', '0.000000', '0.000000', 'demo_12', '', '', '0.000000', '0.000000', '0.000000', '0.300000', 2, 1, 0, 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2022-11-27 17:28:23', '2022-11-27 17:28:23', 0, 3, 1, 'standard'),
 (8, 2, 1, 8, 1, 1, 0, 0, '', '', '', '', '0.000000', 0, 1, NULL, 0, '11.900000', '5.490000', '', '0.000000', '0.000000', '0.000000', 'demo_13', '', '', '0.000000', '0.000000', '0.000000', '0.300000', 2, 1, 0, 0, 0, 0, 1, '404', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2022-11-27 17:28:23', '2022-11-27 17:28:23', 0, 3, 1, 'standard'),
@@ -9201,10 +10180,14 @@ INSERT INTO `ad_product` (`id_product`, `id_supplier`, `id_manufacturer`, `id_ca
 (13, 2, 2, 9, 1, 1, 0, 0, '', '', '', '', '0.000000', 0, 1, NULL, 0, '9.000000', '5.490000', '', '0.000000', '0.000000', '0.000000', 'demo_19', '', '', '0.000000', '0.000000', '0.000000', '0.300000', 2, 1, 0, 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 1, 0, '2022-11-27 17:28:23', '2022-11-27 17:28:23', 0, 3, 1, 'virtual'),
 (14, 2, 2, 9, 1, 1, 0, 0, '', '', '', '', '0.000000', 0, 1, NULL, 0, '9.000000', '5.490000', '', '0.000000', '0.000000', '0.000000', 'demo_20', '', '', '0.000000', '0.000000', '0.000000', '0.300000', 2, 1, 0, 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 1, 0, '2022-11-27 17:28:23', '2022-11-27 17:28:23', 0, 3, 1, 'virtual'),
 (15, 2, 0, 8, 1, 1, 0, 0, '', '', '', '', '0.000000', 0, 1, NULL, 0, '35.000000', '5.490000', '', '0.000000', '0.000000', '0.000000', 'demo_21', '', '', '0.000000', '0.000000', '0.000000', '0.300000', 2, 1, 0, 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 1, 0, 0, 0, '2022-11-27 17:28:23', '2022-11-27 17:28:23', 0, 3, 1, 'pack'),
-(16, 2, 2, 7, 1, 1, 0, 0, '', '', '', '', '0.000000', 0, 1, NULL, 0, '12.900000', '5.490000', '', '0.000000', '0.000000', '0.000000', 'demo_8', '', '', '0.000000', '0.000000', '0.000000', '0.300000', 2, 1, 0, 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 28, '2022-11-27 17:28:23', '2022-11-27 17:28:23', 0, 3, 1, 'combinations'),
-(17, 2, 2, 7, 1, 1, 0, 0, '', '', '', '', '0.000000', 0, 1, NULL, 0, '12.900000', '5.490000', '', '0.000000', '0.000000', '0.000000', 'demo_9', '', '', '0.000000', '0.000000', '0.000000', '0.300000', 2, 1, 0, 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 32, '2022-11-27 17:28:23', '2022-11-27 17:28:23', 0, 3, 1, 'combinations'),
-(18, 2, 2, 7, 1, 1, 0, 0, '', '', '', '', '0.000000', 0, 1, NULL, 0, '12.900000', '5.490000', '', '0.000000', '0.000000', '0.000000', 'demo_10', '', '', '0.000000', '0.000000', '0.000000', '0.300000', 2, 1, 0, 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 36, '2022-11-27 17:28:23', '2022-11-27 17:28:23', 0, 3, 1, 'combinations'),
-(19, 2, 1, 8, 1, 1, 0, 0, '', '', '', '', '0.000000', 0, 1, NULL, 0, '13.900000', '5.490000', '', '0.000000', '0.000000', '0.000000', 'demo_14', '', '', '0.000000', '0.000000', '0.000000', '0.300000', 2, 1, 0, 1, 0, 1, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2022-11-27 17:28:23', '2022-11-27 17:28:23', 0, 3, 1, 'standard');
+(16, 2, 2, 7, 1, 1, 0, 0, '', '', '', '', '0.000000', 0, 1, NULL, 0, '12.900000', '5.490000', '', '0.000000', '0.000000', '0.000000', 'demo_8', '', '', '0.000000', '0.000000', '0.000000', '0.300000', 2, 1, 0, 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2022-11-27 17:28:23', '2022-11-27 17:28:23', 0, 3, 1, 'combinations'),
+(17, 2, 2, 7, 1, 1, 0, 0, '', '', '', '', '0.000000', 0, 1, NULL, 0, '12.900000', '5.490000', '', '0.000000', '0.000000', '0.000000', 'demo_9', '', '', '0.000000', '0.000000', '0.000000', '0.300000', 2, 1, 0, 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2022-11-27 17:28:23', '2022-11-27 17:28:23', 0, 3, 1, 'combinations'),
+(18, 2, 2, 7, 1, 1, 0, 0, '', '', '', '', '0.000000', 0, 1, NULL, 0, '12.900000', '5.490000', '', '0.000000', '0.000000', '0.000000', 'demo_10', '', '', '0.000000', '0.000000', '0.000000', '0.300000', 2, 1, 0, 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2022-11-27 17:28:23', '2022-11-27 17:28:23', 0, 3, 1, 'combinations'),
+(19, 2, 1, 8, 1, 1, 0, 0, '', '', '', '', '0.000000', 0, 1, NULL, 0, '13.900000', '5.490000', '', '0.000000', '0.000000', '0.000000', 'demo_14', 'demo_14', '', '0.000000', '0.000000', '0.000000', '0.300000', 2, 1, 0, 2, 0, 1, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2022-11-27 17:28:23', '2022-11-29 19:01:52', 0, 3, 1, 'standard'),
+(20, 0, 0, 4, 1, 1, 0, 0, '', '', '', '', '0.000000', 0, 1, NULL, 0, '20.325203', '0.000000', '', '0.000000', '0.000000', '0.000000', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', 2, 1, 0, 0, 0, 0, 1, '404', 0, 1, '0000-00-00', 0, 'new', 1, 0, 'both', 0, 0, 0, 43, '2022-11-29 18:56:30', '2022-11-29 19:24:02', 0, 3, 1, 'combinations'),
+(64, 0, 0, 4, 1, 0, 0, 0, '', '', '', '', '0.000000', 0, 1, NULL, 0, '25.000000', '0.000000', '', '0.000000', '0.000000', '0.000000', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', 2, 1, 0, 0, 0, 0, 1, '404', 0, 1, '0000-00-00', 0, 'new', 1, 0, 'both', 0, 0, 0, 0, '2022-11-29 19:43:03', '2022-11-29 19:43:22', 0, 3, 1, ''),
+(65, 0, 0, 2, 1, 1, 0, 0, '', '', '', '', '0.000000', 0, 1, NULL, 0, '20.325203', '0.000000', '', '0.000000', '0.000000', '0.000000', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', 2, 1, 0, 0, 0, 0, 0, '404', 0, 1, '0000-00-00', 0, 'new', 1, 0, 'both', 0, 0, 0, 0, '2022-11-30 16:45:59', '2022-12-01 22:16:08', 0, 3, 1, ''),
+(66, 0, 0, 4, 1, 1, 0, 0, '', '', '', '', '0.000000', 0, 1, NULL, 0, '20.325203', '0.000000', '', '0.000000', '0.000000', '0.000000', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', 2, 1, 0, 0, 0, 0, 1, '404', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2022-11-30 17:01:19', '2022-11-30 17:06:04', 0, 3, 1, '');
 
 -- --------------------------------------------------------
 
@@ -9261,33 +10244,22 @@ INSERT INTO `ad_product_attribute` (`id_product_attribute`, `id_product`, `refer
 (10, 2, 'demo_3', '', '', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', '0.000000', NULL, 1, NULL, 0, '0000-00-00'),
 (11, 2, 'demo_3', '', '', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', '0.000000', NULL, 1, NULL, 0, '0000-00-00'),
 (12, 2, 'demo_3', '', '', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', '0.000000', NULL, 1, NULL, 0, '0000-00-00'),
-(13, 3, 'demo_6', '', '', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', '0.000000', 1, 1, NULL, 0, '0000-00-00'),
-(14, 3, 'demo_6', '', '', '', '', '', '0.000000', '20.000000', '0.000000', '0.000000', '0.000000', NULL, 1, NULL, 0, '0000-00-00'),
-(15, 3, 'demo_6', '', '', '', '', '', '0.000000', '50.000000', '0.000000', '0.000000', '0.000000', NULL, 1, NULL, 0, '0000-00-00'),
-(16, 4, 'demo_5', '', '', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', '0.000000', 1, 1, NULL, 0, '0000-00-00'),
-(17, 4, 'demo_5', '', '', '', '', '', '0.000000', '20.000000', '0.000000', '0.000000', '0.000000', NULL, 1, NULL, 0, '0000-00-00'),
-(18, 4, 'demo_5', '', '', '', '', '', '0.000000', '50.000000', '0.000000', '0.000000', '0.000000', NULL, 1, NULL, 0, '0000-00-00'),
-(19, 5, 'demo_7', '', '', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', '0.000000', 1, 1, NULL, 0, '0000-00-00'),
-(20, 5, 'demo_7', '', '', '', '', '', '0.000000', '20.000000', '0.000000', '0.000000', '0.000000', NULL, 1, NULL, 0, '0000-00-00'),
-(21, 5, 'demo_7', '', '', '', '', '', '0.000000', '50.000000', '0.000000', '0.000000', '0.000000', NULL, 1, NULL, 0, '0000-00-00'),
 (22, 9, 'demo_15', '', '', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', '0.000000', 1, 1, NULL, 0, '0000-00-00'),
 (23, 9, 'demo_15', '', '', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', '0.000000', NULL, 1, NULL, 0, '0000-00-00'),
 (24, 10, 'demo_16', '', '', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', '0.000000', 1, 1, NULL, 0, '0000-00-00'),
 (25, 10, 'demo_16', '', '', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', '0.000000', NULL, 1, NULL, 0, '0000-00-00'),
 (26, 11, 'demo_17', '', '', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', '0.000000', 1, 1, NULL, 0, '0000-00-00'),
 (27, 11, 'demo_17', '', '', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', '0.000000', NULL, 1, NULL, 0, '0000-00-00'),
-(28, 16, 'demo_8', '', '', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', '0.000000', 1, 1, NULL, 0, '0000-00-00'),
-(29, 16, 'demo_8', '', '', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', '0.000000', NULL, 1, NULL, 0, '0000-00-00'),
-(30, 16, 'demo_8', '', '', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', '0.000000', NULL, 1, NULL, 0, '0000-00-00'),
-(31, 16, 'demo_8', '', '', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', '0.000000', NULL, 1, NULL, 0, '0000-00-00'),
-(32, 17, 'demo_9', '', '', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', '0.000000', 1, 1, NULL, 0, '0000-00-00'),
-(33, 17, 'demo_9', '', '', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', '0.000000', NULL, 1, NULL, 0, '0000-00-00'),
-(34, 17, 'demo_9', '', '', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', '0.000000', NULL, 1, NULL, 0, '0000-00-00'),
-(35, 17, 'demo_9', '', '', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', '0.000000', NULL, 1, NULL, 0, '0000-00-00'),
-(36, 18, 'demo_10', '', '', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', '0.000000', 1, 1, NULL, 0, '0000-00-00'),
-(37, 18, 'demo_10', '', '', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', '0.000000', NULL, 1, NULL, 0, '0000-00-00'),
-(38, 18, 'demo_10', '', '', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', '0.000000', NULL, 1, NULL, 0, '0000-00-00'),
-(39, 18, 'demo_10', '', '', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', '0.000000', NULL, 1, NULL, 0, '0000-00-00');
+(40, 20, '', '', '', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', '0.000000', NULL, 1, NULL, 0, '0000-00-00'),
+(41, 20, '', '', '', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', '0.000000', NULL, 1, NULL, 0, '0000-00-00'),
+(42, 20, '', '', '', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', '0.000000', NULL, 1, NULL, 0, '0000-00-00'),
+(43, 20, '', '', '', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', '0.000000', 1, 1, NULL, 0, '0000-00-00'),
+(44, 20, '', '', '', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', '0.000000', NULL, 1, NULL, 0, '0000-00-00'),
+(45, 20, '', '', '', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', '0.000000', NULL, 1, NULL, 0, '0000-00-00'),
+(46, 20, '', '', '', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', '0.000000', NULL, 1, NULL, 0, '0000-00-00'),
+(47, 20, '', '', '', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', '0.000000', NULL, 1, NULL, 0, '0000-00-00'),
+(48, 20, '', '', '', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', '0.000000', NULL, 1, NULL, 0, '0000-00-00'),
+(50, 1, '', '', '', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', '0.000000', NULL, 1, NULL, 0, '2022-12-02');
 
 -- --------------------------------------------------------
 
@@ -9317,6 +10289,13 @@ INSERT INTO `ad_product_attribute_combination` (`id_attribute`, `id_product_attr
 (4, 7),
 (4, 8),
 (4, 12),
+(5, 43),
+(5, 44),
+(5, 45),
+(5, 50),
+(6, 46),
+(6, 47),
+(6, 48),
 (8, 1),
 (8, 3),
 (8, 5),
@@ -9331,27 +10310,19 @@ INSERT INTO `ad_product_attribute_combination` (`id_attribute`, `id_product_attr
 (11, 23),
 (11, 25),
 (11, 27),
-(19, 13),
-(19, 16),
-(19, 19),
-(20, 14),
-(20, 17),
-(20, 20),
-(21, 15),
-(21, 18),
-(21, 21),
-(22, 28),
-(22, 32),
-(22, 36),
-(23, 29),
-(23, 33),
-(23, 37),
-(24, 30),
-(24, 34),
-(24, 38),
-(25, 31),
-(25, 35),
-(25, 39);
+(11, 40),
+(11, 41),
+(11, 42),
+(26, 50),
+(31, 40),
+(31, 43),
+(31, 46),
+(32, 41),
+(32, 44),
+(32, 47),
+(33, 42),
+(33, 45),
+(33, 48);
 
 -- --------------------------------------------------------
 
@@ -9381,33 +10352,14 @@ INSERT INTO `ad_product_attribute_image` (`id_product_attribute`, `id_image`) VA
 (10, 21),
 (11, 21),
 (12, 21),
-(13, 3),
-(14, 3),
-(15, 3),
-(16, 4),
-(17, 4),
-(18, 4),
-(19, 5),
-(20, 5),
-(21, 5),
 (22, 10),
 (23, 9),
 (24, 12),
 (25, 11),
 (26, 14),
 (27, 13),
-(28, 18),
-(29, 18),
-(30, 18),
-(31, 18),
-(32, 19),
-(33, 19),
-(34, 19),
-(35, 19),
-(36, 20),
-(37, 20),
-(38, 20),
-(39, 20);
+(44, 25),
+(50, 43);
 
 -- --------------------------------------------------------
 
@@ -9448,33 +10400,22 @@ INSERT INTO `ad_product_attribute_shop` (`id_product`, `id_product_attribute`, `
 (2, 10, 1, '0.000000', '0.000000', '0.000000', '0.000000', '0.000000', NULL, 1, NULL, 0, '0000-00-00'),
 (2, 11, 1, '0.000000', '0.000000', '0.000000', '0.000000', '0.000000', NULL, 1, NULL, 0, '0000-00-00'),
 (2, 12, 1, '0.000000', '0.000000', '0.000000', '0.000000', '0.000000', NULL, 1, NULL, 0, '0000-00-00'),
-(3, 13, 1, '0.000000', '0.000000', '0.000000', '0.000000', '0.000000', 1, 1, NULL, 0, '0000-00-00'),
-(3, 14, 1, '0.000000', '20.000000', '0.000000', '0.000000', '0.000000', NULL, 1, NULL, 0, '0000-00-00'),
-(3, 15, 1, '0.000000', '50.000000', '0.000000', '0.000000', '0.000000', NULL, 1, NULL, 0, '0000-00-00'),
-(4, 16, 1, '0.000000', '0.000000', '0.000000', '0.000000', '0.000000', 1, 1, NULL, 0, '0000-00-00'),
-(4, 17, 1, '0.000000', '20.000000', '0.000000', '0.000000', '0.000000', NULL, 1, NULL, 0, '0000-00-00'),
-(4, 18, 1, '0.000000', '50.000000', '0.000000', '0.000000', '0.000000', NULL, 1, NULL, 0, '0000-00-00'),
-(5, 19, 1, '0.000000', '0.000000', '0.000000', '0.000000', '0.000000', 1, 1, NULL, 0, '0000-00-00'),
-(5, 20, 1, '0.000000', '20.000000', '0.000000', '0.000000', '0.000000', NULL, 1, NULL, 0, '0000-00-00'),
-(5, 21, 1, '0.000000', '50.000000', '0.000000', '0.000000', '0.000000', NULL, 1, NULL, 0, '0000-00-00'),
 (9, 22, 1, '0.000000', '0.000000', '0.000000', '0.000000', '0.000000', 1, 1, NULL, 0, '0000-00-00'),
 (9, 23, 1, '0.000000', '0.000000', '0.000000', '0.000000', '0.000000', NULL, 1, NULL, 0, '0000-00-00'),
 (10, 24, 1, '0.000000', '0.000000', '0.000000', '0.000000', '0.000000', 1, 1, NULL, 0, '0000-00-00'),
 (10, 25, 1, '0.000000', '0.000000', '0.000000', '0.000000', '0.000000', NULL, 1, NULL, 0, '0000-00-00'),
 (11, 26, 1, '0.000000', '0.000000', '0.000000', '0.000000', '0.000000', 1, 1, NULL, 0, '0000-00-00'),
 (11, 27, 1, '0.000000', '0.000000', '0.000000', '0.000000', '0.000000', NULL, 1, NULL, 0, '0000-00-00'),
-(16, 28, 1, '0.000000', '0.000000', '0.000000', '0.000000', '0.000000', 1, 1, NULL, 0, '0000-00-00'),
-(16, 29, 1, '0.000000', '0.000000', '0.000000', '0.000000', '0.000000', NULL, 1, NULL, 0, '0000-00-00'),
-(16, 30, 1, '0.000000', '0.000000', '0.000000', '0.000000', '0.000000', NULL, 1, NULL, 0, '0000-00-00'),
-(16, 31, 1, '0.000000', '0.000000', '0.000000', '0.000000', '0.000000', NULL, 1, NULL, 0, '0000-00-00'),
-(17, 32, 1, '0.000000', '0.000000', '0.000000', '0.000000', '0.000000', 1, 1, NULL, 0, '0000-00-00'),
-(17, 33, 1, '0.000000', '0.000000', '0.000000', '0.000000', '0.000000', NULL, 1, NULL, 0, '0000-00-00'),
-(17, 34, 1, '0.000000', '0.000000', '0.000000', '0.000000', '0.000000', NULL, 1, NULL, 0, '0000-00-00'),
-(17, 35, 1, '0.000000', '0.000000', '0.000000', '0.000000', '0.000000', NULL, 1, NULL, 0, '0000-00-00'),
-(18, 36, 1, '0.000000', '0.000000', '0.000000', '0.000000', '0.000000', 1, 1, NULL, 0, '0000-00-00'),
-(18, 37, 1, '0.000000', '0.000000', '0.000000', '0.000000', '0.000000', NULL, 1, NULL, 0, '0000-00-00'),
-(18, 38, 1, '0.000000', '0.000000', '0.000000', '0.000000', '0.000000', NULL, 1, NULL, 0, '0000-00-00'),
-(18, 39, 1, '0.000000', '0.000000', '0.000000', '0.000000', '0.000000', NULL, 1, NULL, 0, '0000-00-00');
+(20, 40, 1, '0.000000', '0.000000', '0.000000', '0.000000', '0.000000', NULL, 1, NULL, 0, '0000-00-00'),
+(20, 41, 1, '0.000000', '0.000000', '0.000000', '0.000000', '0.000000', NULL, 1, NULL, 0, '0000-00-00'),
+(20, 42, 1, '0.000000', '0.000000', '0.000000', '0.000000', '0.000000', NULL, 1, NULL, 0, '0000-00-00'),
+(20, 43, 1, '0.000000', '0.000000', '0.000000', '0.000000', '0.000000', 1, 1, NULL, 0, '0000-00-00'),
+(20, 44, 1, '0.000000', '0.000000', '0.000000', '0.000000', '0.000000', NULL, 1, NULL, 0, '0000-00-00'),
+(20, 45, 1, '0.000000', '0.000000', '0.000000', '0.000000', '0.000000', NULL, 1, NULL, 0, '0000-00-00'),
+(20, 46, 1, '0.000000', '0.000000', '0.000000', '0.000000', '0.000000', NULL, 1, NULL, 0, '0000-00-00'),
+(20, 47, 1, '0.000000', '0.000000', '0.000000', '0.000000', '0.000000', NULL, 1, NULL, 0, '0000-00-00'),
+(20, 48, 1, '0.000000', '0.000000', '0.000000', '0.000000', '0.000000', NULL, 1, NULL, 0, '0000-00-00'),
+(1, 50, 1, '0.000000', '0.000000', '0.000000', '0.000000', '0.000000', NULL, 1, NULL, 0, '2022-12-02');
 
 -- --------------------------------------------------------
 
@@ -9692,7 +10633,11 @@ INSERT INTO `ad_product_lang` (`id_product`, `id_shop`, `id_lang`, `description`
 (16, 1, 1, '<p>The Mountain fox notebook is the best option to write down your most ingenious ideas. At work, at home or when traveling, its endearing design and manufacturing quality will make you feel like writing! 90 gsm paper / double spiral binding.</p>', '<p>120 sheets notebook with hard cover made of recycled cardboard. 16x22cm</p>', 'mountain-fox-notebook', '', '', '', 'Mountain fox notebook', '', '', '', ''),
 (17, 1, 1, '<p>The Mountain fox notebook is the best option to write down your most ingenious ideas. At work, at home or when traveling, its endearing design and manufacturing quality will make you feel like writing! 90 gsm paper / double spiral binding.</p>', '<p>120 sheets notebook with hard cover made of recycled cardboard. 16x22cm</p>', 'brown-bear-notebook', '', '', '', 'Brown bear notebook', '', '', '', ''),
 (18, 1, 1, '<p>The Mountain fox notebook is the best option to write down your most ingenious ideas. At work, at home or when traveling, its endearing design and manufacturing quality will make you feel like writing! 90 gsm paper / double spiral binding.</p>', '<p>120 sheets notebook with hard cover made of recycled cardboard. 16x22cm</p>', 'hummingbird-notebook', '', '', '', 'Hummingbird notebook', '', '', '', ''),
-(19, 1, 1, '<p>Customize your mug with the text of your choice. A mood, a message, a quote... It\'s up to you! Maximum number of characters: ---</p>', '<p>White Ceramic Mug. 325ml</p>', 'customizable-mug', '', '', '', 'Customizable mug', '', '', '', '');
+(19, 1, 1, '<p>Customize your mug with the text of your choice. A mood, a message, a quote... It\'s up to you! Maximum number of characters: ---</p>', '<p>White Ceramic Mug. 325ml</p>', 'customizable-mug', '', '', '', 'Customizable mug', '', '', '', ''),
+(20, 1, 1, '', '', 'ozweego-shoes', '', '', '', 'test', '', '', '', ''),
+(64, 1, 1, '', '', 'test', '', '', '', 'test', '', '', '', ''),
+(65, 1, 1, '', '', 'test', '', '', '', 'test', '', '', '', ''),
+(66, 1, 1, '', '', 'test', '', '', '', 'test', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -9755,11 +10700,11 @@ CREATE TABLE `ad_product_shop` (
 --
 
 INSERT INTO `ad_product_shop` (`id_product`, `id_shop`, `id_category_default`, `id_tax_rules_group`, `on_sale`, `online_only`, `ecotax`, `minimal_quantity`, `low_stock_threshold`, `low_stock_alert`, `price`, `wholesale_price`, `unity`, `unit_price`, `unit_price_ratio`, `additional_shipping_cost`, `customizable`, `uploadable_files`, `text_fields`, `active`, `redirect_type`, `id_type_redirected`, `available_for_order`, `available_date`, `show_condition`, `condition`, `show_price`, `indexed`, `visibility`, `cache_default_attribute`, `advanced_stock_management`, `date_add`, `date_upd`, `pack_stock_type`) VALUES
-(1, 1, 4, 1, 0, 0, '0.000000', 1, NULL, 0, '23.900000', '5.490000', '', '0.000000', '0.000000', '0.000000', 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 1, 0, '2022-11-27 17:28:23', '2022-11-27 17:28:23', 3),
+(1, 1, 4, 1, 0, 0, '0.000000', 1, NULL, 0, '23.900000', '5.490000', '', '0.000000', '0.000000', '0.000000', 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 1, 0, '2022-11-27 17:28:23', '2022-12-02 17:43:52', 3),
 (2, 1, 5, 1, 0, 0, '0.000000', 1, NULL, 0, '35.900000', '5.490000', '', '0.000000', '0.000000', '0.000000', 0, 0, 0, 1, '404', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 9, 0, '2022-11-27 17:28:23', '2022-11-27 17:28:23', 3),
-(3, 1, 9, 1, 0, 0, '0.000000', 1, NULL, 0, '29.000000', '5.490000', '', '0.000000', '0.000000', '0.000000', 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 13, 0, '2022-11-27 17:28:23', '2022-11-27 17:28:23', 3),
-(4, 1, 9, 1, 0, 0, '0.000000', 1, NULL, 0, '29.000000', '5.490000', '', '0.000000', '0.000000', '0.000000', 0, 0, 0, 1, '404', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 16, 0, '2022-11-27 17:28:23', '2022-11-27 17:28:23', 3),
-(5, 1, 9, 1, 0, 0, '0.000000', 1, NULL, 0, '29.000000', '5.490000', '', '0.000000', '0.000000', '0.000000', 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 19, 0, '2022-11-27 17:28:23', '2022-11-27 17:28:23', 3),
+(3, 1, 9, 1, 0, 0, '0.000000', 1, NULL, 0, '29.000000', '5.490000', '', '0.000000', '0.000000', '0.000000', 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, '2022-11-27 17:28:23', '2022-11-27 17:28:23', 3),
+(4, 1, 9, 1, 0, 0, '0.000000', 1, NULL, 0, '29.000000', '5.490000', '', '0.000000', '0.000000', '0.000000', 0, 0, 0, 1, '404', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, '2022-11-27 17:28:23', '2022-11-27 17:28:23', 3),
+(5, 1, 9, 1, 0, 0, '0.000000', 1, NULL, 0, '29.000000', '5.490000', '', '0.000000', '0.000000', '0.000000', 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, '2022-11-27 17:28:23', '2022-11-27 17:28:23', 3),
 (6, 1, 8, 1, 0, 0, '0.000000', 1, NULL, 0, '11.900000', '5.490000', '', '0.000000', '0.000000', '0.000000', 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, '2022-11-27 17:28:23', '2022-11-27 17:28:23', 3),
 (7, 1, 8, 1, 0, 0, '0.000000', 1, NULL, 0, '11.900000', '5.490000', '', '0.000000', '0.000000', '0.000000', 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, '2022-11-27 17:28:23', '2022-11-27 17:28:23', 3),
 (8, 1, 8, 1, 0, 0, '0.000000', 1, NULL, 0, '11.900000', '5.490000', '', '0.000000', '0.000000', '0.000000', 0, 0, 0, 1, '404', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, '2022-11-27 17:28:23', '2022-11-27 17:28:23', 3),
@@ -9770,10 +10715,14 @@ INSERT INTO `ad_product_shop` (`id_product`, `id_shop`, `id_category_default`, `
 (13, 1, 9, 1, 0, 0, '0.000000', 1, NULL, 0, '9.000000', '5.490000', '', '0.000000', '0.000000', '0.000000', 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, '2022-11-27 17:28:23', '2022-11-27 17:28:23', 3),
 (14, 1, 9, 1, 0, 0, '0.000000', 1, NULL, 0, '9.000000', '5.490000', '', '0.000000', '0.000000', '0.000000', 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, '2022-11-27 17:28:23', '2022-11-27 17:28:23', 3),
 (15, 1, 8, 1, 0, 0, '0.000000', 1, NULL, 0, '35.000000', '5.490000', '', '0.000000', '0.000000', '0.000000', 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, '2022-11-27 17:28:23', '2022-11-27 17:28:23', 3),
-(16, 1, 7, 1, 0, 0, '0.000000', 1, NULL, 0, '12.900000', '5.490000', '', '0.000000', '0.000000', '0.000000', 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 28, 0, '2022-11-27 17:28:23', '2022-11-27 17:28:23', 3),
-(17, 1, 7, 1, 0, 0, '0.000000', 1, NULL, 0, '12.900000', '5.490000', '', '0.000000', '0.000000', '0.000000', 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 32, 0, '2022-11-27 17:28:23', '2022-11-27 17:28:23', 3),
-(18, 1, 7, 1, 0, 0, '0.000000', 1, NULL, 0, '12.900000', '5.490000', '', '0.000000', '0.000000', '0.000000', 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 36, 0, '2022-11-27 17:28:23', '2022-11-27 17:28:23', 3),
-(19, 1, 8, 1, 0, 0, '0.000000', 1, NULL, 0, '13.900000', '5.490000', '', '0.000000', '0.000000', '0.000000', 1, 0, 1, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, '2022-11-27 17:28:23', '2022-11-27 17:28:23', 3);
+(16, 1, 7, 1, 0, 0, '0.000000', 1, NULL, 0, '12.900000', '5.490000', '', '0.000000', '0.000000', '0.000000', 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, '2022-11-27 17:28:23', '2022-11-27 17:28:23', 3),
+(17, 1, 7, 1, 0, 0, '0.000000', 1, NULL, 0, '12.900000', '5.490000', '', '0.000000', '0.000000', '0.000000', 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, '2022-11-27 17:28:23', '2022-11-27 17:28:23', 3),
+(18, 1, 7, 1, 0, 0, '0.000000', 1, NULL, 0, '12.900000', '5.490000', '', '0.000000', '0.000000', '0.000000', 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, '2022-11-27 17:28:23', '2022-11-27 17:28:23', 3),
+(19, 1, 8, 1, 0, 0, '0.000000', 1, NULL, 0, '13.900000', '5.490000', '', '0.000000', '0.000000', '0.000000', 2, 0, 1, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, '2022-11-27 17:28:23', '2022-11-29 19:01:52', 3),
+(20, 1, 4, 1, 0, 0, '0.000000', 1, NULL, 0, '20.325203', '0.000000', '', '0.000000', '0.000000', '0.000000', 0, 0, 0, 1, '404', 0, 1, '0000-00-00', 0, 'new', 1, 0, 'both', 43, 0, '2022-11-29 18:56:30', '2022-11-29 19:24:02', 3),
+(64, 1, 4, 0, 0, 0, '0.000000', 1, NULL, 0, '25.000000', '0.000000', '', '0.000000', '0.000000', '0.000000', 0, 0, 0, 1, '404', 0, 1, '0000-00-00', 0, 'new', 1, 0, 'both', 0, 0, '2022-11-29 19:43:03', '2022-11-29 19:43:22', 3),
+(65, 1, 2, 1, 0, 0, '0.000000', 1, NULL, 0, '20.325203', '0.000000', '', '0.000000', '0.000000', '0.000000', 0, 0, 0, 0, '404', 0, 1, '0000-00-00', 0, 'new', 1, 0, 'both', 0, 0, '2022-11-30 16:45:59', '2022-12-01 22:16:08', 3),
+(66, 1, 4, 1, 0, 0, '0.000000', 1, NULL, 0, '20.325203', '0.000000', '', '0.000000', '0.000000', '0.000000', 0, 0, 0, 1, '404', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, '2022-11-30 17:01:19', '2022-11-30 17:06:04', 3);
 
 -- --------------------------------------------------------
 
@@ -9821,29 +10770,11 @@ INSERT INTO `ad_product_supplier` (`id_product_supplier`, `id_product`, `id_prod
 (23, 2, 11, 1, 'demo_3_64', '5.490000', 1),
 (24, 2, 12, 1, 'demo_3_65', '5.490000', 1),
 (25, 3, 0, 1, 'demo_6_70', '5.490000', 1),
-(26, 3, 13, 1, 'demo_6_70', '5.490000', 1),
-(27, 3, 14, 1, 'demo_6_71', '5.490000', 1),
-(28, 3, 15, 1, 'demo_6_72', '5.490000', 1),
 (29, 4, 0, 1, 'demo_5_73', '5.490000', 1),
-(30, 4, 16, 1, 'demo_5_73', '5.490000', 1),
-(31, 4, 17, 1, 'demo_5_74', '5.490000', 1),
-(32, 4, 18, 1, 'demo_5_75', '5.490000', 1),
 (33, 5, 0, 1, 'demo_5_76', '5.490000', 1),
-(34, 5, 19, 1, 'demo_5_76', '5.490000', 1),
-(35, 5, 20, 1, 'demo_5_77', '5.490000', 1),
-(36, 5, 21, 1, 'demo_5_78', '5.490000', 1),
 (37, 3, 0, 2, 'demo_6_70', '2.490000', 1),
-(38, 3, 13, 2, 'demo_6_70', '2.490000', 1),
-(39, 3, 14, 2, 'demo_6_71', '2.490000', 1),
-(40, 3, 15, 2, 'demo_6_72', '2.490000', 1),
 (41, 4, 0, 2, 'demo_5_73', '2.490000', 1),
-(42, 4, 16, 2, 'demo_5_73', '2.490000', 1),
-(43, 4, 17, 2, 'demo_5_74', '2.490000', 1),
-(44, 4, 18, 2, 'demo_5_75', '2.490000', 1),
 (45, 5, 0, 2, 'demo_5_76', '2.490000', 1),
-(46, 5, 19, 2, 'demo_5_76', '2.490000', 1),
-(47, 5, 20, 2, 'demo_5_77', '2.490000', 1),
-(48, 5, 21, 2, 'demo_5_78', '2.490000', 1),
 (49, 9, 0, 2, 'demo_15_79', '5.490000', 1),
 (50, 9, 22, 2, 'demo_15_79', '5.490000', 1),
 (51, 9, 23, 2, 'demo_15_80', '5.490000', 1),
@@ -9854,21 +10785,10 @@ INSERT INTO `ad_product_supplier` (`id_product_supplier`, `id_product`, `id_prod
 (56, 11, 26, 2, 'demo_17_83', '5.490000', 1),
 (57, 11, 27, 2, 'demo_17_84', '5.490000', 1),
 (58, 16, 0, 2, 'demo_8_85', '5.490000', 1),
-(59, 16, 28, 2, 'demo_8_85', '5.490000', 1),
-(60, 16, 29, 2, 'demo_8_86', '5.490000', 1),
-(61, 16, 30, 2, 'demo_8_87', '5.490000', 1),
-(62, 16, 31, 2, 'demo_8_88', '5.490000', 1),
 (63, 17, 0, 2, 'demo_9_89', '5.490000', 1),
-(64, 17, 32, 2, 'demo_9_89', '5.490000', 1),
-(65, 17, 33, 2, 'demo_9_90', '5.490000', 1),
-(66, 17, 34, 2, 'demo_9_91', '5.490000', 1),
-(67, 17, 35, 2, 'demo_9_92', '5.490000', 1),
 (68, 18, 0, 2, 'demo_10_93', '5.490000', 1),
-(69, 18, 36, 2, 'demo_10_93', '5.490000', 1),
-(70, 18, 37, 2, 'demo_10_94', '5.490000', 1),
-(71, 18, 38, 2, 'demo_10_95', '5.490000', 1),
-(72, 18, 39, 2, 'demo_10_96', '5.490000', 1),
-(73, 15, 0, 2, '', '0.000000', 1);
+(73, 15, 0, 2, '', '0.000000', 1),
+(75, 1, 50, 1, 'demo_1_46', '5.490000', 1);
 
 -- --------------------------------------------------------
 
@@ -11020,11 +11940,19 @@ INSERT INTO `ad_search_index` (`id_product`, `id_word`, `weight`) VALUES
 (19, 27, 3),
 (19, 28, 3),
 (19, 254, 3),
-(19, 270, 3),
-(19, 271, 3),
+(19, 774, 3),
 (19, 747, 6),
 (19, 253, 8),
-(19, 6, 10);
+(19, 6, 10),
+(20, 800, 2),
+(20, 801, 2),
+(20, 802, 2),
+(20, 773, 3),
+(20, 771, 6),
+(20, 772, 6),
+(66, 773, 3),
+(66, 826, 3),
+(66, 825, 6);
 
 -- --------------------------------------------------------
 
@@ -11074,6 +12002,7 @@ INSERT INTO `ad_search_word` (`id_word`, `id_shop`, `id_lang`, `word`) VALUES
 (56, 1, 1, 'black'),
 (383, 1, 1, 'brown'),
 (59, 1, 1, 'brushed'),
+(773, 1, 1, 'buty'),
 (484, 1, 1, 'can'),
 (596, 1, 1, 'cardboard'),
 (254, 1, 1, 'ceramic'),
@@ -11100,6 +12029,7 @@ INSERT INTO `ad_search_word` (`id_word`, `id_shop`, `id_lang`, `word`) VALUES
 (480, 1, 1, 'custom'),
 (747, 1, 1, 'customizable'),
 (748, 1, 1, 'customize'),
+(800, 1, 1, 'czarny'),
 (204, 1, 1, 'day'),
 (22, 1, 1, 'delicacy'),
 (6, 1, 1, 'demo'),
@@ -11164,6 +12094,7 @@ INSERT INTO `ad_search_word` (`id_word`, `id_shop`, `id_lang`, `word`) VALUES
 (111, 1, 1, 'matt'),
 (753, 1, 1, 'maximum'),
 (54, 1, 1, 'men'),
+(826, 1, 1, 'meskie'),
 (751, 1, 1, 'message'),
 (354, 1, 1, 'modern'),
 (313, 1, 1, 'mood'),
@@ -11178,6 +12109,7 @@ INSERT INTO `ad_search_word` (`id_word`, `id_shop`, `id_lang`, `word`) VALUES
 (476, 1, 1, 'noncommercial'),
 (591, 1, 1, 'notebook'),
 (754, 1, 1, 'number'),
+(774, 1, 1, 'odziez'),
 (257, 1, 1, 'off'),
 (128, 1, 1, 'office'),
 (126, 1, 1, 'open'),
@@ -11188,6 +12120,7 @@ INSERT INTO `ad_search_word` (`id_word`, `id_shop`, `id_lang`, `word`) VALUES
 (40, 1, 1, 'origamis'),
 (285, 1, 1, 'out'),
 (53, 1, 1, 'overtime'),
+(771, 1, 1, 'ozweego'),
 (577, 1, 1, 'pack'),
 (624, 1, 1, 'pages'),
 (129, 1, 1, 'painted'),
@@ -11227,6 +12160,7 @@ INSERT INTO `ad_search_word` (`id_word`, `id_shop`, `id_lang`, `word`) VALUES
 (284, 1, 1, 'set'),
 (593, 1, 1, 'sheets'),
 (3, 1, 1, 'shirt'),
+(772, 1, 1, 'shoes'),
 (11, 1, 1, 'short'),
 (61, 1, 1, 'side'),
 (490, 1, 1, 'size'),
@@ -11246,7 +12180,10 @@ INSERT INTO `ad_search_word` (`id_word`, `id_shop`, `id_lang`, `word`) VALUES
 (469, 1, 1, 'svg'),
 (57, 1, 1, 'sweater'),
 (19, 1, 1, 'symbol'),
+(802, 1, 1, 'szarobrazowy'),
+(801, 1, 1, 'szary'),
 (5, 1, 1, 't-shirt'),
+(825, 1, 1, 'test'),
 (749, 1, 1, 'text'),
 (45, 1, 1, 'textile'),
 (357, 1, 1, 'that'),
@@ -11351,7 +12288,7 @@ CREATE TABLE `ad_shop_url` (
 --
 
 INSERT INTO `ad_shop_url` (`id_shop_url`, `id_shop`, `domain`, `domain_ssl`, `physical_uri`, `virtual_uri`, `main`, `active`) VALUES
-(1, 1, 'localhost', 'localhost', '/', '', 1, 1);
+(1, 1, 'localhost', 'localhost:443', '/', '', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -11438,6 +12375,15 @@ CREATE TABLE `ad_specific_price_priority` (
   `id_product` int(11) NOT NULL,
   `priority` varchar(80) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Zrzut danych tabeli `ad_specific_price_priority`
+--
+
+INSERT INTO `ad_specific_price_priority` (`id_specific_price_priority`, `id_product`, `priority`) VALUES
+(1, 20, 'id_group;id_currency;id_country;id_shop'),
+(2, 19, 'id_group;id_currency;id_country;id_shop'),
+(9, 66, 'id_group;id_currency;id_country;id_shop');
 
 -- --------------------------------------------------------
 
@@ -11874,6 +12820,28 @@ CREATE TABLE `ad_statssearch` (
   `date_add` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
+--
+-- Zrzut danych tabeli `ad_statssearch`
+--
+
+INSERT INTO `ad_statssearch` (`id_statssearch`, `id_shop`, `id_shop_group`, `keywords`, `results`, `date_add`) VALUES
+(1, 1, 1, 'test', 1, '2022-11-30 17:02:15'),
+(2, 1, 1, 'Test', 1, '2022-11-30 17:02:26'),
+(3, 1, 1, 'Test', 1, '2022-11-30 17:02:26'),
+(4, 1, 1, 'd', 0, '2022-11-30 17:13:30'),
+(5, 1, 1, 'dupa', 1, '2022-11-30 17:13:31'),
+(6, 1, 1, 'esa', 7, '2022-11-30 17:13:41'),
+(7, 1, 1, 'f', 0, '2022-11-30 17:13:46'),
+(8, 1, 1, 'e', 0, '2022-11-30 17:13:48'),
+(9, 1, 1, 'es', 0, '2022-11-30 17:13:49'),
+(10, 1, 1, 'ess', 7, '2022-11-30 17:13:51'),
+(11, 1, 1, 'm', 0, '2022-11-30 17:14:00'),
+(12, 1, 1, 'mo', 0, '2022-11-30 17:14:01'),
+(13, 1, 1, 'mou', 7, '2022-11-30 17:14:02'),
+(14, 1, 1, 'te', 0, '2022-11-30 17:14:06'),
+(15, 1, 1, 'tes', 1, '2022-11-30 17:14:06'),
+(16, 1, 1, 'test', 1, '2022-11-30 17:14:08');
+
 -- --------------------------------------------------------
 
 --
@@ -11920,64 +12888,57 @@ CREATE TABLE `ad_stock_available` (
 --
 
 INSERT INTO `ad_stock_available` (`id_stock_available`, `id_product`, `id_product_attribute`, `id_shop`, `id_shop_group`, `quantity`, `physical_quantity`, `reserved_quantity`, `depends_on_stock`, `out_of_stock`, `location`) VALUES
-(1, 1, 0, 1, 0, 2400, 0, 0, 0, 2, ''),
-(2, 2, 0, 1, 0, 2100, 0, 0, 0, 2, ''),
-(3, 3, 0, 1, 0, 1500, 0, 0, 0, 2, ''),
-(4, 4, 0, 1, 0, 1500, 0, 0, 0, 2, ''),
-(5, 5, 0, 1, 0, 900, 0, 0, 0, 2, ''),
-(6, 6, 0, 1, 0, 300, 0, 0, 0, 2, ''),
-(7, 7, 0, 1, 0, 300, 0, 0, 0, 2, ''),
-(8, 8, 0, 1, 0, 300, 0, 0, 0, 2, ''),
-(9, 9, 0, 1, 0, 600, 0, 0, 0, 2, ''),
-(10, 10, 0, 1, 0, 600, 0, 0, 0, 2, ''),
-(11, 11, 0, 1, 0, 600, 0, 0, 0, 2, ''),
-(12, 12, 0, 1, 0, 300, 0, 0, 0, 1, ''),
-(13, 13, 0, 1, 0, 300, 0, 0, 0, 1, ''),
-(14, 14, 0, 1, 0, 300, 0, 0, 0, 1, ''),
-(15, 15, 0, 1, 0, 100, 0, 0, 0, 2, ''),
-(16, 16, 0, 1, 0, 1200, 0, 0, 0, 2, ''),
-(17, 17, 0, 1, 0, 1200, 0, 0, 0, 2, ''),
-(18, 18, 0, 1, 0, 1200, 0, 0, 0, 2, ''),
-(19, 19, 0, 1, 0, 300, 0, 0, 0, 2, ''),
-(20, 1, 1, 1, 0, 300, 0, 0, 0, 2, ''),
-(21, 1, 2, 1, 0, 300, 0, 0, 0, 2, ''),
-(22, 1, 3, 1, 0, 300, 0, 0, 0, 2, ''),
-(23, 1, 4, 1, 0, 300, 0, 0, 0, 2, ''),
-(24, 1, 5, 1, 0, 300, 0, 0, 0, 2, ''),
-(25, 1, 6, 1, 0, 300, 0, 0, 0, 2, ''),
-(26, 1, 7, 1, 0, 300, 0, 0, 0, 2, ''),
-(27, 1, 8, 1, 0, 300, 0, 0, 0, 2, ''),
-(28, 2, 9, 1, 0, 1200, 0, 0, 0, 2, ''),
-(29, 2, 10, 1, 0, 300, 0, 0, 0, 2, ''),
-(30, 2, 11, 1, 0, 300, 0, 0, 0, 2, ''),
-(31, 2, 12, 1, 0, 300, 0, 0, 0, 2, ''),
-(32, 3, 13, 1, 0, 900, 0, 0, 0, 2, ''),
-(33, 3, 14, 1, 0, 300, 0, 0, 0, 2, ''),
-(34, 3, 15, 1, 0, 300, 0, 0, 0, 2, ''),
-(35, 4, 16, 1, 0, 900, 0, 0, 0, 2, ''),
-(36, 4, 17, 1, 0, 300, 0, 0, 0, 2, ''),
-(37, 4, 18, 1, 0, 300, 0, 0, 0, 2, ''),
-(38, 5, 19, 1, 0, 300, 0, 0, 0, 2, ''),
-(39, 5, 20, 1, 0, 300, 0, 0, 0, 2, ''),
-(40, 5, 21, 1, 0, 300, 0, 0, 0, 2, ''),
-(41, 9, 22, 1, 0, 300, 0, 0, 0, 2, ''),
-(42, 9, 23, 1, 0, 300, 0, 0, 0, 2, ''),
-(43, 10, 24, 1, 0, 300, 0, 0, 0, 2, ''),
-(44, 10, 25, 1, 0, 300, 0, 0, 0, 2, ''),
-(45, 11, 26, 1, 0, 300, 0, 0, 0, 2, ''),
-(46, 11, 27, 1, 0, 300, 0, 0, 0, 2, ''),
-(47, 16, 28, 1, 0, 300, 0, 0, 0, 2, ''),
-(48, 16, 29, 1, 0, 300, 0, 0, 0, 2, ''),
-(49, 16, 30, 1, 0, 300, 0, 0, 0, 2, ''),
-(50, 16, 31, 1, 0, 300, 0, 0, 0, 2, ''),
-(51, 17, 32, 1, 0, 300, 0, 0, 0, 2, ''),
-(52, 17, 33, 1, 0, 300, 0, 0, 0, 2, ''),
-(53, 17, 34, 1, 0, 300, 0, 0, 0, 2, ''),
-(54, 17, 35, 1, 0, 300, 0, 0, 0, 2, ''),
-(55, 18, 36, 1, 0, 300, 0, 0, 0, 2, ''),
-(56, 18, 37, 1, 0, 300, 0, 0, 0, 2, ''),
-(57, 18, 38, 1, 0, 300, 0, 0, 0, 2, ''),
-(58, 18, 39, 1, 0, 300, 0, 0, 0, 2, '');
+(1, 1, 0, 1, 0, 2400, 2400, 0, 0, 2, ''),
+(2, 2, 0, 1, 0, 2100, 2100, 0, 0, 2, ''),
+(3, 3, 0, 1, 0, 0, 0, 0, 0, 2, ''),
+(4, 4, 0, 1, 0, 0, 0, 0, 0, 2, ''),
+(5, 5, 0, 1, 0, 0, 0, 0, 0, 2, ''),
+(6, 6, 0, 1, 0, 300, 300, 0, 0, 2, ''),
+(7, 7, 0, 1, 0, 300, 300, 0, 0, 2, ''),
+(8, 8, 0, 1, 0, 300, 301, 1, 0, 2, ''),
+(9, 9, 0, 1, 0, 600, 600, 0, 0, 2, ''),
+(10, 10, 0, 1, 0, 600, 600, 0, 0, 2, ''),
+(11, 11, 0, 1, 0, 600, 600, 0, 0, 2, ''),
+(12, 12, 0, 1, 0, 300, 300, 0, 0, 1, ''),
+(13, 13, 0, 1, 0, 300, 300, 0, 0, 1, ''),
+(14, 14, 0, 1, 0, 300, 300, 0, 0, 1, ''),
+(15, 15, 0, 1, 0, 100, 100, 0, 0, 2, ''),
+(16, 16, 0, 1, 0, 0, 0, 0, 0, 2, ''),
+(17, 17, 0, 1, 0, 0, 0, 0, 0, 2, ''),
+(18, 18, 0, 1, 0, 0, 0, 0, 0, 2, ''),
+(19, 19, 0, 1, 0, 300, 300, 0, 0, 2, ''),
+(20, 1, 1, 1, 0, 300, 300, 0, 0, 2, ''),
+(21, 1, 2, 1, 0, 300, 300, 0, 0, 2, ''),
+(22, 1, 3, 1, 0, 300, 300, 0, 0, 2, ''),
+(23, 1, 4, 1, 0, 300, 300, 0, 0, 2, ''),
+(24, 1, 5, 1, 0, 300, 300, 0, 0, 2, ''),
+(25, 1, 6, 1, 0, 300, 300, 0, 0, 2, ''),
+(26, 1, 7, 1, 0, 300, 300, 0, 0, 2, ''),
+(27, 1, 8, 1, 0, 300, 300, 0, 0, 2, ''),
+(28, 2, 9, 1, 0, 1200, 1200, 0, 0, 2, ''),
+(29, 2, 10, 1, 0, 300, 300, 0, 0, 2, ''),
+(30, 2, 11, 1, 0, 300, 300, 0, 0, 2, ''),
+(31, 2, 12, 1, 0, 300, 300, 0, 0, 2, ''),
+(41, 9, 22, 1, 0, 300, 300, 0, 0, 2, ''),
+(42, 9, 23, 1, 0, 300, 300, 0, 0, 2, ''),
+(43, 10, 24, 1, 0, 300, 300, 0, 0, 2, ''),
+(44, 10, 25, 1, 0, 300, 301, 1, 0, 2, ''),
+(45, 11, 26, 1, 0, 300, 300, 0, 0, 2, ''),
+(46, 11, 27, 1, 0, 300, 300, 0, 0, 2, ''),
+(59, 20, 0, 1, 0, 10, 10, 0, 0, 2, ''),
+(61, 20, 40, 1, 0, 4, 4, 0, 0, 2, ''),
+(62, 20, 41, 1, 0, 3, 3, 0, 0, 2, ''),
+(63, 20, 42, 1, 0, 3, 3, 0, 0, 2, ''),
+(64, 20, 43, 1, 0, 5, 5, 0, 0, 2, ''),
+(65, 20, 44, 1, 0, 5, 5, 0, 0, 2, ''),
+(66, 20, 45, 1, 0, 5, 5, 0, 0, 2, ''),
+(67, 20, 46, 1, 0, 4, 4, 0, 0, 2, ''),
+(68, 20, 47, 1, 0, 4, 4, 0, 0, 2, ''),
+(69, 20, 48, 1, 0, 4, 4, 0, 0, 2, ''),
+(112, 64, 0, 1, 0, 10, 10, 0, 0, 2, ''),
+(113, 65, 0, 1, 0, 10, 10, 0, 0, 2, ''),
+(114, 66, 0, 1, 0, 10, 10, 0, 0, 2, ''),
+(116, 1, 50, 1, 0, 0, 0, 0, 0, 2, '');
 
 -- --------------------------------------------------------
 
@@ -12002,6 +12963,30 @@ CREATE TABLE `ad_stock_mvt` (
   `current_wa` decimal(20,6) DEFAULT 0.000000,
   `referer` bigint(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Zrzut danych tabeli `ad_stock_mvt`
+--
+
+INSERT INTO `ad_stock_mvt` (`id_stock_mvt`, `id_stock`, `id_order`, `id_supply_order`, `id_stock_mvt_reason`, `id_employee`, `employee_lastname`, `employee_firstname`, `physical_quantity`, `date_add`, `sign`, `price_te`, `last_wa`, `current_wa`, `referer`) VALUES
+(1, 59, NULL, NULL, 11, 1, 'Ronaldo', 'Cristiano', 50, '2022-11-29 19:00:40', 1, '0.000000', '0.000000', '0.000000', NULL),
+(2, 64, NULL, NULL, 11, 1, 'Ronaldo', 'Cristiano', 1, '2022-11-29 19:07:53', 1, '0.000000', '0.000000', '0.000000', NULL),
+(3, 64, NULL, NULL, 11, 1, 'Ronaldo', 'Cristiano', 4, '2022-11-29 19:08:20', 1, '0.000000', '0.000000', '0.000000', NULL),
+(4, 65, NULL, NULL, 11, 1, 'Ronaldo', 'Cristiano', 5, '2022-11-29 19:08:20', 1, '0.000000', '0.000000', '0.000000', NULL),
+(5, 66, NULL, NULL, 11, 1, 'Ronaldo', 'Cristiano', 5, '2022-11-29 19:08:20', 1, '0.000000', '0.000000', '0.000000', NULL),
+(6, 67, NULL, NULL, 11, 1, 'Ronaldo', 'Cristiano', 4, '2022-11-29 19:08:20', 1, '0.000000', '0.000000', '0.000000', NULL),
+(7, 68, NULL, NULL, 11, 1, 'Ronaldo', 'Cristiano', 4, '2022-11-29 19:08:20', 1, '0.000000', '0.000000', '0.000000', NULL),
+(8, 69, NULL, NULL, 11, 1, 'Ronaldo', 'Cristiano', 4, '2022-11-29 19:08:20', 1, '0.000000', '0.000000', '0.000000', NULL),
+(9, 61, NULL, NULL, 11, 1, 'Ronaldo', 'Cristiano', 4, '2022-11-29 19:08:20', 1, '0.000000', '0.000000', '0.000000', NULL),
+(10, 62, NULL, NULL, 11, 1, 'Ronaldo', 'Cristiano', 3, '2022-11-29 19:08:20', 1, '0.000000', '0.000000', '0.000000', NULL),
+(11, 63, NULL, NULL, 11, 1, 'Ronaldo', 'Cristiano', 3, '2022-11-29 19:08:20', 1, '0.000000', '0.000000', '0.000000', NULL),
+(12, 70, NULL, NULL, 11, 1, 'Ronaldo', 'Cristiano', 10, '2022-11-29 19:18:27', 1, '0.000000', '0.000000', '0.000000', NULL),
+(13, 59, NULL, NULL, 11, 1, 'Ronaldo', 'Cristiano', 27, '2022-11-29 19:24:02', -1, '0.000000', '0.000000', '0.000000', NULL),
+(14, 110, NULL, NULL, 11, 1, 'Ronaldo', 'Cristiano', 10, '2022-11-29 19:34:52', 1, '0.000000', '0.000000', '0.000000', NULL),
+(15, 111, NULL, NULL, 11, 1, 'Ronaldo', 'Cristiano', 10, '2022-11-29 19:41:43', 1, '0.000000', '0.000000', '0.000000', NULL),
+(16, 112, NULL, NULL, 11, 1, 'Ronaldo', 'Cristiano', 10, '2022-11-29 19:43:05', 1, '0.000000', '0.000000', '0.000000', NULL),
+(17, 113, NULL, NULL, 11, 1, 'Ronaldo', 'Cristiano', 10, '2022-11-30 16:46:00', 1, '0.000000', '0.000000', '0.000000', NULL),
+(18, 114, NULL, NULL, 11, 1, 'Ronaldo', 'Cristiano', 10, '2022-11-30 17:01:20', 1, '0.000000', '0.000000', '0.000000', NULL);
 
 -- --------------------------------------------------------
 
@@ -15768,7 +16753,7 @@ ALTER TABLE `ad_address`
 -- AUTO_INCREMENT dla tabeli `ad_admin_filter`
 --
 ALTER TABLE `ad_admin_filter`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT dla tabeli `ad_alias`
@@ -15780,25 +16765,25 @@ ALTER TABLE `ad_alias`
 -- AUTO_INCREMENT dla tabeli `ad_attachment`
 --
 ALTER TABLE `ad_attachment`
-  MODIFY `id_attachment` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id_attachment` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT dla tabeli `ad_attachment_lang`
 --
 ALTER TABLE `ad_attachment_lang`
-  MODIFY `id_attachment` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id_attachment` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT dla tabeli `ad_attribute`
 --
 ALTER TABLE `ad_attribute`
-  MODIFY `id_attribute` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id_attribute` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT dla tabeli `ad_attribute_group`
 --
 ALTER TABLE `ad_attribute_group`
-  MODIFY `id_attribute_group` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_attribute_group` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT dla tabeli `ad_authorization_role`
@@ -15846,7 +16831,7 @@ ALTER TABLE `ad_cart_rule_product_rule_group`
 -- AUTO_INCREMENT dla tabeli `ad_category`
 --
 ALTER TABLE `ad_category`
-  MODIFY `id_category` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_category` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT dla tabeli `ad_cms`
@@ -15876,25 +16861,25 @@ ALTER TABLE `ad_cms_role`
 -- AUTO_INCREMENT dla tabeli `ad_configuration`
 --
 ALTER TABLE `ad_configuration`
-  MODIFY `id_configuration` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=405;
+  MODIFY `id_configuration` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=415;
 
 --
 -- AUTO_INCREMENT dla tabeli `ad_configuration_kpi`
 --
 ALTER TABLE `ad_configuration_kpi`
-  MODIFY `id_configuration_kpi` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `id_configuration_kpi` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
 
 --
 -- AUTO_INCREMENT dla tabeli `ad_connections`
 --
 ALTER TABLE `ad_connections`
-  MODIFY `id_connections` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_connections` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT dla tabeli `ad_connections_source`
 --
 ALTER TABLE `ad_connections_source`
-  MODIFY `id_connections_source` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id_connections_source` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT dla tabeli `ad_contact`
@@ -15978,13 +16963,13 @@ ALTER TABLE `ad_employee`
 -- AUTO_INCREMENT dla tabeli `ad_employee_session`
 --
 ALTER TABLE `ad_employee_session`
-  MODIFY `id_employee_session` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id_employee_session` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT dla tabeli `ad_feature`
 --
 ALTER TABLE `ad_feature`
-  MODIFY `id_feature` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_feature` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT dla tabeli `ad_feature_flag`
@@ -15996,7 +16981,7 @@ ALTER TABLE `ad_feature_flag`
 -- AUTO_INCREMENT dla tabeli `ad_feature_value`
 --
 ALTER TABLE `ad_feature_value`
-  MODIFY `id_feature_value` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id_feature_value` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT dla tabeli `ad_ganalytics`
@@ -16032,13 +17017,13 @@ ALTER TABLE `ad_guest`
 -- AUTO_INCREMENT dla tabeli `ad_homeslider`
 --
 ALTER TABLE `ad_homeslider`
-  MODIFY `id_homeslider_slides` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_homeslider_slides` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT dla tabeli `ad_homeslider_slides`
 --
 ALTER TABLE `ad_homeslider_slides`
-  MODIFY `id_homeslider_slides` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_homeslider_slides` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT dla tabeli `ad_hook`
@@ -16062,7 +17047,7 @@ ALTER TABLE `ad_hook_module_exceptions`
 -- AUTO_INCREMENT dla tabeli `ad_image`
 --
 ALTER TABLE `ad_image`
-  MODIFY `id_image` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id_image` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
 -- AUTO_INCREMENT dla tabeli `ad_image_type`
@@ -16122,7 +17107,7 @@ ALTER TABLE `ad_link_block_shop`
 -- AUTO_INCREMENT dla tabeli `ad_log`
 --
 ALTER TABLE `ad_log`
-  MODIFY `id_log` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=244;
+  MODIFY `id_log` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=393;
 
 --
 -- AUTO_INCREMENT dla tabeli `ad_mail`
@@ -16164,7 +17149,7 @@ ALTER TABLE `ad_module`
 -- AUTO_INCREMENT dla tabeli `ad_module_history`
 --
 ALTER TABLE `ad_module_history`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT dla tabeli `ad_module_preference`
@@ -16254,31 +17239,31 @@ ALTER TABLE `ad_order_state`
 -- AUTO_INCREMENT dla tabeli `ad_page`
 --
 ALTER TABLE `ad_page`
-  MODIFY `id_page` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_page` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT dla tabeli `ad_pagenotfound`
 --
 ALTER TABLE `ad_pagenotfound`
-  MODIFY `id_pagenotfound` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id_pagenotfound` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=439;
 
 --
 -- AUTO_INCREMENT dla tabeli `ad_page_type`
 --
 ALTER TABLE `ad_page_type`
-  MODIFY `id_page_type` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_page_type` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT dla tabeli `ad_product`
 --
 ALTER TABLE `ad_product`
-  MODIFY `id_product` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id_product` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
 
 --
 -- AUTO_INCREMENT dla tabeli `ad_product_attribute`
 --
 ALTER TABLE `ad_product_attribute`
-  MODIFY `id_product_attribute` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `id_product_attribute` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 
 --
 -- AUTO_INCREMENT dla tabeli `ad_product_comment`
@@ -16302,7 +17287,7 @@ ALTER TABLE `ad_product_download`
 -- AUTO_INCREMENT dla tabeli `ad_product_supplier`
 --
 ALTER TABLE `ad_product_supplier`
-  MODIFY `id_product_supplier` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=74;
+  MODIFY `id_product_supplier` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
 
 --
 -- AUTO_INCREMENT dla tabeli `ad_profile`
@@ -16380,7 +17365,7 @@ ALTER TABLE `ad_search_engine`
 -- AUTO_INCREMENT dla tabeli `ad_search_word`
 --
 ALTER TABLE `ad_search_word`
-  MODIFY `id_word` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=771;
+  MODIFY `id_word` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=829;
 
 --
 -- AUTO_INCREMENT dla tabeli `ad_shop`
@@ -16410,7 +17395,7 @@ ALTER TABLE `ad_specific_price`
 -- AUTO_INCREMENT dla tabeli `ad_specific_price_priority`
 --
 ALTER TABLE `ad_specific_price_priority`
-  MODIFY `id_specific_price_priority` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_specific_price_priority` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT dla tabeli `ad_specific_price_rule`
@@ -16440,7 +17425,7 @@ ALTER TABLE `ad_state`
 -- AUTO_INCREMENT dla tabeli `ad_statssearch`
 --
 ALTER TABLE `ad_statssearch`
-  MODIFY `id_statssearch` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id_statssearch` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT dla tabeli `ad_stock`
@@ -16452,13 +17437,13 @@ ALTER TABLE `ad_stock`
 -- AUTO_INCREMENT dla tabeli `ad_stock_available`
 --
 ALTER TABLE `ad_stock_available`
-  MODIFY `id_stock_available` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
+  MODIFY `id_stock_available` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=117;
 
 --
 -- AUTO_INCREMENT dla tabeli `ad_stock_mvt`
 --
 ALTER TABLE `ad_stock_mvt`
-  MODIFY `id_stock_mvt` bigint(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_stock_mvt` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT dla tabeli `ad_stock_mvt_reason`
