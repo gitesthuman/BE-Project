@@ -25,6 +25,8 @@ Email: `demo@prestashop.com`
 Password: `dupaguwno` <sub>strong password ;)</sub>
 
 # Enabling SSL
+Open `be-project` in Docker Desktop <br />
+Open `be-adidas` container in terminal and type following commands:
 
 ```
 apt update
