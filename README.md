@@ -41,13 +41,13 @@ Create the SSL Certificate
 openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/apache-selfsigned.key -out /etc/ssl/certs/apache-selfsigned.crt
 ```
 Fill the form:<br />
-Country Name (2 letter code) [XX]:`pl`<br />
-State or Province Name (full name) []:`pomorskie`<br />
-Locality Name (eg, city) [Default City]:`gdansk` <br />
-Organization Name (eg, company) [Default Company Ltd]:`pg`<br />
-Organizational Unit Name (eg, section) []:`biznes`<br />
-Common Name (eg, your name or your server's hostname) []:`Be-projekt`<br />
-Email Address []:`demo@prestashop.com`<br />
+Country Name [XX] : `pl`<br />
+State or Province Name : `pomorskie`<br />
+Locality Name : `gdansk` <br />
+Organization Name : `pg`<br />
+Organizational Unit Name : `biznes`<br />
+Common Name : `Be-projekt`<br />
+Email Address : `demo@prestashop.com`<br />
 
 Configure Apache to Use SSL
 
