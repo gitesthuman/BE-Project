@@ -100,4 +100,7 @@ Save and exit, then type:
 apachectl configtest
 service apache2 reload
 ```
+
+At the end enable SSL and force it on all site pages in your PrestaShop settings.
+
 Done
