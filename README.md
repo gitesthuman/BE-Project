@@ -1,5 +1,5 @@
 # BE-Project
-Nike online shop based on Prestashop 8. Requires [Docker](https://www.docker.com/products/docker-desktop/) and Windows.
+Adidas online shop based on Prestashop 8. Requires [Docker](https://www.docker.com/products/docker-desktop/) and Windows.
 
 # Installation guide
 ```
