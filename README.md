@@ -87,7 +87,7 @@ Open previously created file:
 ```
 nano /etc/apache2/sites-available/html.conf
 ```
-Add following:
+Add following ABOVE previously created VirtualHost on port 443:
 ```
 <VirtualHost *:80>
     ServerName localhost
