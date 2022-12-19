@@ -1,5 +1,8 @@
 from time import sleep
+
+from selenium.common import NoSuchElementException
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import Select
 
 
 class User:
@@ -38,12 +41,22 @@ class User:
     def fill_address_form(self, sec, address, postcode, city):
         self.driver.find_element(By.ID, "field-address1").send_keys(address)
         sleep(sec)
-        self.driver.find_element(By.ID, "field-postcode").send_keys(postcode)
-        sleep(sec)
         self.driver.find_element(By.ID, "field-city").send_keys(city)
         sleep(sec)
-        self.driver.find_element(By.XPATH, '//*[@id="delivery-address"]/div/footer/button').click()
+        field_id_country = Select(self.driver.find_element(By.ID, "field-id_country"))
+        field_id_country.select_by_visible_text("Polska")
         sleep(sec)
+        field_id_country = Select(self.driver.find_element(By.ID, "field-id_state"))
+        field_id_country.select_by_index(1)
+        sleep(sec)
+        self.driver.find_element(By.ID, "field-postcode").send_keys(postcode)
+        sleep(sec)
+        try:
+            self.driver.find_element(By.NAME, "confirm-addresses").click()
+            sleep(sec)
+        except NoSuchElementException:
+            self.driver.find_element(By.XPATH, '//*[@id="checkout-addresses-step"]/div/div/form/footer/button').click()
+            sleep(sec)
 
     def choose_delivery(self, sec):
         self.driver.find_element(By.ID, "delivery_option_2").click()

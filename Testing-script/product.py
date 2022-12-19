@@ -1,4 +1,5 @@
 from time import sleep
+
 from selenium.webdriver import ActionChains, Keys
 from selenium.webdriver.common.by import By
 
@@ -28,8 +29,7 @@ class Product:
         sleep(sec)
 
         self.driver.find_element(By.CLASS_NAME, "add-to-cart").click()
-        sleep(sec)
-
+        sleep(sec*5)
         self.driver.find_element(By.XPATH,
                                  '//*[@id="blockcart-modal"]/div/div/div[2]/div/div[2]/div/div/button').click()
         sleep(sec)

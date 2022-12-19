@@ -12,21 +12,23 @@ driver.get("http://127.0.0.1:80")
 driver.maximize_window()
 driver.implicitly_wait(10)
 
-user = User(driver, "Pan", "Adam", "Adamski", "adam3@gmail.com", "adaamo12.", "2001-01-01")
+user = User(driver, "Pan", "Adam", "Adamski", "adam14@gmail.com", "adaamo12.", "2001-01-01")
 
 products = []
-products.append(Product(driver, "CLOTHES", "MEN", "Hummingbird Printed T-Shirt"))
-products.append(Product(driver, "PRODUKTY POWIĄZANE", "HOME ACCESSORIES", "Mug The Best Is Yet To Come"))
-products.append(Product(driver, "PRODUKTY POWIĄZANE", "HOME ACCESSORIES", "Mug The Adventure Begins"))
-products.append(Product(driver, "PRODUKTY POWIĄZANE", "HOME ACCESSORIES", "Mug Today Is A Good Day"))
-products.append(Product(driver, "PRODUKTY POWIĄZANE", "HOME ACCESSORIES", "Mountain Fox Cushion"))
-products.append(Product(driver, "PRODUKTY POWIĄZANE", "HOME ACCESSORIES", "Brown Bear Cushion"))
-products.append(Product(driver, "PRODUKTY POWIĄZANE", "HOME ACCESSORIES", "Hummingbird Cushion"))
-products.append(Product(driver, "PRODUKTY POWIĄZANE", "HOME ACCESSORIES", "Pack Mug + Framed Poster"))
+products.append(Product(driver, "BUTY", "SNEAKERSY", "OZWEEGO Shoes"))
+products.append(Product(driver, "BUTY", "SNEAKERSY", "ZX 22 BOOST Shoes"))
+products.append(Product(driver, "BUTY", "SNEAKERSY", "Superstar Shoes"))
+products.append(Product(driver, "BUTY", "SNEAKERSY", "Stan Smith Shoes"))
+products.append(Product(driver, "BUTY", "SNEAKERSY", "Gazelle Indoor Shoes"))
+products.append(Product(driver, "AKCESORIA", "TORBY I PLECAKI", "Adicolor Backpack"))
+products.append(Product(driver, "AKCESORIA", "TORBY I PLECAKI", "Power VI Backpack"))
+products.append(Product(driver, "AKCESORIA", "TORBY I PLECAKI", "4ATHLTS Camper Backpack"))
+products.append(Product(driver, "AKCESORIA", "TORBY I PLECAKI", "4ATHLTS ID Gear Up Backpack"))
+products.append(Product(driver, "AKCESORIA", "TORBY I PLECAKI", "Adicolor Classic Waist Bag"))
 
 sec = 1
 for product in products:
-    product.add_to_cart(random.randint(1, 10), sec)
+    product.add_to_cart(random.randint(1, 3), sec)
     sec = 0
 
 sec = 1

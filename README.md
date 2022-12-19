@@ -104,3 +104,7 @@ service apache2 reload
 At the end enable SSL and force it on all site pages in your PrestaShop settings.
 
 Done
+
+# Testing script
+Download ChromeDriver from https://chromedriver.chromium.org/downloads
+in file `main.py` specify `PATH` to your `chromedriver.exe`
