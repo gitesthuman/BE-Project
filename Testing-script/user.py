@@ -46,8 +46,6 @@ class User:
         field_id_country = Select(self.driver.find_element(By.ID, "field-id_country"))
         field_id_country.select_by_visible_text("Polska")
         sleep(sec)
-        field_id_country = Select(self.driver.find_element(By.ID, "field-id_state"))
-        field_id_country.select_by_index(1)
         sleep(sec)
         self.driver.find_element(By.ID, "field-postcode").send_keys(postcode)
         sleep(sec)
@@ -79,6 +77,5 @@ class User:
         sleep(sec)
         self.driver.find_element(By.XPATH, '//*[@id="content"]/table/tbody/tr/td[6]/a[1]').click()
         sleep(sec)
-
 
 
