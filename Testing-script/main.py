@@ -1,6 +1,7 @@
 from time import sleep
 import random
 from selenium import webdriver
+from selenium.common import NoSuchElementException
 from selenium.webdriver.common.by import By
 from product import Product
 from user import User
@@ -12,19 +13,25 @@ driver.get("http://127.0.0.1:80")
 driver.maximize_window()
 driver.implicitly_wait(10)
 
-user = User(driver, "Pan", "Adam", "Adamski", "adam14@gmail.com", "adaamo12.", "2001-01-01")
+user = User(driver, "Pan", "Adam", "Adamski", "adam@gmail.com", "adaamo12.", "2001-01-01")
 
 products = []
 products.append(Product(driver, "BUTY", "SNEAKERSY", "OZWEEGO Shoes"))
-products.append(Product(driver, "BUTY", "SNEAKERSY", "ZX 22 BOOST Shoes"))
+products.append(Product(driver, "BUTY", "SNEAKERSY", "ZX 5K Boost Shoes"))
 products.append(Product(driver, "BUTY", "SNEAKERSY", "Superstar Shoes"))
 products.append(Product(driver, "BUTY", "SNEAKERSY", "Stan Smith Shoes"))
-products.append(Product(driver, "BUTY", "SNEAKERSY", "Gazelle Indoor Shoes"))
+products.append(Product(driver, "BUTY", "SNEAKERSY", "Buty Gazelle"))
 products.append(Product(driver, "AKCESORIA", "TORBY I PLECAKI", "Adicolor Backpack"))
 products.append(Product(driver, "AKCESORIA", "TORBY I PLECAKI", "Power VI Backpack"))
 products.append(Product(driver, "AKCESORIA", "TORBY I PLECAKI", "4ATHLTS Camper Backpack"))
 products.append(Product(driver, "AKCESORIA", "TORBY I PLECAKI", "4ATHLTS ID Gear Up Backpack"))
-products.append(Product(driver, "AKCESORIA", "TORBY I PLECAKI", "Adicolor Classic Waist Bag"))
+products.append(Product(driver, "AKCESORIA", "TORBY I PLECAKI", "Adicolor Archive Waist Bag"))
+
+try:
+    driver.find_element(By.ID, "details-button").click()
+    driver.find_element(By.ID, "proceed-link").click()
+except NoSuchElementException:
+    pass
 
 sec = 1
 for product in products:
@@ -44,4 +51,4 @@ user.fill_address_form(sec, "Kosciuszki", "11-111", "Gdansk")
 user.choose_delivery(sec)
 user.choose_payment(sec)
 user.check_order_status(sec)
-sleep(5)
+sleep(10)

@@ -1,6 +1,7 @@
 from time import sleep
 
 from selenium.common import NoSuchElementException
+from selenium.webdriver import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
 
@@ -37,6 +38,23 @@ class User:
         sleep(sec)
         self.driver.find_element(By.XPATH, '// *[ @ id = "customer-form"] / footer / button').click()
         sleep(sec)
+        while True:
+            try:
+                self.driver.find_element(By.XPATH, '//*[@id="customer-form"]/div/div[4]/div[1]/div/ul/li')
+                split = self.email.split('@')
+                split[0] += '1'
+                self.email = split[0] + '@' + split[1]
+                print(self.email)
+                field_email = self.driver.find_element(By.ID, "field-email")
+                field_email.send_keys(Keys.SHIFT, Keys.END, Keys.BACK_SPACE)
+                field_email.send_keys(self.email)
+                sleep(sec)
+                self.driver.find_element(By.ID, "field-password").send_keys(self.password)
+                sleep(sec)
+                self.driver.find_element(By.XPATH, '// *[ @ id = "customer-form"] / footer / button').click()
+                sleep(sec)
+            except NoSuchElementException:
+                break
 
     def fill_address_form(self, sec, address, postcode, city):
         self.driver.find_element(By.ID, "field-address1").send_keys(address)
