@@ -22,8 +22,6 @@ To enter the admin page, you need to enter `http://localhost:80/kupriano` and lo
 
 Email: `demo@prestashop.com`
 
-Password: `dupaguwno` <sub>strong password ;)</sub>
-
 # Enabling SSL
 Open `be-project` in Docker Desktop <br />
 Open `be-adidas` container in terminal and type following commands:
