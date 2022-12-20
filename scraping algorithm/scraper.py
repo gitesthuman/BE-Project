@@ -69,14 +69,14 @@ for page in pages.keys():
             img = product['view_list'][0]['image_url']
             brand = product['attribute_list']['brand']
             sup = 1
-            if pages[page] in ["Skarpetki", "Nakrycia głowy", "Torby i plecaki"]:
+            if "Akcesoria" in pages[page]:
                 sup = 2
 
             print(ID)
             if do_comb:
                 do_comb = False
                 size_cat = "Rozmiar"
-                if pages[page] in ["Sneakersy", "Bieganie", "Piłka nożna"]:
+                if "Buty" in pages[page]:
                     size_cat = "Rozmiar buta"
 
                 imgs = [img]
@@ -89,6 +89,8 @@ for page in pages.keys():
                         imgs.append(li['image'])
 
                 sizes = [v['size'] for v in product['variation_list']]
+                while len(sizes) > 15:
+                    sizes.pop()
 
                 if len(sizes) > 1 and len(colors) > 1:
                     for s in sizes:
