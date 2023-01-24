@@ -14,14 +14,6 @@ docker-compose stop
 ```
 You can also start and stop application in Docker Desktop application.
 
----
-At first, go to [phpMyAdmin](http://localhost:81) and import database `mariadb.sql`.
-
-
-To enter the admin page, you need to enter `http://localhost:80/kupriano` and log in.
-
-Email: `demo@prestashop.com`
-
 # Enabling SSL
 Open `be-project` in Docker Desktop <br />
 Open `be-adidas` container in terminal and type following commands:
