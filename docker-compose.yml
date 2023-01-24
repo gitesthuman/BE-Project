@@ -5,14 +5,13 @@ services:
     container_name: be-adidas
     image: jacoblink/be-prestashop:latest
     ports:
-      - 80:80
       - 443:443
     depends_on:
       - mariadb
 
   mariadb:
     container_name: adidas-db
-    image: mariadb
+    image: mariadb:10.8.2
     environment:
       - MYSQL_ROOT_PASSWORD=root
       - MYSQL_DATABASE=prestashop
